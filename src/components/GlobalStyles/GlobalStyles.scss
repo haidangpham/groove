@@ -1,0 +1,90 @@
+@import 'normalize.css';
+
+:root{
+        //default
+        --default-layout-width: 100%;
+        --font-family: CircularSp;
+        --secondary-font-family: sans-serif;
+        --background-color: rgb(45, 43, 43);
+        --default-panel-gap: 8px;
+        --default-color: rgb(179, 179, 179);
+        --active-color: rgb(255, 255, 255);
+        ---default-white-color: rgb(255, 255, 255);
+
+        //background
+        --background-hover-highlight: hsla(0,0%,100%,.1);
+        //panel
+        --panel-background-color: #121212;
+        --panel-border-radius: 8px;
+        --now-playing-panel-height: 72px;
+
+        //sidebar
+        --default-sidebar-width: 342px;
+        --sidebar-spacer: calc(var(--default-sidebar-width) + 2*var(--default-panel-gap));
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    :visited{
+        color: unset;
+    }
+    transition: all 0.25s ease-out;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    color: var(--default-color);
+    background-color: #000;
+    overflow: hidden;
+    button{
+        background-color: unset;
+        border: unset;
+        font: unset;
+        color: unset;
+    }
+}
+ .scrolling{
+    overflow: auto;
+}
+.testing{
+    background-color: red;
+}
+//Fonts emmbed
+@font-face {
+    font-family: CircularSp;
+    src: url('/assets/fonts/CircularSp-Bold.woff2');
+    font-weight: 300;
+}
+@font-face {
+    font-family: CircularSpBold;
+    src: url('/assets/fonts/CircularSp-Bold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: CircularSpBook;
+    src: url('/assets/fonts/CircularSp-Book.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: CircularSpTitleBlack;
+    src: url('/assets/fonts/CircularSpTitle-Black.woff2');
+    font-weight: 500;
+}
+@font-face {
+    font-family: CircularSpTitleBold;
+    src: url('/assets/fonts/CircularSpTitle-Bold.woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: CircularSpTallBold;
+    src: url('/assets/fonts/CircularSpTitle-Tall-Bold.woff2');
+    font-weight: 700;
+}

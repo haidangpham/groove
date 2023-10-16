@@ -1,0 +1,14 @@
+.wrapper{
+     display: grid;
+     grid-template-rows: 112px 1fr;
+     gap: var(--default-panel-gap);
+     width: var(--sidebar-width);
+     height: calc(100vh - (var(--now-playing-panel-height) + var(--default-panel-gap)));
+     background-color: #000;
+     &>*{
+          background-color: var(--panel-background-color);
+          border-radius: var(--panel-border-radius);
+     }
+
+  
+}

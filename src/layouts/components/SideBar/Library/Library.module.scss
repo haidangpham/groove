@@ -1,0 +1,84 @@
+
+.wrapper{
+    height: calc(100vh - (var(--now-playing-panel-height) + var(--default-panel-gap)));
+    padding: 8px;
+}
+.library-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 16px;
+}
+.toggle-div{
+    display: flex;
+    align-items: center;
+    width: auto;
+    &:hover{
+        color: var(--active-color);
+        .library-icon{
+            fill: var(--active-color);
+        }
+    }
+    cursor: pointer;
+}
+
+.options-div{
+    display: flex;
+    gap: 8px;
+    span{
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 8px;
+        cursor: pointer;
+        &:hover{
+            .icon{
+                fill: var(--active-color);    
+            }
+        } 
+    }
+}
+.options-div >*:hover{
+    background-color: #1a1a1a;;
+}
+.icon{
+    fill: var(--default-color);
+    &.library-icon{
+        margin-right: 12px;
+    }
+}
+.category{
+    display: flex;
+    column-gap: 8px;
+    margin: 8px 16px;
+    width: 100%;
+    height: auto;
+}
+.category > *{
+    background-color: hsla(0,0%,100%,.07);
+    padding: 4px 12px;
+    border-radius: 32px;
+    font-size: 1.4rem;
+    color: var(---default-white-color);
+    cursor: pointer;
+    &:hover{
+        background-color: var(--background-hover-highlight);
+    }
+}
+//content
+.scrollableDiv{
+    overflow-y: scroll;
+}
+.library-content{
+    width: auto;
+    padding: 0 8px 8px;
+    display: block;
+    height: 100%;
+
+}
+
+.search-i{
+    width: 16px;
+    height: 16px;
+}

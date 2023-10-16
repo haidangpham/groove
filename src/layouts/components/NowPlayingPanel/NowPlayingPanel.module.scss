@@ -1,0 +1,10 @@
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: var(--now-playing-panel-height);
+    z-index: 10;
+    background-color: #000;
+    border-radius: var(--panel-border-radius);
+
+}

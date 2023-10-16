@@ -1,0 +1,8 @@
+.wrapper{
+   height: calc(100vh - (var(--now-playing-panel-height) + var(--default-panel-gap)));
+    width: 100%;
+    right: 0;
+    font-size: 20px;
+    color: wheat;
+    overflow: auto;
+}
