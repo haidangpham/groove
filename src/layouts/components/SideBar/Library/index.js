@@ -9,12 +9,14 @@ import {
     SearchIcon,
     MenuIcon,
 } from "../../../../components/Icons";
+import {currentUser} from '../../../../assets/data/users';
 
 const cx = classNames.bind(styles);
 function Library() {
+    const suggestedItems= currentUser.playlists
     return (
         <div className={cx("wrapper")}>
-            <div>
+            <div className={cx('fixed-wrapper')}>
                 <div className={cx("library-header")}>
                     <div className={cx("toggle-div")}>
                         <ActiveLibraryIcon className={cx("icon", "library-icon")} />
@@ -51,39 +53,23 @@ function Library() {
                         <span>Recents</span>
                         <MenuIcon className={cx("icon")} />
                     </button>
-                    <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>scroll</div>
-                        <div>SCROLL</div>
                 </div>
+                {
+                    suggestedItems.map((item, index)=>{
+                        return(
+                            <div key={index} className={cx('item-box')}>
+                                <div className={cx('row-item')}>
+                                    <div className={cx('cover-img')}><img src={item.coverImage} alt=""/></div>
+                                    <div className={cx('item')}>
+                                        <p className={cx('item-title')}>{item.name}</p>
+                                        <span className={cx('item-subtitle')}>{item.type} • {item.author}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })
+                }  
+                
             </div>
         </div>
     );

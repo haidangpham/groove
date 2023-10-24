@@ -9,7 +9,7 @@
         --default-panel-gap: 8px;
         --default-color: rgb(179, 179, 179);
         --active-color: rgb(255, 255, 255);
-        ---default-white-color: rgb(255, 255, 255);
+        --white-font-color: rgb(255, 255, 255);
 
         //background
         --background-hover-highlight: hsla(0,0%,100%,.1);
@@ -17,10 +17,14 @@
         --panel-background-color: #121212;
         --panel-border-radius: 8px;
         --now-playing-panel-height: 72px;
+        --nav-height: 112px;
 
         //sidebar
         --default-sidebar-width: 342px;
         --sidebar-spacer: calc(var(--default-sidebar-width) + 2*var(--default-panel-gap));
+
+        //animation
+        --default-animation: all 0.25s ease-out;
 }
 *{
     box-sizing: border-box;
@@ -31,7 +35,6 @@
     :visited{
         color: unset;
     }
-    transition: all 0.25s ease-out;
 }
 html {
     font-size: 62.5%;

@@ -8,7 +8,6 @@ import Library from "./Library";
 
 const cx= classNames.bind(styles)
 function SideBar({path}) {
-    
     return (
        <div className={cx('wrapper')}>
             <PageNav path={path} />

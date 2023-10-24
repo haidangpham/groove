@@ -6,10 +6,9 @@
     position: relative;
     display: grid;
     gap: var(--default-panel-gap);
-    height: calc(100vh - var(--now-playing-panel-height));
+    height: calc(100vh - var(--now-playing-panel-height) + var(--default-panel-gap));
     grid-template-columns: var(--default-sidebar-width) auto;
     padding: var(--default-panel-gap);
-    
      & >*{
         background-color: var(--panel-background-color);
         border-radius: var(--panel-border-radius);
@@ -18,6 +17,7 @@
 .sidebar{
     position: relative;
     width: var(--default-sidebar-width);
+    height: auto;
 }
 .resizeArea{
     position: absolute;
