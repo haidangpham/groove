@@ -9,11 +9,10 @@ import {
     SearchIcon,
     MenuIcon,
 } from "../../../../components/Icons";
-import {currentUser} from '../../../../assets/data/users';
+import { userPlaylists } from "../../../../assets/data/playlist";
 
 const cx = classNames.bind(styles);
 function Library() {
-    const suggestedItems= currentUser.playlists
     return (
         <div className={cx("wrapper")}>
             <div className={cx('fixed-wrapper')}>
@@ -48,14 +47,14 @@ function Library() {
 
             <div className={cx("library-content", "scrollableDiv")}>
                 <div className={cx("actions")}>
-                    <SearchIcon className={cx("search-i", "icon")} />
+                    <span><SearchIcon className={cx("search-i", "icon")} /></span>
                     <button>
                         <span>Recents</span>
                         <MenuIcon className={cx("icon")} />
                     </button>
                 </div>
                 {
-                    suggestedItems.map((item, index)=>{
+                    userPlaylists.map((item, index)=>{
                         return(
                             <div key={index} className={cx('item-box')}>
                                 <div className={cx('row-item')}>

@@ -10,6 +10,7 @@
         --default-color: rgb(179, 179, 179);
         --active-color: rgb(255, 255, 255);
         --white-font-color: rgb(255, 255, 255);
+        --top-bar-height: 6.4rem;
 
         //background
         --background-hover-highlight: hsla(0,0%,100%,.1);
@@ -35,6 +36,7 @@
     :visited{
         color: unset;
     }
+
 }
 html {
     font-size: 62.5%;
@@ -54,11 +56,9 @@ body {
         color: unset;
     }
 }
+
  .scrolling{
     overflow: auto;
-}
-.testing{
-    background-color: red;
 }
 //Fonts emmbed
 @font-face {

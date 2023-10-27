@@ -1,56 +1,28 @@
-// import Discovery from "../layouts/components/Discovery";
 import classNames from "classnames/bind";
+
 import styles from './HomePage.module.scss'
+import { recentPlaylists, userPlaylists } from "../../assets/data/playlist";
+import Shelf from "../../layouts/components/Shelf/Shelf";
 const cx= classNames.bind(styles)
 function Home() {
-    document.title = "Experience music world.";
     return (
         <div className={cx('wrapper')}>
-            <div>Homeeee1</div>
-            <p>Discovery1</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee2</div>
-            <p>Discovery2</p>
-            <div>Homeeee2</div>
-            <p>Discovery2</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee</div>
-            <p>Discovery</p>
-            <div>Homeeee3</div>
-            <p>Discovery2</p>
-            <div>Homeeee2</div>
-            <p>DISCOVERY</p>
-            
+            <div className={cx('greet')}>Good morning</div>
+            <div className={cx('recent-playlists')}>
+                {recentPlaylists.map((id, index)=>{
+                    const item= userPlaylists.find((playlist)=> playlist.id=== id)
+                    return(
+                    <div className={cx('item')}>
+                        <img src={item.coverImage} alt="" className={cx('playlist-cover')}/>
+                    </div>)
+                })
+                
+                }
+                    
+                
+            </div>
+            <Shelf />
+
         </div>
        
     );

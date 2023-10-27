@@ -2,9 +2,12 @@
 .wrapper{
     position: relative;
     height: calc(100vh - (var(--now-playing-panel-height) + 3*var(--default-panel-gap) +  var(--nav-height)));
-    // height: 500px;
     padding: 8px 0;
+    .icon:hover{
+        fill: var(--active-color);
+    }
 }
+
 .fixed-wrapper{
     box-shadow: 0 6px 10px rgba(0,0,0,.6);
 }
@@ -46,7 +49,7 @@
     }
 }
 .options-div >*:hover{
-    background-color: #1a1a1a;;
+    background-color: #1a1a1a;
 }
 .icon{
     fill: var(--default-color);
@@ -81,25 +84,45 @@
     padding: 0 8px 8px;
     display: block;
     height: calc(100% - 80px);
-
+    
 }
 .search-i{
     width: 16px;
     height: 16px;
-    margin: 8px;
 }
 .actions{
     display: flex;
     justify-content: space-between;
-    padding: 0 4px;
+    padding: 2px 4px;
     width: 100%;
+    & > *{
+        cursor: pointer;
+    }
     button{
         display: flex;
         align-items: center;
         gap: 5px;
-
         font-size: 14px;
         font-weight: 400;
+        &:hover{
+            scale: 1.05;
+            &>*{
+                color: var(--active-color);
+                fill: var(--active-color);
+            }
+        }
+        transition: var(--default-animation);
+    }
+
+    & > span{
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 8px;
+        &:hover{
+            background-color: #1a1a1a;
+        }
+        
     }
 }
 .row-item{

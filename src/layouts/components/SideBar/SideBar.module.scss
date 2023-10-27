@@ -3,7 +3,7 @@
      grid-template-rows: 112px auto;
      gap: var(--default-panel-gap);
      width: var(--sidebar-width);
-     height: calc(100vh - (var(--now-playing-panel-height) + var(--default-panel-gap)));
+     height: 100%;
      background-color: #000;
      &>*{
           background-color: var(--panel-background-color);
