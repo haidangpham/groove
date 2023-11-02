@@ -16,7 +16,7 @@ li{
 }
 .active{
     color: var(--active-color);
-    fill: white;
+    fill: var(--active-color);
 }
 .nav-pages{
     display: flex;

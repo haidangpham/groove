@@ -1,0 +1,26 @@
+.btn-ctn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--theme-color);
+    cursor: pointer;
+    .icon{
+        width: 40%;
+    }
+}
+.small{
+    width: 3.2rem;
+    height: 3.2rem;
+}
+.medium{
+    width: 4.8rem;
+    height: 4.8rem;
+}
+.large{
+    width: 5.6rem;
+    height: 5.6rem;
+}
+.white{
+    background-color: white;
+}

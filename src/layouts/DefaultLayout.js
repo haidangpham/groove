@@ -17,6 +17,7 @@ function DefaultLayout({ children, path }) {
                     <SideBar path={path}/>
                 </div>
                 {/* content */}
+                
                 <div className={cx('main-view')}>
                     <div className={cx('top-bar')}>
                         <div className={cx('history-nav')}>

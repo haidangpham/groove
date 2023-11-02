@@ -1,0 +1,12 @@
+.tippy-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding: 0 6px;
+    background-color: var(--theme-color);
+    opacity: 0.5;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    color: var(--white-font-color);
+}

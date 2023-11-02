@@ -10,6 +10,7 @@ import {
     MenuIcon,
 } from "../../../../components/Icons";
 import { userPlaylists } from "../../../../assets/data/playlist";
+import TipBox from "../../TippyBox";
 
 const cx = classNames.bind(styles);
 function Library() {
@@ -17,10 +18,13 @@ function Library() {
         <div className={cx("wrapper")}>
             <div className={cx('fixed-wrapper')}>
                 <div className={cx("library-header")}>
-                    <div className={cx("toggle-div")}>
-                        <ActiveLibraryIcon className={cx("icon", "library-icon")} />
-                        <span>Your Library</span>
-                    </div>
+                        <TipBox content="Collapse Your Library">
+                            <div className={cx("toggle-div")}>
+                                <ActiveLibraryIcon className={cx("icon", "library-icon")} />
+                                <span>Your Library</span>
+                            </div>
+                        </TipBox>
+                    
                     <div className={cx("options-div")}>
                         <span>
                             <PlusIcon className={cx("icon")} />

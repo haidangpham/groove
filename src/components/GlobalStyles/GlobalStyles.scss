@@ -2,18 +2,21 @@
 
 :root{
         //default
+        --theme-color: rgb(66, 206, 166);
         --default-layout-width: 100%;
         --font-family: CircularSp;
         --secondary-font-family: sans-serif;
         --background-color: rgb(45, 43, 43);
         --default-panel-gap: 8px;
         --default-color: rgb(179, 179, 179);
-        --active-color: rgb(255, 255, 255);
+        --active-color: var(--theme-color);
         --white-font-color: rgb(255, 255, 255);
         --top-bar-height: 6.4rem;
+        --background-noise: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=);
 
         //background
         --background-hover-highlight: hsla(0,0%,100%,.1);
+        --background-base: #121212;
         //panel
         --panel-background-color: #121212;
         --panel-border-radius: 8px;
@@ -36,8 +39,9 @@
     :visited{
         color: unset;
     }
-
+    
 }
+
 html {
     font-size: 62.5%;
 }
@@ -56,15 +60,17 @@ body {
         color: unset;
     }
 }
-
- .scrolling{
+a{
+    color: unset;
+}
+.scrolling{
     overflow: auto;
 }
 //Fonts emmbed
 @font-face {
     font-family: CircularSp;
     src: url('/assets/fonts/CircularSp-Bold.woff2');
-    font-weight: 300;
+    font-weight: 200;
 }
 @font-face {
     font-family: CircularSpBold;

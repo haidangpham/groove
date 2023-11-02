@@ -1,6 +1,7 @@
 .wrapper {
     display: grid;
     row-gap: 20px;
+    position: relative;
 }
 .panel-wrapper {
     position: relative;
@@ -36,8 +37,8 @@
     width: calc(100vw - var(--sidebar-spacer) - var(--default-panel-gap));
     overflow: auto;
     //
-    background: rgb(78,90,11);
-    background: linear-gradient(170deg, rgba(51,58,11,1) 0%, var(--panel-background-color) 50%, var(--panel-background-color) 100%);
+    background: linear-gradient(0deg, transparent 0,rgba(255, 251, 0, 0.5) 100%),var(--background-noise);
+    // background: linear-gradient(180deg, rgb(130, 149, 27) 0%, var(--panel-background-color) 60%, var(--panel-background-color) 100%);
 }
 .top-bar {
     position: fixed;
