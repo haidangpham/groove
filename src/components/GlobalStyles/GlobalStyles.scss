@@ -13,7 +13,7 @@
         --white-font-color: rgb(255, 255, 255);
         --top-bar-height: 6.4rem;
         --background-noise: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=);
-
+        --scrollbar-width: 1.4rem;
         //background
         --background-hover-highlight: hsla(0,0%,100%,.1);
         --background-base: #121212;
@@ -30,6 +30,23 @@
         //animation
         --default-animation: all 0.25s ease-out;
 }
+//scrollbar
+::-webkit-scrollbar {
+    width: var( --scrollbar-width);  
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(186, 186, 186, 0.5);
+    opacity: 0; /* Set initial opacity to 0 */
+    transition: opacity 0.3s;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    // background: rgba(113, 113, 113, 0.614);
+    opacity: 1;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    // background: rgba(155, 155, 155, 0.614);
+    opacity: 0;
+  }
 *{
     box-sizing: border-box;
     margin: 0;

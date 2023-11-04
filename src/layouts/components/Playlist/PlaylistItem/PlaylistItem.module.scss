@@ -1,0 +1,71 @@
+.song{
+    padding: 4px 10px;
+    user-select: none;
+    border-radius: 5px;
+    & > *{align-self: center;}
+    transition: var(--default-animation);
+    &:hover{
+        background-color: hsla(0,0%,100%,.1);
+        .duration .icon{
+            opacity: 1;
+        }
+    }
+    .icon{
+        fill: var(--default-color);
+    }
+    .play-btn{
+        fill: var(--white-font-color);
+        width: 1.4rem;
+        transition: var(--default-animation);
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.1);
+            fill: var(--theme-color);
+        }
+    }
+    .song-title-ctn{
+        display: flex;
+        align-items: center;
+        .song-img{
+            width: 40px;
+            margin-right: 1rem;
+        }
+        .song-title{
+        font-size: 1.6rem;
+        color: var(--white-font-color);
+        }
+        .song-artist{
+            font-size: 1.4rem;
+        } 
+    }
+    .duration{
+        display: flex;
+        justify-content: space-between;
+        .icon{
+            opacity: 0;
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+            transition: var(--default-animation);
+            &:hover{
+                fill: var(--active-color);
+            }
+        }
+    }
+}
+.active{
+    .song-artist, .song-album{
+        color: var(--white-font-color);
+    }
+}
+.song-album, .release-date{
+    width: fit-content;
+}
+.song-title, .song-artist, .song-album{
+    font-family: 'CircularSpBook';
+    cursor: pointer;
+    a:hover{
+        color: var(--white-font-color);
+        text-decoration: underline;
+    }
+}

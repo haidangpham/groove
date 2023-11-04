@@ -3,9 +3,10 @@ import { currentUser } from "./users";
 
 
 //GET UNIQUE ID
-import { v4 as uuid } from "uuid";
-const uniqueId= uuid().slice(0,8);
-console.log(uniqueId);
+// import { v4 as uuid } from "uuid";
+// const uniqueId= uuid().slice(0,8);
+// console.log(uniqueId);
+
 //USER RECENT PLAYLISTS
 export const userPlaylists= [
     {   
@@ -14,7 +15,7 @@ export const userPlaylists= [
         name: 'My Playlist #1',
         author: currentUser.name,
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
-        songIds:[1, 2, 3],
+        songIds:[1, 2, 3,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3],
         duration: '',
         type: 'Playlist',
     },

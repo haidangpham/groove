@@ -45,10 +45,12 @@
     }
 }
 .content-wrapper{
-    height: 100vh;
+    min-height: 100vh;
+    margin-left: var(--scrollbar-width);
     background-color: var(--background-base);
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 1rem;
+    overflow: overlay;
     .actions{
         display: flex;
         align-items: center;

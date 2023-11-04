@@ -1,13 +1,28 @@
 import classNames from "classnames/bind";
+import React, { useContext, useRef } from "react";
 
+import { TrackContext } from "../App";
 import SideBar from "./components/SideBar";
 import styles from "./DefaultLayout.module.scss";
 import { currentUser } from "../assets/data/users";
 import NowPlayingPanel from "./components/NowPlayingPanel/NowPlayingPanel";
 import { BackwardIcon, BellIcon, DownloadIcon, ForwardIcon } from "../components/Icons";
+import songs from "../assets/tracks";
 
 const cx = classNames.bind(styles);
 function DefaultLayout({ children, path }) {
+    const mainViewRef= useRef(null)
+    const topBarRef= useRef(null)
+    const scrollFunction = (e) => {
+        if (e.target.scrollTop > 200) {
+            topBarRef.current.classList.add(cx('bg-change'))
+        } else {
+            topBarRef.current.classList.remove(cx('bg-change'))
+        }
+    };
+    //Now Playing
+    const{playingItems}= useContext(TrackContext)
+    const track= songs.find((song)=> song.uniqueId ===playingItems.playingTrack)
     return (
         <div className={cx("wrapper")}>
             <div className={cx("panel-wrapper")}>
@@ -18,8 +33,8 @@ function DefaultLayout({ children, path }) {
                 </div>
                 {/* content */}
                 
-                <div className={cx('main-view')}>
-                    <div className={cx('top-bar')}>
+                <div className={cx('main-view')} ref={mainViewRef} onScroll={scrollFunction}>
+                    <div className={cx('top-bar')} ref={topBarRef}>
                         <div className={cx('history-nav')}>
                             <button className={cx('backward', 'inactive')}>
                                 <BackwardIcon className={cx('icon')}/>
@@ -48,7 +63,7 @@ function DefaultLayout({ children, path }) {
                 </div>
                 
             </div>
-            <NowPlayingPanel />
+            <NowPlayingPanel track={track} />
         </div>
     );
 }
