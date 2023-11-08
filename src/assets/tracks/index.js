@@ -32,9 +32,21 @@ const songs=[
         artistId: '1c0a1523',
         albumId: 3,
         releaseDate: 'Nov 25, 2016',
-        duration: '4:29',
+        duration: '4:17',
         playCount: '1,583,524,512',
         src: require('./Counting Stars - OneRepublic.mp3'),
+    },
+    {
+        id: 4,
+        uniqueId: '8a087349',
+        title: 'Anh Là Ngoại Lệ Của Em',
+        coverImage: require('../images/albumCoverImgs/anh-la-ngoai-le-cua-em-cover.jpg'),
+        artistId: '3e572185',
+        albumId: 3,
+        releaseDate: 'Oct 05, 2023',
+        duration: '3:08',
+        playCount: '1,583,524,512',
+        src: require('./AnhLaNgoaiLeCuaEm-PhuongLy.mp3'),
     }
 ]
 export default songs

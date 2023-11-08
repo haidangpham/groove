@@ -42,5 +42,13 @@ export const artists=[
         mthlyCount: '105,660,539',
         verified: true,
         albums: [], 
+    },
+    {
+        id: 5,
+        uniqueId: '3e572185',
+        name: 'Phương Ly',
+        mthlyCount: '1,047,507',
+        verified: true,
+        albums: [], 
     }
 ]
