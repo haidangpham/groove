@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/groove/static/css/main.7bbfe0fe.css",
+    "main.js": "/groove/static/js/main.5855aa3e.js",
+    "static/js/787.61e465a2.chunk.js": "/groove/static/js/787.61e465a2.chunk.js",
+    "static/media/I Feel It Coming-The Weeknd.mp3": "/groove/static/media/I Feel It Coming-The Weeknd.2bb9a9154786f3b6cd24.mp3",
+    "static/media/AnhLaNgoaiLeCuaEm-PhuongLy.mp3": "/groove/static/media/AnhLaNgoaiLeCuaEm-PhuongLy.c874e2bf3c480c65bb71.mp3",
+    "static/media/GalwayGirl-EdSheeran.mp3": "/groove/static/media/GalwayGirl-EdSheeran.b98dcdf52da8f4966136.mp3",
+    "static/media/Counting Stars - OneRepublic.mp3": "/groove/static/media/Counting Stars - OneRepublic.f678209c6b5cef938e73.mp3",
+    "static/media/anh-la-ngoai-le-cua-em-cover.jpg": "/groove/static/media/anh-la-ngoai-le-cua-em-cover.1752eb6987835d774280.jpg",
+    "static/media/CircularSp-Bold.woff2": "/groove/static/media/CircularSp-Bold.8f862e2aafc540b1cca0.woff2",
+    "static/media/CircularSpTitle-Bold.woff2": "/groove/static/media/CircularSpTitle-Bold.4dc1949b07062bb011c9.woff2",
+    "static/media/CircularSpTitle-Black.woff2": "/groove/static/media/CircularSpTitle-Black.fceaf068cd72cf27e236.woff2",
+    "static/media/CircularSp-Book.woff2": "/groove/static/media/CircularSp-Book.4d08acc2822e73fe6c91.woff2",
+    "static/media/liked-playlist.png": "/groove/static/media/liked-playlist.5ebae1ae1a72170b226d.png",
+    "static/media/divide-cover.jpg": "/groove/static/media/divide-cover.d268be29f52d12bfb8d3.jpg",
+    "static/media/starboy-cover.jpg": "/groove/static/media/starboy-cover.5b1a0f0e0c4c6c458d23.jpg",
+    "static/media/native-cover.jpg": "/groove/static/media/native-cover.f2df060173238781d4cd.jpg",
+    "static/media/CircularSpTitle-Tall-Bold.woff2": "/groove/static/media/CircularSpTitle-Tall-Bold.45619fbb6198f0db7e17.woff2",
+    "index.html": "/groove/index.html",
+    "main.7bbfe0fe.css.map": "/groove/static/css/main.7bbfe0fe.css.map",
+    "main.5855aa3e.js.map": "/groove/static/js/main.5855aa3e.js.map",
+    "787.61e465a2.chunk.js.map": "/groove/static/js/787.61e465a2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7bbfe0fe.css",
+    "static/js/main.5855aa3e.js"
+  ]
+}
