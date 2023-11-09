@@ -33,8 +33,10 @@
             top: 50%;
             right: 1rem;
             transform: translateY(-50%);
-            opacity: 0;
+            display: flex;
+            align-items: center;
             .play-btn{
+                opacity: 0;
                 box-shadow:  1px 9px 13px -3px rgb(8, 8, 8, 0.5);
                 &:hover{
                     transform: scale(1.1);
@@ -42,10 +44,19 @@
                 transition: var(--default-animation);
             }
             transition: var(--default-animation);
+            .playing-icon{
+                width: 20px;
+            }
         }
         &:hover{
             .play-btn-wrapper{
-                opacity: 2;
+                .play-btn{
+                    opacity: 1;
+                }
+                .playing-icon{
+
+                    display: none;
+                }
             }
             .playlist{
                 background-color: rgba(128, 128, 128, 0.35);

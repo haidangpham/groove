@@ -12,7 +12,7 @@ function Home() {
     return (
         <div className={cx("wrapper")}>
             <div className={cx("greet")}>Good morning</div>
-             <RecentPlaylists  playingPlaylist={playingItems.playingPlaylist} />
+                <RecentPlaylists  playingPlaylist={playingItems.playingPlaylist} />
             <Shelf />
         </div>
     );

@@ -50,5 +50,37 @@ export const artists=[
         mthlyCount: '1,047,507',
         verified: true,
         albums: [], 
+    },
+    {
+        id: 6,
+        uniqueId: '4b60eda5',
+        name: 'Masew',
+        mthlyCount: '699,219',
+        verified: true,
+        albums: [], 
+    },
+    {
+        id: 7,
+        uniqueId: '99e464ae',
+        name: 'Sơn Tùng M-TP',
+        mthlyCount: '975,695',
+        verified: true,
+        albums: [], 
+    },
+    {
+        id: 8,
+        uniqueId: 'a5631d0f',
+        name: 'Wren Evans',
+        mthlyCount: '943,701',
+        verified: true,
+        albums: [], 
+    },
+    {
+        id: 8,
+        uniqueId: 'a5a46b52',
+        name: 'HIEUTHUHAI',
+        mthlyCount: '1,035,473',
+        verified: true,
+        albums: [], 
     }
 ]

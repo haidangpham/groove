@@ -3,9 +3,9 @@ import { currentUser } from "./users";
 
 
 //GET UNIQUE ID
-// import { v4 as uuid } from "uuid";
-// const uniqueId= uuid().slice(0,8);
-// console.log(uniqueId);
+import { v4 as uuid } from "uuid";
+const uniqueId= uuid().slice(0,8);
+console.log(uniqueId);
 
 //USER RECENT PLAYLISTS
 export const userPlaylists= [
@@ -15,7 +15,7 @@ export const userPlaylists= [
         name: 'My Playlist #1',
         author: currentUser.name,
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
-        songIds:['935189f8', '31e5f3c5', '9d3a6d85','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85'],
+        songIds:['935189f8', '60aba40d', '9d3a6d85','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85'],
         duration: '',
         type: 'Playlist',
     },
@@ -25,7 +25,7 @@ export const userPlaylists= [
         name: 'Idk, it\'s kinda dope',
         author: currentUser.name,
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
-        songIds:['935189f8', '31e5f3c5', '9d3a6d85'],
+        songIds:['8a087349', '31e5f3c5', '9d3a6d85'],
         duration: '',
         type: 'Playlist',
     },
@@ -72,10 +72,10 @@ export const userPlaylists= [
     {   
         id: 7,
         uniqueId: '375c047d',
-        name: 'My Playlist #7',
+        name: 'V-Pop Hits',
         author: currentUser.name,
-        coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
-        songIds:['8a087349'],
+        coverImage: require('../images/playlistCoverImgs/V-Pop-Hits-cover.jpg'),
+        songIds:['8a087349','832801c2' ,'f36e5afa', '60aba40d', '01adb04c'],
         duration: '',
         type: 'Playlist',
     },
@@ -86,7 +86,7 @@ export const globalPlaylists=[
         id: 8,
         uniqueId: '7435bcd8',
         name: 'My Playlist #8',
-        author: currentUser.name,
+        author: 'Groove',
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
         songIds:['935189f8', '31e5f3c5', '9d3a6d85'],
         duration: '',
@@ -96,7 +96,7 @@ export const globalPlaylists=[
         id: 9,
         uniqueId: '7435bcd8',
         name: 'V-Pop Hits',
-        author: currentUser.name,
+        author: 'Groove',
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
         songIds:['8a087349'],
         duration: '',

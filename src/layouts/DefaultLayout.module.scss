@@ -3,6 +3,7 @@
     row-gap: 20px;
     position: relative;
     --background-color: rgb(153, 151, 35);
+
 }
 .panel-wrapper {
     position: relative;
@@ -39,8 +40,8 @@
     overflow: overlay;
     scroll-behavior: smooth;
     //
-    background: linear-gradient(0deg, transparent 0,var(--background-color) 100%),var(--background-noise);
-    border-radius:6px ;
+    background: linear-gradient(0deg, var(--panel-background-color) 40%,var(--background-color) 100%),var(--background-noise);
+    border-radius: 6px;
 }
 .bg-change{
     background-color: var(--background-color);

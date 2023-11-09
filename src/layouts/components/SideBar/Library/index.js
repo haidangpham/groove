@@ -11,6 +11,7 @@ import {
 } from "../../../../components/Icons";
 import { userPlaylists } from "../../../../assets/data/playlist";
 import TipBox from "../../TippyBox";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 function Library() {
@@ -60,7 +61,8 @@ function Library() {
                 {
                     userPlaylists.map((item, index)=>{
                         return(
-                            <div key={index} className={cx('item-box')}>
+                            <Link to={`/playlist/${item.uniqueId}`} key={index}>
+                            <div className={cx('item-box')}>
                                 <div className={cx('row-item')}>
                                     <div className={cx('cover-img')}><img src={item.coverImage} alt=""/></div>
                                     <div className={cx('item')}>
@@ -69,6 +71,7 @@ function Library() {
                                     </div>
                                 </div>
                             </div>
+                            </Link>
                         )
                     })
                 }  

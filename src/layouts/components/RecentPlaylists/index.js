@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { TrackContext } from "../../../App";
 import { recentPlaylists, userPlaylists } from "../../../assets/data/playlist";
 import PlayButton from "../PlayButton/PlayButton";
+import { PlayingIcon } from "../../../components/Icons";
 const cx = classNames.bind(styles);
 
 function RecentPlaylists({ playingPlaylist }) {
@@ -40,6 +41,7 @@ function RecentPlaylists({ playingPlaylist }) {
                                     pause
                                     onClick={() => playlistPlayPause(item)}
                                 />
+                                
                             ) : (
                                 <PlayButton
                                     className={cx("play-btn")}
@@ -47,6 +49,7 @@ function RecentPlaylists({ playingPlaylist }) {
                                     onClick={() => playlistPlayPause(item)}
                                 />
                             )}
+                            {playingPlaylist === item.uniqueId && isPlaying?<PlayingIcon  className={cx('playing-icon')}/>: null}
                         </div>
                     </div>
                 );
