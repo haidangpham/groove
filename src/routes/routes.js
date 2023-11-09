@@ -1,10 +1,10 @@
 const routes={
-    home: '/groove/',
-    search:'/groove/search',
-    track: '/groove/track/:songId',
-    playlist: '/groove/playlist/:playlistId',
-    album: '/groove/album/:albumId',
-    artist: '/groove/artist/:artistId',
-    profile: '/groove/user/:userId',
+    home: '/',
+    search:'/search',
+    track: '/track/:songId',
+    playlist: '/playlist/:playlistId',
+    album: '/album/:albumId',
+    artist: '/artist/:artistId',
+    profile: '/user/:userId',
 }
 export default routes
