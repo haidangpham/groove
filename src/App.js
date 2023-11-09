@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import publicRoutes from "./routes";
 import DefaultLayout from "./layouts/DefaultLayout";
 import { createContext, useEffect, useRef, useState } from "react";
