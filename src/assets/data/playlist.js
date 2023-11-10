@@ -3,9 +3,9 @@ import { currentUser } from "./users";
 
 
 //GET UNIQUE ID
-import { v4 as uuid } from "uuid";
-const uniqueId= uuid().slice(0,8);
-console.log(uniqueId);
+// import { v4 as uuid } from "uuid";
+// const uniqueId= uuid().slice(0,8);
+// console.log(uniqueId);
 
 //USER RECENT PLAYLISTS
 export const userPlaylists= [
@@ -13,6 +13,7 @@ export const userPlaylists= [
         id: 1,
         uniqueId: 'd02bafdb',
         name: 'My Playlist #1',
+        description: null,
         author: currentUser.name,
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
         songIds:['935189f8', '60aba40d', '9d3a6d85','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85'],
@@ -23,6 +24,7 @@ export const userPlaylists= [
         id: 2,
         uniqueId: '4a927a89',
         name: 'Idk, it\'s kinda dope',
+        description: null,
         author: currentUser.name,
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
         songIds:['8a087349', '31e5f3c5', '9d3a6d85'],
@@ -33,6 +35,7 @@ export const userPlaylists= [
         id: 3,
         uniqueId: '2c6c6c95',
         name: 'My Playlist #3',
+        description: null,
         author: currentUser.name,
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
         songIds:['31e5f3c5', '935189f8', '9d3a6d85'],
@@ -43,6 +46,7 @@ export const userPlaylists= [
         id: 4,
         uniqueId: 'd02bafdb',
         name: 'My Playlist #4',
+        description: null,
         author: currentUser.name,
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
         songIds:['935189f8', '31e5f3c5', '9d3a6d85'],
@@ -53,6 +57,7 @@ export const userPlaylists= [
         id: 5,
         uniqueId: 'a9cb6333',
         name: 'My Playlist #5',
+        description: null,
         author: currentUser.name,
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
         songIds:['935189f8', '31e5f3c5', '9d3a6d85'],
@@ -63,6 +68,7 @@ export const userPlaylists= [
         id: 6,
         uniqueId: '824e3987',
         name: 'My Playlist #6',
+        description: null,
         author: currentUser.name,
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
         songIds:['935189f8', '31e5f3c5', '9d3a6d85'],
@@ -73,6 +79,7 @@ export const userPlaylists= [
         id: 7,
         uniqueId: '375c047d',
         name: 'V-Pop Hits',
+        description: null,
         author: currentUser.name,
         coverImage: require('../images/playlistCoverImgs/V-Pop-Hits-cover.jpg'),
         songIds:['8a087349','832801c2' ,'f36e5afa', '60aba40d', '01adb04c'],
@@ -85,19 +92,54 @@ export const globalPlaylists=[
     {    
         id: 8,
         uniqueId: '7435bcd8',
-        name: 'My Playlist #8',
+        name: 'Chill Hits',
+        description: 'Kick back to the best new and recent chill hits.',
         author: 'Groove',
-        coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
+        coverImage: require('../images/playlistCoverImgs/chill-hits-cover.jpg'),
         songIds:['935189f8', '31e5f3c5', '9d3a6d85'],
         duration: '',
         type: 'Playlist',
     },
     {
         id: 9,
-        uniqueId: '7435bcd8',
+        uniqueId: '8227f292',
         name: 'V-Pop Hits',
+        description: 'Những ca khúc nhạc Việt hot nhất 2023.',
         author: 'Groove',
-        coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
+        coverImage: require('../images/playlistCoverImgs/V-Pop-Hits-cover.jpg'),
+        songIds:['8a087349'],
+        duration: '',
+        type: 'Playlist',
+    },
+    {
+        id: 10,
+        uniqueId: 'd839b189',
+        name: 'Party Hits',
+        description: 'A mix of the biggest pop, dance, and hip hop party songs.',
+        author: 'Groove',
+        coverImage: require('../images/playlistCoverImgs/party-hits-cover.jpg'),
+        songIds:['8a087349'],
+        duration: '',
+        type: 'Playlist',
+    },
+    {
+        id: 11,
+        uniqueId: '960fdcff',
+        name: 'The Ultimate Hit Mix',
+        description: 'Mixing the decades: 1990s, 2000s, 2010s and 2020s.',
+        author: 'Groove',
+        coverImage: require('../images/playlistCoverImgs/the-ultimate-hit-cover.jpg'),
+        songIds:['8a087349'],
+        duration: '',
+        type: 'Playlist',
+    },
+    {
+        id: 11,
+        uniqueId: '458fa796',
+        name: 'Hit Rewind',
+        description: 'Listen to all the tracks you\'ve been missing.',
+        author: 'Groove',
+        coverImage: require('../images/playlistCoverImgs/hit-rewind-cover.jpg'),
         songIds:['8a087349'],
         duration: '',
         type: 'Playlist',

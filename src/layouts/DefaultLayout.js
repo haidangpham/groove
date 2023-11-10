@@ -23,6 +23,8 @@ function DefaultLayout({ children, path }) {
     //Now Playing
     const{playingItems}= useContext(TrackContext)
     const track= songs.find((song)=> song.uniqueId ===playingItems.playingTrack)
+    //Top Bar Nav
+    
     return (
         <div className={cx("wrapper")}>
             <div className={cx("panel-wrapper")}>

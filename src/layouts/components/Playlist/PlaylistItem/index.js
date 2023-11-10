@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import styles from './PlaylistItem.module.scss';
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { TrackContext } from "../../../../App";
 
 import { HeartIcon, MoreOptionsIcon, PauseIcon, PlayIcon } from "../../../../components/Icons";
@@ -42,7 +42,7 @@ function PlaylistItem({song, playlistId, index}) {
                 (isPlaying && playingItems.playingTrack=== song.uniqueId && playingItems.playingPlaylist=== playlistId?
                 <PauseIcon className={cx('icon', 'play-btn')}/>:
                 <PlayIcon className={cx('icon', 'play-btn')} />
-                ): index}
+                ): index+1}
         </span>
         <div className={cx('song-title-ctn')}>
             <img className={cx('song-img')} src={song.coverImage} alt=""/>

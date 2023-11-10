@@ -11,9 +11,11 @@ function Home() {
     const { playingItems } = useContext(TrackContext);
     return (
         <div className={cx("wrapper")}>
-            <div className={cx("greet")}>Good morning</div>
+            <h3 className={cx("greet")}>Good morning</h3>
                 <RecentPlaylists  playingPlaylist={playingItems.playingPlaylist} />
-            <Shelf />
+                <Shelf title='hits'  cardList={['7435bcd8', '8227f292', 'd839b189', '960fdcff', '458fa796']}/>
+                <Shelf title='hits'  cardList={['7435bcd8', '8227f292', 'd839b189', '960fdcff', '458fa796']}/>
+                <Shelf title='hits'  cardList={['7435bcd8', '8227f292', 'd839b189', '960fdcff', '458fa796']}/>
         </div>
     );
 }

@@ -47,17 +47,18 @@
     background-color: var(--background-color);
 }
 .top-bar {
+    display: flex;
+    justify-content: space-between;
     position: fixed;
     height: var(--top-bar-height);
     width: inherit;
-    display: flex;
-    justify-content: space-between;
     padding: 16px 18px;
     border-radius: 1rem 1rem 0 0;
+    opacity: 1;
+    z-index: 90;
     * {
         transition: var(--default-animation);
     }
-    opacity: 1;
 }
 .icon {
     fill: rgb(255, 255, 255);
