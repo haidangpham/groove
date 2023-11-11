@@ -9,12 +9,12 @@ export const TrackContext = createContext();
 function App() {
     const globalAudioRef= useRef()
     const [isPlaying, setIsPlaying]= useState(false)
-    const [queuedTracks, setQueuedTracks]= useState([])
+    const [queuedTracks, setQueuedTracks]= useState(["31e5f3c5"])
     const [playingTrack, setPlayingTrack] = useState("31e5f3c5");
     const [playingPlaylist, setPlayingPlaylist] = useState(null);
+    const [playingTrackIndex, setPlayingTrackIndex]= useState(0);
     // const [isShuffled, setIsShuffled]= useState(false);
-    const [currentIndex, setCurrentIndex]= useState(0);
-    console.log('re-rendered');
+    console.log('queued tracks: '+ queuedTracks);
     //set isPlaying state
     useEffect(()=>{
         if(globalAudioRef.current.paused){
@@ -24,25 +24,29 @@ function App() {
         }
     }, [globalAudioRef.current?.paused, isPlaying])
 
-    //update playingTrack when queuedTrack is updated
-    useEffect(() => {
-        if (queuedTracks.length > 0) {
-          // Update playingTrack with the first track in queuedTracks
-          setPlayingTrack(queuedTracks[currentIndex]);
-        }
-        
-      }, [queuedTracks, currentIndex]);
 
       //AutoPlay
       const autoPlay= ()=>{
-        setCurrentIndex( currentIndex + 1)
+        if(playingTrackIndex+1 < queuedTracks.length){
+            setPlayingTrackIndex( playingTrackIndex + 1)
+            setPlayingTrack(queuedTracks[playingTrackIndex+1])
+        }else{
+            //no more tracks in queue
+            return
+        }
         if(isPlaying){
             setTimeout(() => {
                 globalAudioRef.current.play();
-                
-              }, 500);
+                setIsPlaying(true)
+              }, 1000);
         }
       }
+        //update playingTrack when queuedTrack is updated
+      useEffect(() => {
+        // Update the playingTrack when playingTrackIndex changes
+        setPlayingTrack(queuedTracks[playingTrackIndex]);
+      }, [playingTrackIndex, queuedTracks]);
+
     //set global playing state
     const playingItems = {
         playingTrack: playingTrack,
@@ -51,11 +55,18 @@ function App() {
 
     //get track
     const track= songs.find((song)=> song.uniqueId ===playingTrack)
+    //global functions
     const updatePlayingTrack = (newTrackId) => {
         setPlayingTrack(newTrackId);
     };
     const updatePlayingPlaylist = (newPlaylistId) => {
         setPlayingPlaylist(newPlaylistId);
+    };
+    const updateQueuedTracks = (trackIds) => {
+        setQueuedTracks(trackIds);
+    };
+    const updatePlayingTrackIndex = (index) => {
+        setPlayingTrackIndex(index);
     };
 
     const addLoadedMetadataListener = (listener) => {
@@ -70,8 +81,7 @@ function App() {
         if (playlistData.uniqueId !== playingItems.playingPlaylist) {
             setPlayingPlaylist(playlistData.uniqueId);
             setQueuedTracks(playlistData.songIds)
-            setCurrentIndex(0)
-        
+            setPlayingTrackIndex(0)
       
           if (playingTrack !== playlistData.songIds[0]) {
             globalAudioRef.current.play();
@@ -107,11 +117,14 @@ function App() {
                                             globalAudioRef,
                                             isPlaying,
                                             queuedTracks,
+                                            playingTrackIndex,
                                             setIsPlaying,
                                             updatePlayingTrack,
                                             updatePlayingPlaylist,
-                                            addLoadedMetadataListener,
+                                            updateQueuedTracks,
+                                            updatePlayingTrackIndex,
                                             playlistPlayPause,
+                                            addLoadedMetadataListener,
                                         }}
                                     >
                                         <DefaultLayout

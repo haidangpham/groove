@@ -3,9 +3,9 @@ import { currentUser } from "./users";
 
 
 //GET UNIQUE ID
-// import { v4 as uuid } from "uuid";
-// const uniqueId= uuid().slice(0,8);
-// console.log(uniqueId);
+import { v4 as uuid } from "uuid";
+const uniqueId= uuid().slice(0,8);
+console.log(uniqueId);
 
 //USER RECENT PLAYLISTS
 export const userPlaylists= [
@@ -96,7 +96,7 @@ export const globalPlaylists=[
         description: 'Kick back to the best new and recent chill hits.',
         author: 'Groove',
         coverImage: require('../images/playlistCoverImgs/chill-hits-cover.jpg'),
-        songIds:['935189f8', '31e5f3c5', '9d3a6d85'],
+        songIds:['0de36070','c0e575ca', 'f2d46ad6', 'd69983d6', '6840748d', '217d3406'],
         duration: '',
         type: 'Playlist',
     },

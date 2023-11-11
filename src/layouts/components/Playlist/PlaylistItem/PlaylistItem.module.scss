@@ -58,6 +58,10 @@
         color: var(--white-font-color);
     }
 }
+.active-p{
+    fill: var(--theme-color);
+    color: var(--theme-color);
+}
 .song-album, .release-date{
     width: fit-content;
 }
