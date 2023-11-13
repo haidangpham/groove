@@ -45,11 +45,11 @@ function PlaylistItem({ song, playlistId, index }) {
                 updatePlayingTrack(queuedTracks[playingTrackIndex]);
             }
         } else {
-            globalAudioRef.current.currentTime = 0;
             updatePlayingPlaylist(playlistId);
             updateQueuedTracks(songIds);
             updatePlayingTrackIndex(index);
             updatePlayingTrack(queuedTracks[playingTrackIndex]);
+            globalAudioRef.current.play()
             setIsPlaying(true);
         }
     };

@@ -46,83 +46,14 @@
 .bg-change{
     background-color: var(--background-color);
 }
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    height: var(--top-bar-height);
-    width: inherit;
-    padding: 16px 18px;
-    border-radius: 1rem 1rem 0 0;
-    opacity: 1;
-    z-index: 90;
-    * {
-        transition: var(--default-animation);
-    }
-}
+//
 .icon {
     fill: rgb(255, 255, 255);
 }
 
-.top-bar button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 32px;
-    height: 32px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    cursor: pointer;
-    &.inactive {
-        opacity: 0.6;
-    }
-}
-//History Nav
-.history-nav {
-    display: flex;
-    gap: 8px;
-}
-.history-nav > button {
-    opacity: 1;
-}
 
-//Options
-.options {
-    display: flex;
-    gap: 8px;
-}
-.download {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    width: auto;
-    padding: 4px 16px;
-    color: var(--white-font-color);
-    font-size: 1.4rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 30px;
-    cursor: pointer;
-    //animation
-    &:hover {
-        transform: scale(1.05);
-    }
-}
-.notification {
-    background-color: white;
-    .bell {
-        opacity: 0.6;
-    }
-    &:hover {
-        transform: scale(1.05);
-        .bell {
-            opacity: 1;
-        }
-    }
-}
-.profile img {
-    width: 24px;
-    border-radius: 50%;
-}
+
+
 .content {
     margin-top: var(--top-bar-height);
 }

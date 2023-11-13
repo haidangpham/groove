@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { globalPlaylists } from "../../assets/data/playlist";
 
 import styles from "./PlaylistPage.module.scss";
@@ -8,17 +8,26 @@ import PlayButton from "../../layouts/components/PlayButton/PlayButton";
 import { MoreOptionsIcon } from "../../components/Icons";
 import songs from "../../assets/tracks";
 import Playlist from "../../layouts/components/Playlist";
-import { useContext } from "react";
-import { TrackContext } from "../../App";
+import { useContext, useEffect } from "react";
+import { NavContext, TrackContext } from "../../App";
 
 const cx = classNames.bind(styles);
 function PlaylistPage() {
-    const { playingItems, isPlaying, playlistPlayPause } =
-        useContext(TrackContext);
+    const { playingItems, isPlaying, playlistPlayPause } =useContext(TrackContext);
     const playlistId = useParams();
     const playlistData = globalPlaylists.find(
         (item) => item.uniqueId === playlistId.playlistId
     );
+    //save path name in navList
+    const {updateNavList, isBackwarded, updateIsBackwarded}= useContext(NavContext)
+    const location= useLocation()
+    useEffect(()=>{
+        if(isBackwarded){
+            return
+        }
+        updateNavList(location.pathname)
+        updateIsBackwarded(false)
+    },[])
     //get songs
     const songlist = [];
     playlistData.songIds.forEach((songId) => {

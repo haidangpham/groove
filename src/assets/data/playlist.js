@@ -3,9 +3,9 @@ import { currentUser } from "./users";
 
 
 //GET UNIQUE ID
-import { v4 as uuid } from "uuid";
-const uniqueId= uuid().slice(0,8);
-console.log(uniqueId);
+// import { v4 as uuid } from "uuid";
+// const uniqueId= uuid().slice(0,8);
+// console.log(uniqueId);
 
 //USER RECENT PLAYLISTS
 export const userPlaylists= [
@@ -107,7 +107,7 @@ export const globalPlaylists=[
         description: 'Những ca khúc nhạc Việt hot nhất 2023.',
         author: 'Groove',
         coverImage: require('../images/playlistCoverImgs/V-Pop-Hits-cover.jpg'),
-        songIds:['8a087349'],
+        songIds:['8a087349', 'd9093b0c', 'e53a0a9f', 'd81a36b0'],
         duration: '',
         type: 'Playlist',
     },

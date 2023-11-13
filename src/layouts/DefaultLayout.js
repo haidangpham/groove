@@ -2,12 +2,12 @@ import classNames from "classnames/bind";
 import React, { useContext, useRef } from "react";
 
 import { TrackContext } from "../App";
-import SideBar from "./components/SideBar";
 import styles from "./DefaultLayout.module.scss";
-import { currentUser } from "../assets/data/users";
-import NowPlayingPanel from "./components/NowPlayingPanel/NowPlayingPanel";
-import { BackwardIcon, BellIcon, DownloadIcon, ForwardIcon } from "../components/Icons";
 import songs from "../assets/tracks";
+
+import SideBar from "./components/SideBar";
+import TopBar from "./components/TopBar";
+import NowPlayingPanel from "./components/NowPlayingPanel/NowPlayingPanel";
 
 const cx = classNames.bind(styles);
 function DefaultLayout({ children, path }) {
@@ -20,11 +20,11 @@ function DefaultLayout({ children, path }) {
             topBarRef.current.classList.remove(cx('bg-change'))
         }
     };
+
     //Now Playing
     const{playingItems}= useContext(TrackContext)
     const track= songs.find((song)=> song.uniqueId ===playingItems.playingTrack)
-    //Top Bar Nav
-    
+
     return (
         <div className={cx("wrapper")}>
             <div className={cx("panel-wrapper")}>
@@ -36,28 +36,7 @@ function DefaultLayout({ children, path }) {
                 {/* content */}
                 
                 <div className={cx('main-view')} ref={mainViewRef} onScroll={scrollFunction}>
-                    <div className={cx('top-bar')} ref={topBarRef}>
-                        <div className={cx('history-nav')}>
-                            <button className={cx('backward', 'inactive')}>
-                                <BackwardIcon className={cx('icon')}/>
-                            </button>
-                            <button className={cx('forward')}>
-                                <ForwardIcon className={cx('icon')}/>
-                            </button>
-                        </div>
-                        
-                        <div className={cx('options')}>
-                           
-                            <div className={cx('download')}>
-                                <DownloadIcon className={cx('icon')}/>
-                                <span>Install App</span>
-                            </div>
-                            <button className={cx('notification')}><BellIcon className={cx('icon', 'bell')}/> </button> 
-                            <button className={cx('profile')}>
-                                <img src={currentUser.avatar} alt="user's name"/>
-                            </button> 
-                        </div>
-                    </div>
+                    <TopBar forwardedRef={topBarRef}/>
                     <div className={cx('content')}>
                         {children}
                     </div>

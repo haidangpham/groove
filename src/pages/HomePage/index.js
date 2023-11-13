@@ -4,11 +4,22 @@ import styles from "./HomePage.module.scss";
 import Shelf from "../../layouts/components/Shelf/Shelf";
 
 import RecentPlaylists from "../../layouts/components/RecentPlaylists";
-import { useContext } from "react";
-import { TrackContext } from "../../App";
+import { useContext, useEffect, useRef } from "react";
+import { NavContext, TrackContext } from "../../App";
+import { useLocation } from "react-router-dom";
 const cx = classNames.bind(styles);
 function Home() {
     const { playingItems } = useContext(TrackContext);
+    const {updateNavList, isBackwarded, updateIsBackwarded}= useContext(NavContext)
+    const location= useLocation()
+    useEffect(()=>{
+        if(isBackwarded){
+            return
+        }
+        updateNavList(location.pathname)
+        updateIsBackwarded(false)
+    }, [])
+
     return (
         <div className={cx("wrapper")}>
             <h3 className={cx("greet")}>Good morning</h3>
