@@ -1,11 +1,12 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { createContext, useEffect, useRef, useState } from "react";
+
 import publicRoutes from "./routes";
 import DefaultLayout from "./layouts/DefaultLayout";
-import { createContext, useEffect, useRef, useState } from "react";
 import songs from "./assets/tracks";
-import { globalPlaylists } from "./assets/data/playlist";
 
 export const TrackContext = createContext();
+export const NavContext= createContext();
 function App() {
     const globalAudioRef= useRef()
     const [isPlaying, setIsPlaying]= useState(false)
@@ -13,8 +14,10 @@ function App() {
     const [playingTrack, setPlayingTrack] = useState("31e5f3c5");
     const [playingPlaylist, setPlayingPlaylist] = useState(null);
     const [playingTrackIndex, setPlayingTrackIndex]= useState(0);
+    const [navList, setNavList]= useState([]);
+    const [curIndexNav, setCurIndexNav]= useState(0)
+    const [isBackwarded, setIsBackwarded]= useState(false)
     // const [isShuffled, setIsShuffled]= useState(false);
-    console.log('queued tracks: '+ queuedTracks);
     //set isPlaying state
     useEffect(()=>{
         if(globalAudioRef.current.paused){
@@ -22,7 +25,26 @@ function App() {
         }else{
             setIsPlaying(true)
         }
+        
     }, [globalAudioRef.current?.paused, isPlaying])
+
+    //set Nav Index
+    useEffect(()=>{
+       setCurIndexNav(navList.length -1)
+    },[navList])
+    useEffect(()=>{
+        if(isBackwarded){
+
+        }
+    },[])
+    const updateNewNavList= ()=>{
+       
+    }
+    const updateIsBackwarded=(bool)=>{
+        setIsBackwarded(bool)
+    }
+
+    console.log(isBackwarded);
 
 
       //AutoPlay
@@ -68,10 +90,21 @@ function App() {
     const updatePlayingTrackIndex = (index) => {
         setPlayingTrackIndex(index);
     };
-
-    const addLoadedMetadataListener = (listener) => {
+    const updateNavList= (param)=>{
+        const params= [...navList, param]
+        setNavList(params)
+    }
+    const updateCurIndexNav= (step)=>{
+        const index= curIndexNav + step
+        if(index < 0 || index === navList.length ){
+            return
+        }
+        setCurIndexNav(index)
+        index + 1 < navList.length?setIsBackwarded(true):setIsBackwarded(false)
+    }
+    const addLoadedMetadataListener = async(listener) => {
         if (globalAudioRef.current) {
-          globalAudioRef.current.addEventListener('loadedmetadata', listener);
+            await globalAudioRef.current.addEventListener('loadedmetadata', listener);
         }
       };
 
@@ -127,11 +160,16 @@ function App() {
                                             addLoadedMetadataListener,
                                         }}
                                     >
-                                        <DefaultLayout
+                                        <NavContext.Provider
+                                            value={{navList, curIndexNav,isBackwarded, updateNavList, updateCurIndexNav, updateIsBackwarded}}
+                                        >
+                                            <DefaultLayout
                                             path={route.path}
                                         >
                                             <Page />
                                         </DefaultLayout>
+                                        </NavContext.Provider>
+                                        
                                     </TrackContext.Provider>
                                 }
                             />
