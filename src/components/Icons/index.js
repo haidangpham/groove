@@ -105,6 +105,17 @@ export const PlayIcon = ({ className }) => (
         <path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path>
     </svg>
 );
+export const PlayIconPrimary = ({ className }) => (
+    <svg
+        className={className}
+        height="30"
+        width="30"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+    >
+        <path d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path>
+    </svg>
+);
 export const PauseIcon = ({ className }) => (
     <svg
         className={className}

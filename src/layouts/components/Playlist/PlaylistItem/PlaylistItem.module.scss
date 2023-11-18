@@ -60,7 +60,7 @@
 }
 .active-p{
     fill: var(--theme-color);
-    color: var(--theme-color);
+    color: var(--theme-color) !important;
 }
 .song-album, .release-date{
     width: fit-content;

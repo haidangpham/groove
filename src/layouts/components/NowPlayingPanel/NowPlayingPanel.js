@@ -33,6 +33,10 @@ function NowPlayingPanel({ track }) {
     const progressBarRef = useRef(null);
     const volumeRef = useRef(null);
     const playAnimationRef = useRef();
+    const artistName= artists.find(
+        (artist) =>
+            track.authorId === artist.uniqueId
+    ).name
 
     const [isMute, setIsMute] = useState(false);
     const [timeProgress, setTimeProgress] = useState(0);
@@ -91,6 +95,7 @@ function NowPlayingPanel({ track }) {
         if (isPlaying) {
             globalAudioRef.current.play();
             playAnimationRef.current = requestAnimationFrame(repeat);
+            document.title= `${track.title} • ${artistName}`
         } else {
             globalAudioRef.current.pause();
         }
@@ -144,12 +149,7 @@ function NowPlayingPanel({ track }) {
                     <div className={cx("track-title")}>
                         <p className={cx("title")}>{track.title}</p>
                         <span className={cx("author")}>
-                            {
-                                artists.find(
-                                    (artist) =>
-                                        track.artistId === artist.uniqueId
-                                ).name
-                            }
+                            {artistName}
                         </span>
                     </div>
                     <HeartIcon className={cx("icon")} />

@@ -12,6 +12,9 @@
         transition: var(--default-animation);
     }
 }
+.bg-change{
+    background-color: var(--background-color);
+}
 .icon {
     fill: rgb(255, 255, 255);
 }
@@ -26,13 +29,34 @@
     cursor: pointer;
     &.inactive {
         opacity: 0.6;
-        cursor: not-allowed;
+        user-select: none;
+        pointer-events: none;
     }
 }
 //History Nav
 .history-nav {
     display: flex;
+    align-items: center;
     gap: 8px;
+    .play-btn{
+        background-color: var(--theme-color);
+        width: 50px;
+        height: 50px;
+    }
+    .backup-play-btn{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        opacity: 0;
+        .title{
+            user-select: none;
+            color: var(--white-font-color);
+            font-size: 2.6rem;
+        }
+    }
+    .show{
+        opacity:  1;
+    }
 }
 .history-nav > button {
     opacity: 1;

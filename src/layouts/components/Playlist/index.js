@@ -2,15 +2,14 @@ import classNames from "classnames/bind";
 import styles from './Playlist.module.scss';
 import { ClockIcon } from "../../../components/Icons";
 import PlaylistItem from "./PlaylistItem";
-import { useRef } from "react";
+import { useState } from "react";
 const cx= classNames.bind(styles)
 function Playlist({songlist, playlistId}) {
-    const stickyElement= useRef()
 
     
     return ( 
         <div className={cx('playlist-content')}>
-                <div className={cx('playlist-th')} ref={stickyElement} >
+                <div className={cx('playlist-th')} >
                     <span>#</span>
                     <span>Title</span>
                     <span>Album</span>

@@ -10,15 +10,12 @@ import { useLocation } from "react-router-dom";
 const cx = classNames.bind(styles);
 function Home() {
     const { playingItems } = useContext(TrackContext);
-    const {updateNavList, isBackwarded, updateIsBackwarded}= useContext(NavContext)
+    const {updateNavList}= useContext(NavContext)
     const location= useLocation()
+    
     useEffect(()=>{
-        if(isBackwarded){
-            return
-        }
         updateNavList(location.pathname)
-        updateIsBackwarded(false)
-    }, [])
+    }, [location.pathname])
 
     return (
         <div className={cx("wrapper")}>

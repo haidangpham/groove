@@ -66,7 +66,7 @@ function Library() {
                                 <div className={cx('row-item')}>
                                     <div className={cx('cover-img')}><img src={item.coverImage} alt=""/></div>
                                     <div className={cx('item')}>
-                                        <p className={cx('item-title')}>{item.name}</p>
+                                        <p className={cx('item-title')}>{item.title}</p>
                                         <span className={cx('item-subtitle')}>{item.type} • {item.author}</span>
                                     </div>
                                 </div>

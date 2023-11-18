@@ -35,7 +35,7 @@ function Card({ playlistId }) {
                     />
                 </div>
                 <div className={cx("card-info")}>
-                    <p className={cx("title")}>{playlistData.name}</p>
+                    <p className={cx("title")}>{playlistData.title}</p>
                     <span className={cx("description")}>
                         {playlistData.description}
                     </span>

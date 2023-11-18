@@ -1,0 +1,86 @@
+.wrapper{
+    color: var(--white-font-color);
+    &> *{
+        padding: 0 24px 24px 24px;
+    }
+
+}
+.icon{
+    fill: var(--default-color);
+}
+.cover-image{
+    width: 23.2rem;
+}
+.header{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    
+    .playlist-infos{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .type{
+            font-family: 'CircularSpBook';
+        }
+        .title{
+            display: block;
+            font-family: 'CircularSp';
+            // font-size: 9.5rem;
+            font-size: clamp(3.5rem, 4vw, 9.5rem);
+        }
+        
+        .playlist-details{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'CircularSpBook';
+            font-weight: 100;
+            .author-avatar{
+                width: 26px;
+                border-radius: 50%;
+            }
+            .other-details{
+                font-size: 1.4rem;
+                .author-name, .album-title{
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+.content-wrapper{
+    min-height: 100vh;
+    margin-left: var(--scrollbar-width);
+    background-color: var(--background-base);
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    overflow: overlay;
+    .actions{
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 1.6rem;
+        .play-btn:hover{
+            transform: scale(1.05);
+            
+        }
+        .more-icon,.heart-icon{
+            width: 3.2rem;
+            height: 3.2rem;
+            cursor: pointer;
+            &:hover{
+                fill: var(--active-color);
+            }
+        }
+        
+        >*{
+            transition: var(--default-animation);
+        }
+    }
+    
+}
+

@@ -76,7 +76,7 @@ function PlaylistItem({ song, playlistId, index }) {
             <div className={cx("song-title-ctn")}>
                 <img className={cx("song-img")} src={song.coverImage} alt="" />
                 <div>
-                    <span className={cx("song-title")}>
+                    <span className={cx("song-title", `${isActiveTrack?"active-p": ''}`)}>
                         <Link
                             to={`/track/${song.uniqueId}`}
                             className={isActiveTrack?cx("active-p"): cx('')}
@@ -85,11 +85,11 @@ function PlaylistItem({ song, playlistId, index }) {
                         </Link>
                     </span>
                     <p className={cx("song-artist")}>
-                        <Link to={`/artist/${song.artistId}`}>
+                        <Link to={`/artist/${song.authorId}`}>
                             {
                                 artists.find(
                                     (artist) =>
-                                        artist.uniqueId === song.artistId
+                                        artist.uniqueId === song.authorId
                                 ).name
                             }
                         </Link>
@@ -97,8 +97,8 @@ function PlaylistItem({ song, playlistId, index }) {
                 </div>
             </div>
             <span className={cx("song-album")}>
-                <Link to={`/album/${song.uniqueId}`}>
-                    {albums.find((album) => album.id === song.albumId).title}
+                <Link to={`/album/${song.albumId}`}>
+                    {albums.find((album) => album.uniqueId === song.albumId).title}
                 </Link>
             </span>
             <span className={cx("release-date")}>{song.releaseDate}</span>

@@ -1,0 +1,31 @@
+.lyrics{
+    color: var(--default-color);
+    user-select: none;
+    .lrics-line{
+
+    }
+}
+.artist{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 0.4rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    .avatar{
+        width: 7rem;
+        border-radius: 50%;
+    }
+    &:hover{
+        background-color: var(--background-hover-highlight);
+    }
+    span{
+        font-size: 1.4rem;
+    }
+    p{
+      &:hover{
+        text-decoration: underline;
+      }  
+    }
+}

@@ -1,4 +1,5 @@
 .playlist-content{
+    height: 100%;
     color: var(--default-color);
     font-size: 1.4rem;
     &>*{
@@ -13,8 +14,8 @@
         background-color: red;
     }
     .playlist-th{
-        position: sticky;
-        top: var(--top-bar-height);
+        
+        z-index: 9999;
         margin-bottom: 1rem;
         padding: 0 1rem;
         border-bottom: solid 1px hsla(0,0%,100%,.1);
@@ -24,6 +25,9 @@
             padding-right:2rem ;
        }
     }
-
+    .fixed{
+        position: fixed;
+        top: var(--top-bar-height);
+    }
     
 }

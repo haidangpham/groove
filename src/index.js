@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './components/GlobalStyles';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-document.title = "Experience music world.";
 root.render(
 
     <GlobalStyles>

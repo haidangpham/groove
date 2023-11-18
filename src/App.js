@@ -5,6 +5,7 @@ import publicRoutes from "./routes";
 import DefaultLayout from "./layouts/DefaultLayout";
 import songs from "./assets/tracks";
 
+
 export const TrackContext = createContext();
 export const NavContext= createContext();
 function App() {
@@ -15,36 +16,50 @@ function App() {
     const [playingPlaylist, setPlayingPlaylist] = useState(null);
     const [playingTrackIndex, setPlayingTrackIndex]= useState(0);
     const [navList, setNavList]= useState([]);
-    const [curIndexNav, setCurIndexNav]= useState(0)
-    const [isBackwarded, setIsBackwarded]= useState(false)
+    const [prevNavList, setPrevNavList]= useState([])
+
     // const [isShuffled, setIsShuffled]= useState(false);
     //set isPlaying state
     useEffect(()=>{
         if(globalAudioRef.current.paused){
             setIsPlaying(false)
+            document.title = "Groove - Experience music world.";
         }else{
             setIsPlaying(true)
         }
-        
     }, [globalAudioRef.current?.paused, isPlaying])
 
-    //set Nav Index
+    //NAV
     useEffect(()=>{
-       setCurIndexNav(navList.length -1)
-    },[navList])
-    useEffect(()=>{
-        if(isBackwarded){
-
+        //update prevList
+       if(navList.length >= prevNavList.length){
+            setPrevNavList(navList)
         }
-    },[])
-    const updateNewNavList= ()=>{
-       
-    }
-    const updateIsBackwarded=(bool)=>{
-        setIsBackwarded(bool)
-    }
+    },[navList])
+    
+    const updateNavList= (location)=>{
+        //stop update navList if nav btn is clicked Back/Forwarded
+        if((navList.length < prevNavList.length && location === prevNavList[navList.length])|| location === navList[navList.length - 1]){
+            return
+        }
+        const params= [...navList, location]
+        setNavList(params)
+        if(location !== prevNavList[navList.length]){
+            setPrevNavList(navList)
+        }
 
-    console.log(isBackwarded);
+    }
+    const modifyNavList= (step)=>{
+        if(step < 0){
+            const list= navList.slice(0,navList.length - 1)
+            setNavList(list)
+        }else{
+            const list= prevNavList.slice(0,navList.length + 1)
+            setNavList(list)
+        }
+    }
+    
+    //log
 
 
       //AutoPlay
@@ -90,18 +105,7 @@ function App() {
     const updatePlayingTrackIndex = (index) => {
         setPlayingTrackIndex(index);
     };
-    const updateNavList= (param)=>{
-        const params= [...navList, param]
-        setNavList(params)
-    }
-    const updateCurIndexNav= (step)=>{
-        const index= curIndexNav + step
-        if(index < 0 || index === navList.length ){
-            return
-        }
-        setCurIndexNav(index)
-        index + 1 < navList.length?setIsBackwarded(true):setIsBackwarded(false)
-    }
+    
     const addLoadedMetadataListener = async(listener) => {
         if (globalAudioRef.current) {
             await globalAudioRef.current.addEventListener('loadedmetadata', listener);
@@ -111,11 +115,11 @@ function App() {
     
       //Play Pause Of Playlists
     const playlistPlayPause = (playlistData) => {
+        console.log(playlistData);
         if (playlistData.uniqueId !== playingItems.playingPlaylist) {
             setPlayingPlaylist(playlistData.uniqueId);
             setQueuedTracks(playlistData.songIds)
             setPlayingTrackIndex(0)
-      
           if (playingTrack !== playlistData.songIds[0]) {
             globalAudioRef.current.play();
             setIsPlaying(true);
@@ -131,6 +135,14 @@ function App() {
           setIsPlaying((prevIsPlaying) => !prevIsPlaying);
         }
     };
+    const songPlayPause= (songData) =>{
+        setPlayingPlaylist(null)
+        setPlayingTrack(songData.uniqueId)
+        setQueuedTracks([songData.uniqueId])
+        
+        setIsPlaying((prevIsPlaying) => !prevIsPlaying);
+        
+    }
     //
     return (
         <Router>
@@ -157,11 +169,12 @@ function App() {
                                             updateQueuedTracks,
                                             updatePlayingTrackIndex,
                                             playlistPlayPause,
+                                            songPlayPause,
                                             addLoadedMetadataListener,
                                         }}
                                     >
                                         <NavContext.Provider
-                                            value={{navList, curIndexNav,isBackwarded, updateNavList, updateCurIndexNav, updateIsBackwarded}}
+                                            value={{navList,prevNavList, updateNavList, modifyNavList}}
                                         >
                                             <DefaultLayout
                                             path={route.path}

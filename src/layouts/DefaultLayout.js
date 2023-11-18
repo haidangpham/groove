@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 
 import { TrackContext } from "../App";
 import styles from "./DefaultLayout.module.scss";
@@ -12,15 +12,16 @@ import NowPlayingPanel from "./components/NowPlayingPanel/NowPlayingPanel";
 const cx = classNames.bind(styles);
 function DefaultLayout({ children, path }) {
     const mainViewRef= useRef(null)
-    const topBarRef= useRef(null)
+   
+    const [isScrolled, setIsScrolled]= useState(false)
     const scrollFunction = (e) => {
-        if (e.target.scrollTop > 200) {
-            topBarRef.current.classList.add(cx('bg-change'))
-        } else {
-            topBarRef.current.classList.remove(cx('bg-change'))
-        }
+        
+    if (e.target.scrollTop > 300) {
+        setIsScrolled(true)
+    } else {
+        setIsScrolled(false)
+    }
     };
-
     //Now Playing
     const{playingItems}= useContext(TrackContext)
     const track= songs.find((song)=> song.uniqueId ===playingItems.playingTrack)
@@ -36,7 +37,7 @@ function DefaultLayout({ children, path }) {
                 {/* content */}
                 
                 <div className={cx('main-view')} ref={mainViewRef} onScroll={scrollFunction}>
-                    <TopBar forwardedRef={topBarRef}/>
+                    <TopBar isScrolled={isScrolled}/>
                     <div className={cx('content')}>
                         {children}
                     </div>

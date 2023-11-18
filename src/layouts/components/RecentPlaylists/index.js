@@ -28,7 +28,7 @@ function RecentPlaylists({ playingPlaylist }) {
                                 />
                                 <div className={cx("playlist")}>
                                     <span className={cx("playlist-title")}>
-                                        {item.name}
+                                        {item.title}
                                     </span>
                                 </div>
                             </div>
