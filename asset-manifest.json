@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/groove/static/css/main.205def31.css",
-    "main.js": "/groove/static/js/main.92ac92c4.js",
+    "main.css": "/groove/static/css/main.d1dfa04f.css",
+    "main.js": "/groove/static/js/main.000743b7.js",
     "static/js/787.61e465a2.chunk.js": "/groove/static/js/787.61e465a2.chunk.js",
     "static/media/MuonRoiMaSaoCon-SonTungMTP.mp3": "/groove/static/media/MuonRoiMaSaoCon-SonTungMTP.32f348e275a1bc828c46.mp3",
     "static/media/HayTraoChoAnh-SonTungMTPSnoopDogg.mp3": "/groove/static/media/HayTraoChoAnh-SonTungMTPSnoopDogg.b0e98894f6f9943869ef.mp3",
@@ -37,7 +37,9 @@
     "static/media/NguMotMinh-cover.jpg": "/groove/static/media/NguMotMinh-cover.43e28e4c8edce0eee8ad.jpg",
     "static/media/V-Pop-Hits-cover.jpg": "/groove/static/media/V-Pop-Hits-cover.0cb6d74f51e25622616f.jpg",
     "static/media/TuyAm-cover.jpg": "/groove/static/media/TuyAm-cover.313cb1dd8ac55109b7b6.jpg",
+    "static/media/muon-roi-ma-sao-con-cover.jpg": "/groove/static/media/muon-roi-ma-sao-con-cover.80a6a3d8a47ae7e15261.jpg",
     "static/media/eyes-closed-cover.jpg": "/groove/static/media/eyes-closed-cover.d69523371af1095b34fb.jpg",
+    "static/media/em-khong-hieu-cover.jpg": "/groove/static/media/em-khong-hieu-cover.440e3511c89966e51517.jpg",
     "static/media/native-cover.jpg": "/groove/static/media/native-cover.f2df060173238781d4cd.jpg",
     "static/media/TungQuen-cover.jpg": "/groove/static/media/TungQuen-cover.5a16bd8a31ecec9b70ca.jpg",
     "static/media/HayTraoChoAnh-cover.jpg": "/groove/static/media/HayTraoChoAnh-cover.a46abd122d8e25ae6938.jpg",
@@ -47,12 +49,12 @@
     "static/media/CircularSpTitle-Tall-Bold.woff2": "/groove/static/media/CircularSpTitle-Tall-Bold.45619fbb6198f0db7e17.woff2",
     "static/media/neu-luc-do-cover.jpg": "/groove/static/media/neu-luc-do-cover.b4926bf536e8e6954439.jpg",
     "index.html": "/groove/index.html",
-    "main.205def31.css.map": "/groove/static/css/main.205def31.css.map",
-    "main.92ac92c4.js.map": "/groove/static/js/main.92ac92c4.js.map",
+    "main.d1dfa04f.css.map": "/groove/static/css/main.d1dfa04f.css.map",
+    "main.000743b7.js.map": "/groove/static/js/main.000743b7.js.map",
     "787.61e465a2.chunk.js.map": "/groove/static/js/787.61e465a2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.205def31.css",
-    "static/js/main.92ac92c4.js"
+    "static/css/main.d1dfa04f.css",
+    "static/js/main.000743b7.js"
   ]
 }
