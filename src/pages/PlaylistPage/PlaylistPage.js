@@ -11,17 +11,11 @@ import UnifiedPageLayout from "../../layouts/components/UnifiedPageLayout";
 
 const cx = classNames.bind(styles);
 function PlaylistPage() {
-    // const { playingItems, isPlaying, playlistPlayPause } =useContext(TrackContext);
     const playlistId = useParams();
     const playlistData = globalPlaylists.find(
         (item) => item.uniqueId === playlistId.playlistId
     );
-    // //save path name in navList
-    // const {updateNavList}= useContext(NavContext)
-    // const location= useLocation()
-    // useEffect(()=>{
-    //     updateNavList(location.pathname)
-    // },[location.pathname])
+    
     // //get songs
     const songlist = [];
     playlistData.songIds.forEach((songId) => {

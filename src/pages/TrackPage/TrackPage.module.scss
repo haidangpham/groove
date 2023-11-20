@@ -15,8 +15,14 @@
     border-radius: 8px;
     .avatar{
         width: 7rem;
+        height: 7rem;
         border-radius: 50%;
+        overflow: hidden;
     }
+    .avatar img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+      }
     &:hover{
         background-color: var(--background-hover-highlight);
     }

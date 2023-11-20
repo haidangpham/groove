@@ -17,8 +17,7 @@ function App() {
     const [playingTrackIndex, setPlayingTrackIndex]= useState(0);
     const [navList, setNavList]= useState([]);
     const [prevNavList, setPrevNavList]= useState([])
-
-    // const [isShuffled, setIsShuffled]= useState(false);
+    const [isShuffled, setIsShuffled]= useState(false);
     //set isPlaying state
     useEffect(()=>{
         if(globalAudioRef.current.paused){
@@ -58,7 +57,6 @@ function App() {
             setNavList(list)
         }
     }
-    
     //log
 
 
@@ -110,12 +108,10 @@ function App() {
         if (globalAudioRef.current) {
             await globalAudioRef.current.addEventListener('loadedmetadata', listener);
         }
-      };
-
+    };
     
       //Play Pause Of Playlists
     const playlistPlayPause = (playlistData) => {
-        console.log(playlistData);
         if (playlistData.uniqueId !== playingItems.playingPlaylist) {
             setPlayingPlaylist(playlistData.uniqueId);
             setQueuedTracks(playlistData.songIds)
@@ -135,14 +131,35 @@ function App() {
           setIsPlaying((prevIsPlaying) => !prevIsPlaying);
         }
     };
-    const songPlayPause= (songData) =>{
-        setPlayingPlaylist(null)
-        setPlayingTrack(songData.uniqueId)
-        setQueuedTracks([songData.uniqueId])
-        
-        setIsPlaying((prevIsPlaying) => !prevIsPlaying);
-        
-    }
+
+    const songPlayPause = (songData, index, playlistId, songIds) => {
+        //function for Single Tracks
+        if(!songIds){
+            setQueuedTracks([songData.uniqueId])
+            setPlayingTrackIndex(0)
+            setPlayingPlaylist(null)
+            globalAudioRef.current[isPlaying ? "pause" : "play"]();
+            return
+        }
+        //function for Tracks in Playlists
+        const isSamePlaylist = playlistId === playingItems.playingPlaylist;
+        const isSameTrack = songData.uniqueId === playingItems.playingTrack;
+        if (isSamePlaylist) {
+            if (isSameTrack) {
+                setIsPlaying((prevIsPlaying) => !prevIsPlaying);
+            } else {
+                updatePlayingTrackIndex(index);
+                updatePlayingTrack(queuedTracks[playingTrackIndex]);
+                globalAudioRef.current.play()
+            }          
+        } else {
+            updatePlayingPlaylist(playlistId);
+            updateQueuedTracks(songIds);
+            updatePlayingTrackIndex(index);
+            updatePlayingTrack(queuedTracks[playingTrackIndex]);
+            globalAudioRef.current.play();
+        }
+    };
     //
     return (
         <Router>

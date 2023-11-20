@@ -46,7 +46,7 @@ function TrackPage() {
                 </div>
                 <Link to={`/artist/${artistData.uniqueId}`}>
                     <div className={cx('artist')} >
-                        <img alt= "" src={artistData.avatar} className={cx('avatar')}/>
+                        <div className={cx('avatar')}><img alt= "" src={artistData.avatar} /></div>
                         <div>
                             <span>Artist</span>
                             <p>{artistData.name}</p>

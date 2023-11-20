@@ -20,39 +20,13 @@ function PlaylistItem({ song, playlistId, index }) {
     const {
         globalAudioRef,
         isPlaying,
-        setIsPlaying,
-        playingTrackIndex,
-        queuedTracks,
         playingItems,
-        updatePlayingTrack,
-        updatePlayingPlaylist,
-        updateQueuedTracks,
-        updatePlayingTrackIndex,
+        songPlayPause,
     } = useContext(TrackContext);
     const songIds = globalPlaylists.find(
         (playlist) => playlist.uniqueId === playlistId
     ).songIds;
-    const handlePlayBtn = () => {
-        const isSamePlaylist = playlistId === playingItems.playingPlaylist;
-        const isSameTrack = song.uniqueId === playingItems.playingTrack;
-        if (isSamePlaylist) {
-            if (isSameTrack) {
-                globalAudioRef.current[isPlaying ? "pause" : "play"]();
-                setIsPlaying((prevIsPlaying) => !prevIsPlaying);
-                
-            } else {
-                updatePlayingTrackIndex(index)
-                updatePlayingTrack(queuedTracks[playingTrackIndex]);
-            }
-        } else {
-            updatePlayingPlaylist(playlistId);
-            updateQueuedTracks(songIds);
-            updatePlayingTrackIndex(index);
-            updatePlayingTrack(queuedTracks[playingTrackIndex]);
-            globalAudioRef.current.play()
-            setIsPlaying(true);
-        }
-    };
+   
     const isActiveTrack= song.uniqueId === playingItems.playingTrack && playlistId === playingItems.playingPlaylist;
     return (
         <div
@@ -60,7 +34,7 @@ function PlaylistItem({ song, playlistId, index }) {
             onMouseOver={() => setHovered(true)}
             onMouseOut={() => setHovered(false)}
         >
-            <span onClick={handlePlayBtn}>
+            <span onClick={()=>songPlayPause(song, index, playlistId, songIds)}>
                 {isHovered ? (
                     isPlaying &&
                     playingItems.playingTrack === song.uniqueId &&

@@ -3,7 +3,7 @@
     row-gap: 20px;
     position: relative;
     --background-color: rgb(153, 151, 35);
-
+    transition: background-color 0.5s ease;
 }
 .panel-wrapper {
     position: relative;
@@ -42,6 +42,8 @@
     //
     background: linear-gradient(0deg, var(--panel-background-color) 40%,var(--background-color) 100%),var(--background-noise);
     border-radius: 6px;
+    transition: background-color 0.5s ease;
+ 
 }
 
 //

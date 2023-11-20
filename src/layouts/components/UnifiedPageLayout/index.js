@@ -22,7 +22,14 @@ function UnifiedPageLayout({children, itemData}) {
     },[location.pathname])
 
     const playBtnHandle= (itemData)=>{
-        itemData.type ==='Playlist'?playlistPlayPause(itemData):songPlayPause(itemData)
+        if(itemData.type ==='Playlist'){
+            console.log(itemData);
+            playlistPlayPause(itemData)
+            
+        }else{
+            
+            songPlayPause(itemData)
+        }
     }
 
     return (
