@@ -1,11 +1,11 @@
 // import { artists } from "./users"
-import { currentUser } from "./users";
+// import { currentUser } from "./users";
 
 
 //GET UNIQUE ID
-// import { v4 as uuid } from "uuid";
-// const uniqueId= uuid().slice(0,8);
-// console.log(uniqueId);
+import { v4 as uuid } from "uuid";
+const uniqueId= uuid().slice(0,8);
+console.log(uniqueId);
 
 //USER RECENT PLAYLISTS
 export const userPlaylists= [
@@ -16,10 +16,10 @@ export const userPlaylists= [
         description: null,
         authorId: '9d2c865a',
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
-        songIds:['935189f8', '60aba40d', '9d3a6d85','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85'],
+        songIds:['047a58df', 'b403e6d1', '9d3a6d85','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
     {   
         id: 2,
@@ -31,7 +31,7 @@ export const userPlaylists= [
         songIds:['8a087349', '31e5f3c5', '9d3a6d85'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
     {   
         id: 3,
@@ -43,7 +43,7 @@ export const userPlaylists= [
         songIds:['31e5f3c5', '935189f8', '9d3a6d85'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
     {   
         id: 4,
@@ -55,7 +55,7 @@ export const userPlaylists= [
         songIds:['935189f8', '31e5f3c5', '9d3a6d85'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
     {   
         id: 5,
@@ -67,7 +67,7 @@ export const userPlaylists= [
         songIds:['935189f8', '31e5f3c5', '9d3a6d85'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
     {   
         id: 6,
@@ -79,7 +79,7 @@ export const userPlaylists= [
         songIds:['935189f8', '31e5f3c5', '9d3a6d85'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
     {   
         id: 7,
@@ -91,7 +91,7 @@ export const userPlaylists= [
         songIds:['8a087349','832801c2' ,'f36e5afa', '60aba40d', '01adb04c'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
 ]
 export const globalPlaylists=[
@@ -106,7 +106,7 @@ export const globalPlaylists=[
         songIds:['0de36070','c0e575ca', 'f2d46ad6', 'd69983d6', '6840748d', '217d3406'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
     {
         id: 9,
@@ -118,7 +118,7 @@ export const globalPlaylists=[
         songIds:['8a087349', 'd9093b0c', 'e53a0a9f', 'd81a36b0'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
     {
         id: 10,
@@ -130,7 +130,7 @@ export const globalPlaylists=[
         songIds:['8a087349'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
     {
         id: 11,
@@ -142,7 +142,7 @@ export const globalPlaylists=[
         songIds:['8a087349'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
     {
         id: 11,
@@ -154,7 +154,7 @@ export const globalPlaylists=[
         songIds:['8a087349'],
         duration: '',
         type: 'Playlist',
-        backgroundColor: '#60789e'
+        themeColor: '#60789e'
     },
 ]
 export const recentPlaylists= [2,3,5,7,1,6]

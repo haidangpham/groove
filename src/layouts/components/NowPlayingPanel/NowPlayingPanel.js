@@ -179,6 +179,7 @@ function NowPlayingPanel({ track }) {
                             <input
                                 ref={progressBarRef}
                                 onChange={handleProgressChange}
+                                onMouseUp={handleProgressChange}
                                 className={cx("playback-progress")}
                                 type="range"
                                 min="0"

@@ -33,16 +33,26 @@ function DefaultLayout({ children, path }) {
     const location= useLocation()
     const type= location.pathname.split('/')[1]
     const backgroundId= location.pathname.split('/')[2]
+    //Handle background color
     let backgroundColor
-    if(type ==='playlist'){
-        backgroundColor= globalPlaylists.find((playlist)=>playlist.uniqueId === backgroundId).backgroundColor
-    }else if(type==='song'){
-        // backgroundColor= songs.find((song)=>song.uniqueId === backgroundId).backgroundColor
-    }else{
-        //default color
-        backgroundColor= 'rgb(40, 173, 135)'
+    switch (type) {
+        case 'playlist':
+          backgroundColor = globalPlaylists.find((playlist) => playlist.uniqueId === backgroundId)?.themeColor;
+          break;
+        case 'track':
+          backgroundColor = songs.find((song) => song.uniqueId === backgroundId)?.themeColor;
+          break;
+        case 'search':
+          backgroundColor = '#121212';
+          break;
+        default:
+          //Default color
+          backgroundColor = 'rgb(40, 173, 135)';
+          break;
     }
-
+    if(backgroundColor=== undefined){
+      backgroundColor = 'rgb(40, 173, 135)';
+    }
     useEffect(() => {
         setTimeout(() => {
           wrapperRef.current.style.setProperty('--background-color', backgroundColor);
@@ -57,7 +67,6 @@ function DefaultLayout({ children, path }) {
                     <SideBar path={path}/>
                 </div>
                 {/* content */}
-                
                 <div className={cx('main-view')} ref={mainViewRef} onScroll={scrollFunction}>
                     <TopBar isScrolled={isScrolled}/>
                     <div className={cx('content')}>

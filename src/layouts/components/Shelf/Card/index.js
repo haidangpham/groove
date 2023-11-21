@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 import PlayButton from "../../PlayButton/PlayButton";
 import { useContext } from "react";
 import { TrackContext } from "../../../../App";
+import { XIcon } from "../../../../components/Icons";
 
 const cx = classNames.bind(styles);
-function Card({ playlistId }) {
+function Card({ playlistId,index, removeable=false, updateCardList}) {
     const playlistData = globalPlaylists.find(
         (item) => playlistId === item.uniqueId
     );
@@ -17,9 +18,18 @@ function Card({ playlistId }) {
         e.preventDefault();
         playlistPlayPause(playlistData);
     };
+    const handleRemoveCard= (e, index)=>{
+        e.stopPropagation();
+        e.preventDefault();
+        updateCardList(index)
+    }
     return (
-        <Link to={`playlist/${playlistData.uniqueId}`}>
+        <Link to={`/playlist/${playlistData.uniqueId}`}>
             <div className={cx("card")}>
+                {removeable?
+                    <button className={cx('x-btn')} onClick={(e)=>handleRemoveCard(e,index)}><XIcon className={cx('icon')}/></button>:
+                    <></>
+                }
                 <div className={cx("card-cover")}>
                     <img
                         className={cx("cover-img")}

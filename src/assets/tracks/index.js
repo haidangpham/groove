@@ -221,5 +221,33 @@ const songs=[
         src: require('./data/MuonRoiMaSaoCon-SonTungMTP.mp3'),
         type: 'Song',
     },
+    {
+        id: 16,
+        uniqueId: '047a58df',
+        title: 'GODS',
+        coverImage: require('../images/albumCoverImgs/GODS_cover.jpg'),
+        authorId: '72477c1f',
+        albumId: '72a2ef1b',
+        releaseDate: 'Oct 4, 2023',
+        duration: '3:40',
+        playCount: '50,783,021',
+        src: require('./data/Gods-LeagueOfLegendsNewJeans.mp3'),
+        type: 'Song',
+        themeColor: 'rgba(42,56,92,255)'
+    },
+    {
+        id: 16,
+        uniqueId: 'b403e6d1',
+        title: 'STAR WALKIN\' (League of Legends Worlds Anthem)',
+        coverImage: require('../images/albumCoverImgs/STAR-WALKIN\'_cover.jpg'),
+        authorId: '1fe9ade3',
+        albumId: '72a2ef1b',
+        releaseDate: 'Sep 22, 2022',
+        duration: '3:30',
+        playCount: '375,538,128',
+        src: require('./data/StarWalkinLeagueOfLegendsWorldsAnthem-LilNasX.mp3'),
+        type: 'Song',
+        themeColor: 'rgba(79,42,34,255)'
+    },
 ]
 export default songs

@@ -166,4 +166,22 @@ export const artists=[
         verified: true,
         albums: [], 
     },
+    {
+        id: 18,
+        uniqueId: '72477c1f',
+        name: 'League of Legends',
+        avatar: require('../images/avatars/league-of-legends_avatar.jpg'), 
+        mthlyCount: '20,653,845',
+        verified: true,
+        albums: [], 
+    },
+    {
+        id: 19,
+        uniqueId: '1fe9ade3',
+        name: 'Lil Nas X',
+        avatar: require('../images/avatars/lil-nas-x_avatar.jpg'), 
+        mthlyCount: '26,454,991',
+        verified: true,
+        albums: [], 
+    },
 ]

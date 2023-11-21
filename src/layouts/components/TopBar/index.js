@@ -1,10 +1,10 @@
 import classNames from "classnames/bind";
-import { useContext, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import {useLocation, useNavigate} from 'react-router-dom';
 
 import styles from './TopBar.module.scss';
 import { currentUser } from "../../../assets/data/users";
-import { BackwardIcon, BellIcon, DownloadIcon, ForwardIcon } from "../../../components/Icons";
+import { BackwardIcon, BellIcon, DownloadIcon, ForwardIcon, SearchIcon } from "../../../components/Icons";
 import { NavContext, TrackContext } from "../../../App";
 import PlayButton from "../PlayButton/PlayButton";
 import { globalPlaylists } from "../../../assets/data/playlist";
@@ -40,7 +40,7 @@ function TopBar({isScrolled}) {
     }
 
     return ( 
-        <div className={cx('top-bar', `${isScrolled? 'bg-change': ''}`)} ref={topBarRef}>
+        <div className={cx('top-bar', `${isScrolled || location==='search'? 'bg-change': ''}`)} ref={topBarRef}>
                         <div className={cx('history-nav')}>
                             <button className={cx('backward', 'action',`${navList.length<=1?'inactive':'active'}`)} onClick={()=>handleNav(-1)}>
                                 <BackwardIcon className={cx('icon')}/>
@@ -66,6 +66,21 @@ function TopBar({isScrolled}) {
                                 )}
                                 <span className={cx('title')}>{itemData?.title}</span>
                             </div>:<></>}
+                            {location==='search'?
+                                <div className={cx('search-bar')}>
+                                    <div className={cx('icon-ctn')}>
+                                        <SearchIcon className={cx('search-i')} />
+                                    </div>
+                                    <input
+                                        className={cx('search-input')}
+                                        autoComplete="false"
+                                        spellCheck={false}
+                                        placeholder="What do you want to listen to?"
+                                    >
+                                    </input>
+                                </div>
+                                :<></>
+                            }
                         </div>
                         
                         <div className={cx('options')}>
