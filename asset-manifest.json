@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/groove/static/css/main.a9942ded.css",
-    "main.js": "/groove/static/js/main.d100db66.js",
+    "main.css": "/groove/static/css/main.28f69000.css",
+    "main.js": "/groove/static/js/main.6c110ca7.js",
     "static/js/787.61e465a2.chunk.js": "/groove/static/js/787.61e465a2.chunk.js",
     "static/media/MuonRoiMaSaoCon-SonTungMTP.mp3": "/groove/static/media/MuonRoiMaSaoCon-SonTungMTP.32f348e275a1bc828c46.mp3",
     "static/media/HayTraoChoAnh-SonTungMTPSnoopDogg.mp3": "/groove/static/media/HayTraoChoAnh-SonTungMTPSnoopDogg.b0e98894f6f9943869ef.mp3",
@@ -13,7 +13,9 @@
     "static/media/NeuLucDo-tlinh2pillz.mp3": "/groove/static/media/NeuLucDo-tlinh2pillz.cd7d36aebb338ee11459.mp3",
     "static/media/EmKhongHieu-ChanggMinhHuy.mp3": "/groove/static/media/EmKhongHieu-ChanggMinhHuy.9f331493c6809ed4999e.mp3",
     "static/media/BeforeYouGo-LewisCapaldi.mp3": "/groove/static/media/BeforeYouGo-LewisCapaldi.59758eaaca79d118a48c.mp3",
+    "static/media/StarWalkinLeagueOfLegendsWorldsAnthem-LilNasX.mp3": "/groove/static/media/StarWalkinLeagueOfLegendsWorldsAnthem-LilNasX.945752f3ea5d36379533.mp3",
     "static/media/IfTheWorldWasEnding-JPSaxefeatJuliaMichaels.mp3": "/groove/static/media/IfTheWorldWasEnding-JPSaxefeatJuliaMichaels.04ba972f97458231e8e3.mp3",
+    "static/media/Gods-LeagueOfLegendsNewJeans.mp3": "/groove/static/media/Gods-LeagueOfLegendsNewJeans.d28078b416354a1de83e.mp3",
     "static/media/EyesClosed-EdSheeran.mp3": "/groove/static/media/EyesClosed-EdSheeran.a90d10fc6649ed8b85fb.mp3",
     "static/media/AngelsLikeYou-MileyCyrus.mp3": "/groove/static/media/AngelsLikeYou-MileyCyrus.a6336e28df67b676ed09.mp3",
     "static/media/CheatingOnYou-CharliePuth.mp3": "/groove/static/media/CheatingOnYou-CharliePuth.b0a4b0c5d2ebf14ff73c.mp3",
@@ -36,6 +38,7 @@
     "static/media/one-republic_avatar.jpg": "/groove/static/media/one-republic_avatar.d18f9018695c169e415c.jpg",
     "static/media/starboy-cover.jpg": "/groove/static/media/starboy-cover.5b1a0f0e0c4c6c458d23.jpg",
     "static/media/ed-sheeran_avatar.jpg": "/groove/static/media/ed-sheeran_avatar.1ad3b8fe1a92cdb63861.jpg",
+    "static/media/GODS_cover.jpg": "/groove/static/media/GODS_cover.a9b867406a8791c65e58.jpg",
     "static/media/the-ultimate-hit-cover.jpg": "/groove/static/media/the-ultimate-hit-cover.c236f701989a65422086.jpg",
     "static/media/stephen-sanchez_avatar.jpg": "/groove/static/media/stephen-sanchez_avatar.d6c834e03992802ef420.jpg",
     "static/media/NguMotMinh-cover.jpg": "/groove/static/media/NguMotMinh-cover.43e28e4c8edce0eee8ad.jpg",
@@ -56,6 +59,7 @@
     "static/media/cheating-on-you-cover.jpg": "/groove/static/media/cheating-on-you-cover.4540be52e0b8dcb831a5.jpg",
     "static/media/masew_avatar.jpg": "/groove/static/media/masew_avatar.6a99ae145b7dcbf69044.jpg",
     "static/media/CircularSpTitle-Tall-Bold.woff2": "/groove/static/media/CircularSpTitle-Tall-Bold.45619fbb6198f0db7e17.woff2",
+    "static/media/STAR-WALKIN'_cover.jpg": "/groove/static/media/STAR-WALKIN'_cover.88de3001dc948ef6e9b9.jpg",
     "static/media/charlie-puth_avatar.jpg": "/groove/static/media/charlie-puth_avatar.72d197bddf87acab53b8.jpg",
     "static/media/the-weeknd_avatar.jpg": "/groove/static/media/the-weeknd_avatar.1e340090257c9cccbe41.jpg",
     "static/media/changg_avatar.jpg": "/groove/static/media/changg_avatar.760ebebd144d9b91a505.jpg",
@@ -65,12 +69,12 @@
     "static/media/neu-luc-do-cover.jpg": "/groove/static/media/neu-luc-do-cover.b4926bf536e8e6954439.jpg",
     "static/media/son-tung-mtp_avatar.jpg": "/groove/static/media/son-tung-mtp_avatar.c46b5e9b499c31d0998b.jpg",
     "index.html": "/groove/index.html",
-    "main.a9942ded.css.map": "/groove/static/css/main.a9942ded.css.map",
-    "main.d100db66.js.map": "/groove/static/js/main.d100db66.js.map",
+    "main.28f69000.css.map": "/groove/static/css/main.28f69000.css.map",
+    "main.6c110ca7.js.map": "/groove/static/js/main.6c110ca7.js.map",
     "787.61e465a2.chunk.js.map": "/groove/static/js/787.61e465a2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9942ded.css",
-    "static/js/main.d100db66.js"
+    "static/css/main.28f69000.css",
+    "static/js/main.6c110ca7.js"
   ]
 }
