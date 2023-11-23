@@ -23,7 +23,7 @@ function TrackPage() {
     const trackData = songs.find(
         (item) => item.uniqueId === param.songId
     );
-    const artistData= artists.find((artist)=> trackData.authorId ===artist.uniqueId)
+    const artistData= trackData.authorId.map((id)=> artists.find((artist)=> artist.uniqueId=== id))
     const lyricsData= lyrics.find((lyrics)=> lyrics.songId === param.songId)?.lyrics
     //Return home if no lyrics found
     const navigate= useNavigate()
@@ -44,15 +44,21 @@ function TrackPage() {
                         return(<p className={cx('lyrics-line')} key={index}>{line}</p>)
                     })}
                 </div>
-                <Link to={`/artist/${artistData.uniqueId}`}>
-                    <div className={cx('artist')} >
-                        <div className={cx('avatar')}><img alt= "" src={artistData.avatar} /></div>
-                        <div>
-                            <span>Artist</span>
-                            <p>{artistData.name}</p>
-                        </div>
-                    </div>
-                </Link>
+                    {
+                        artistData.map((artist)=>{
+                            <Link to={`/artist/${artist.uniqueId}`}>
+                                <div className={cx('artist')} >
+                                <div className={cx('avatar')}><img alt= "" src={artist.avatar} /></div>
+                                <div>
+                                    <span>Artist</span>
+                                    <p>{artist.name}</p>
+                                </div>
+                                </div> 
+                            </Link>
+                        })
+                    }
+                    
+                
             </div>
         </UnifiedPageLayout>
     </div> );

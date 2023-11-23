@@ -18,6 +18,7 @@ import {
     VolumeMuteIcon,
 } from "../../../components/Icons";
 import PlayButton from "../PlayButton/PlayButton";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 function NowPlayingPanel({ track }) {
@@ -33,10 +34,9 @@ function NowPlayingPanel({ track }) {
     const progressBarRef = useRef(null);
     const volumeRef = useRef(null);
     const playAnimationRef = useRef();
-    const artistName= artists.find(
-        (artist) =>
-            track.authorId === artist.uniqueId
-    ).name
+    const artistNames= track.authorId.map((id)=> artists.find((artist)=> id === artist.uniqueId).name)
+    const artistData= track.authorId.map((id)=> artists.find((artist)=> id === artist.uniqueId))
+    console.log(artistData);
 
     const [isMute, setIsMute] = useState(false);
     const [timeProgress, setTimeProgress] = useState(0);
@@ -95,11 +95,11 @@ function NowPlayingPanel({ track }) {
         if (isPlaying) {
             globalAudioRef.current.play();
             playAnimationRef.current = requestAnimationFrame(repeat);
-            document.title= `${track.title} • ${artistName}`
+            document.title= `${track.title} • ${artistNames[0]}`
         } else {
             globalAudioRef.current.pause();
         }
-    }, [isPlaying, globalAudioRef, repeat]);
+    }, [isPlaying, globalAudioRef, repeat, artistNames, track.title]);
 
     //handle volume
     const handleVolumeChange = () => {
@@ -107,30 +107,39 @@ function NowPlayingPanel({ track }) {
         setVolumeProgress(volumeRef.current.value);
         volumeRef.current.style.setProperty(
             "--volume-progress",
-            `${(volumeProgress / 1) * 100}%`
+            `${volumeProgress * 100}%`
         );
     };
+    //Auto update on changes
+    useEffect(()=>{
+        if(volumeProgress > 0){
+            setPrevVolume(volumeProgress)
+        }
+        if(globalAudioRef.current.volume === 0){
+            setIsMute(true)
+        }
+    },[volumeProgress, globalAudioRef])
+    //Mute
     const handleMute = () => {
         if (isMute) {
-            if (globalAudioRef.current.volume !== 0) {
-                setPrevVolume(globalAudioRef.current.volume);
-            }
-            globalAudioRef.current.volume = 0;
-            volumeRef.current.value = 0;
-            volumeRef.current.style.setProperty("--volume-progress", `0%`);
-        } else {
             globalAudioRef.current.volume = prevVolume;
             volumeRef.current.value = globalAudioRef.current.volume;
             volumeRef.current.style.setProperty(
                 "--volume-progress",
                 `${(volumeRef.current.value / 1) * 100}%`
             );
+        } else {
+            if (globalAudioRef.current.volume !== 0) {
+                setPrevVolume(globalAudioRef.current.volume);
+            }
+            globalAudioRef.current.volume = 0;
+            volumeRef.current.value = 0;
+            volumeRef.current.style.setProperty("--volume-progress", `0%`);
         }
         setIsMute(!isMute);
     };
     //Backward, Forward songs
     const handleSkipping= (isForward)=>{
-        console.log(playingTrackIndex);
         if(isForward){
             playingTrackIndex+1 === queuedTracks.length?updatePlayingTrackIndex(0):updatePlayingTrackIndex(playingTrackIndex + 1)
         }else{
@@ -147,10 +156,15 @@ function NowPlayingPanel({ track }) {
                         alt=""
                     />
                     <div className={cx("track-title")}>
-                        <p className={cx("title")}>{track.title}</p>
-                        <span className={cx("author")}>
-                            {artistName}
-                        </span>
+                        <Link to={`/track/${track.uniqueId}`}><p className={cx("title")}>{track.title}</p></Link>
+                        {artistData.map((artist, index)=>{
+                            if(index>=1){
+                                return(<Link to={`/artist/${artist.uniqueId}`} key={index}>, <span className={cx("author")}>{artist.name}</span></Link>)
+                            }else{
+                                return(<Link to={`/artist/${artist.uniqueId}`} key={index}><span className={cx("author")} key={index}>{artist.name}</span></Link>)
+                            }
+                        }
+                        )}
                     </div>
                     <HeartIcon className={cx("icon")} />
                 </div>
@@ -211,6 +225,7 @@ function NowPlayingPanel({ track }) {
                         <input
                             ref={volumeRef}
                             onChange={handleVolumeChange}
+                            onClick={handleVolumeChange}
                             className={cx("volume-bar")}
                             type="range"
                             min="0"

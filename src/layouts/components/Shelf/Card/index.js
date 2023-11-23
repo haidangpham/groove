@@ -8,7 +8,7 @@ import { TrackContext } from "../../../../App";
 import { XIcon } from "../../../../components/Icons";
 
 const cx = classNames.bind(styles);
-function Card({ playlistId,index, removeable=false, updateCardList}) {
+function Card({ playlistId,index, removeable, updateCardList}) {
     const playlistData = globalPlaylists.find(
         (item) => playlistId === item.uniqueId
     );

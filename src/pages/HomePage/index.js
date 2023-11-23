@@ -16,10 +16,22 @@ function Home() {
     useEffect(()=>{
         updateNavList(location.pathname)
     }, [location.pathname])
-
+    //Handle Greeting
+    const currentDate = new Date();
+    const currentHour = currentDate.getHours();
+    let greeting
+    if( 5 <= currentHour && currentHour < 12){
+        greeting= 'Good morning'
+    }else if(12 <= currentHour && currentHour < 18){
+        greeting= 'Good afternoon'
+    }else if(18 <= currentHour && currentHour < 22){
+        greeting= 'Good evening'
+    }else{
+        greeting= 'Good night'
+    }
     return (
         <div className={cx("wrapper")}>
-            <h3 className={cx("greet")}>Good morning</h3>
+            <h3 className={cx("greet")}>{greeting}</h3>
                 <RecentPlaylists  playingPlaylist={playingItems.playingPlaylist} />
                 <Shelf title='hits'  cardList={['7435bcd8', '8227f292', 'd839b189', '960fdcff', '458fa796']}/>
                 <Shelf title='hits'  cardList={['7435bcd8', '8227f292', 'd839b189', '960fdcff', '458fa796']}/>

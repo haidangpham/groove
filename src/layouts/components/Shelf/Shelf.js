@@ -11,7 +11,7 @@ function Shelf({cardList, title, removeable= false, updateCardList}) {
             <div className={cx('container')}>
                 {
                     cardList.map((playlistId, index)=>(
-                        <Card playlistId={playlistId} key={index} index={index} removeable updateCardList={updateCardList}/>           
+                        <Card playlistId={playlistId} key={index} index={index} removeable={removeable} updateCardList={updateCardList}/>           
                     ))
                 }
             </div>

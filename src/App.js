@@ -57,9 +57,6 @@ function App() {
             setNavList(list)
         }
     }
-    //log
-
-
       //AutoPlay
       const autoPlay= ()=>{
         if(playingTrackIndex+1 < queuedTracks.length){
@@ -135,10 +132,12 @@ function App() {
     const songPlayPause = (songData, index, playlistId, songIds) => {
         //function for Single Tracks
         if(!songIds){
+            
             setQueuedTracks([songData.uniqueId])
             setPlayingTrackIndex(0)
             setPlayingPlaylist(null)
             globalAudioRef.current[isPlaying ? "pause" : "play"]();
+            setIsPlaying(!isPlaying)
             return
         }
         //function for Tracks in Playlists

@@ -68,6 +68,7 @@ function DefaultLayout({ children, path }) {
                 </div>
                 {/* content */}
                 <div className={cx('main-view')} ref={mainViewRef} onScroll={scrollFunction}>
+                  
                     <TopBar isScrolled={isScrolled}/>
                     <div className={cx('content')}>
                         {children}

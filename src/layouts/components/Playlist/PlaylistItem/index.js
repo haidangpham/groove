@@ -63,7 +63,7 @@ function PlaylistItem({ song, playlistId, index }) {
                             {
                                 artists.find(
                                     (artist) =>
-                                        artist.uniqueId === song.authorId
+                                        artist.uniqueId === song.authorId[0]
                                 ).name
                             }
                         </Link>

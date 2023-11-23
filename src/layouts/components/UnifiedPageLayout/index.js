@@ -23,15 +23,12 @@ function UnifiedPageLayout({children, itemData}) {
 
     const playBtnHandle= (itemData)=>{
         if(itemData.type ==='Playlist'){
-            console.log(itemData);
             playlistPlayPause(itemData)
             
-        }else{
-            
+        }else{   
             songPlayPause(itemData)
         }
     }
-
     return (
         <div className={cx("wrapper")}>
             <div className={cx("header")}>
@@ -46,14 +43,16 @@ function UnifiedPageLayout({children, itemData}) {
                     <div className={cx("playlist-details")}>
                         <img
                             className={cx("author-avatar")}
-                            src={artists.find((artist)=> artist.uniqueId === itemData.authorId).avatar}
+                            src={artists.find((artist)=> artist.uniqueId === itemData.authorId[0]).avatar}
                             alt=""
                         />
                         <span className={cx("other-details")}>
-                            <Link className={cx('author-name')} to={`/artist/${itemData.authorId}`}>{artists.find((artist)=> artist.uniqueId === itemData.authorId).name}</Link> •
+                            <Link className={cx('author-name')} to={`/artist/${itemData.authorId[0]}`}>
+                                {artists.find((artist)=> artist.uniqueId === itemData.authorId[0]).name}
+                            </Link>
                             {
                                 itemData.type==='Song'?
-                                <><Link to={`/album/${itemData.albumId}`} className={cx('album-title')}> {albums.find((album)=> album.uniqueId ===itemData.albumId).title}</Link> •
+                                <><Link to={`/album/${itemData.albumId}`} className={cx('album-title')}> • {albums.find((album)=> album.uniqueId ===itemData.albumId).title}</Link> •
                                 <span> {itemData.releaseDate} • {itemData.duration} • {itemData.playCount}</span></>
                                 :
                                 <div></div>
