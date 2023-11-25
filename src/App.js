@@ -12,21 +12,13 @@ function App() {
     const globalAudioRef= useRef()
     const [isPlaying, setIsPlaying]= useState(false)
     const [queuedTracks, setQueuedTracks]= useState(["31e5f3c5"])
+    const [unshuffledQueue, setUnshuffledQueue]= useState(["31e5f3c5"])
     const [playingTrack, setPlayingTrack] = useState("31e5f3c5");
     const [playingPlaylist, setPlayingPlaylist] = useState(null);
     const [playingTrackIndex, setPlayingTrackIndex]= useState(0);
     const [navList, setNavList]= useState([]);
     const [prevNavList, setPrevNavList]= useState([])
     const [isShuffled, setIsShuffled]= useState(false);
-    //set isPlaying state
-    useEffect(()=>{
-        if(globalAudioRef.current.paused){
-            setIsPlaying(false)
-            document.title = "Groove - Experience music world.";
-        }else{
-            setIsPlaying(true)
-        }
-    }, [globalAudioRef.current?.paused, isPlaying])
 
     //NAV
     useEffect(()=>{
@@ -35,7 +27,6 @@ function App() {
             setPrevNavList(navList)
         }
     },[navList])
-    
     const updateNavList= (location)=>{
         //stop update navList if nav btn is clicked Back/Forwarded
         if((navList.length < prevNavList.length && location === prevNavList[navList.length])|| location === navList[navList.length - 1]){
@@ -57,76 +48,110 @@ function App() {
             setNavList(list)
         }
     }
-      //AutoPlay
-      const autoPlay= ()=>{
-        if(playingTrackIndex+1 < queuedTracks.length){
-            setPlayingTrackIndex( playingTrackIndex + 1)
-            setPlayingTrack(queuedTracks[playingTrackIndex+1])
-        }else{
-            //no more tracks in queue
-            return
-        }
-        if(isPlaying){
-            setTimeout(() => {
-                globalAudioRef.current.play();
-                setIsPlaying(true)
-              }, 1000);
-        }
-      }
-        //update playingTrack when queuedTrack is updated
-      useEffect(() => {
-        // Update the playingTrack when playingTrackIndex changes
-        setPlayingTrack(queuedTracks[playingTrackIndex]);
-      }, [playingTrackIndex, queuedTracks]);
+    //get track
+    const track= songs.find((song)=> song.uniqueId ===playingTrack)
 
     //set global playing state
     const playingItems = {
         playingTrack: playingTrack,
         playingPlaylist: playingPlaylist,
     };
-
-    //get track
-    const track= songs.find((song)=> song.uniqueId ===playingTrack)
-    //global functions
-    const updatePlayingTrack = (newTrackId) => {
-        setPlayingTrack(newTrackId);
-    };
-    const updatePlayingPlaylist = (newPlaylistId) => {
-        setPlayingPlaylist(newPlaylistId);
-    };
-    const updateQueuedTracks = (trackIds) => {
-        setQueuedTracks(trackIds);
-    };
-    const updatePlayingTrackIndex = (index) => {
-        setPlayingTrackIndex(index);
-    };
     
-    const addLoadedMetadataListener = async(listener) => {
-        if (globalAudioRef.current) {
-            await globalAudioRef.current.addEventListener('loadedmetadata', listener);
+    //set isPlaying state
+    useEffect(()=>{
+        if(globalAudioRef.current.paused){
+            setIsPlaying(false)
+            document.title = "Groove - Experience music world.";
+        }else{
+            setIsPlaying(true)
         }
-    };
-    
-      //Play Pause Of Playlists
+    }, [globalAudioRef.current?.paused, isPlaying])
+  
+    //AutoPlay
+    const autoPlay= ()=>{
+    if(playingTrackIndex+1 < queuedTracks.length){
+        setPlayingTrackIndex( playingTrackIndex + 1)
+        setPlayingTrack(queuedTracks[playingTrackIndex+1])
+    }else{
+        //no more tracks in queue
+        return
+    }
+        if(isPlaying){
+            setTimeout(() => {
+                globalAudioRef.current.play();
+                setIsPlaying(true)
+                }, 1000);
+        }
+    }
+    //update playingTrack when queuedTrack is updated
+    useEffect(() => {
+    // Update the playingTrack when playingTrackIndex changes
+    setPlayingTrack(queuedTracks[playingTrackIndex]);
+    }, [playingTrackIndex, queuedTracks]);
+
+    //Shuffle Handler
+    const shuffle = (playlist) => {
+        if (!isShuffled) {
+          const findIndex = unshuffledQueue.indexOf(playingTrack);
+          setPlayingTrackIndex(findIndex);
+          return unshuffledQueue;
+        }
+        // Save original queue before shuffle
+        setUnshuffledQueue(playlist);
+        // Slice the playlist based on whether it's the same as queuedTracks
+        const slicedPlaylist = queuedTracks === playlist ? playlist.slice(playingTrackIndex + 1) : playlist.slice(playingTrackIndex);
+        // Shuffle the slicedPlaylist using Fisher-Yates algorithm
+        const shuffled = [...slicedPlaylist];
+        let currentIndex = shuffled.length, randomIndex;
+        while (currentIndex > 0) {
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+          [shuffled[currentIndex], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[currentIndex]];
+        }
+        // Insert the playing track to keep it playing
+        const finalShuffled = queuedTracks === playlist ? [playingTrack, ...shuffled] : shuffled;
+        setPlayingTrackIndex(0);
+        // setQueuedTracks(finalShuffled);
+        return finalShuffled;
+      };
+
+    useEffect(()=>{
+        setQueuedTracks(shuffle(queuedTracks))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[isShuffled])
+
+    //Play Pause Of Playlists
     const playlistPlayPause = (playlistData) => {
+        //if different playlist
         if (playlistData.uniqueId !== playingItems.playingPlaylist) {
             setPlayingPlaylist(playlistData.uniqueId);
-            setQueuedTracks(playlistData.songIds)
             setPlayingTrackIndex(0)
-          if (playingTrack !== playlistData.songIds[0]) {
-            globalAudioRef.current.play();
-            setIsPlaying(true);
-          } else {
-            globalAudioRef.current.currentTime = 0;
-            if (!isPlaying) {
-              globalAudioRef.current.play();
-              setIsPlaying(true);
+            //if shuffle
+            if(isShuffled){
+                setQueuedTracks(shuffle(playlistData.songIds))
+            }else{
+                setQueuedTracks(playlistData.songIds)
             }
-          }
+            // setQueuedTracks(playlistData.songIds)
+            console.log(playingTrack);
+            setIsPlaying(true)
+            //if same track
+        //     if (playingTrack !== playlistData.songIds[0]) {
+        //     globalAudioRef.current.play();
+        //     setIsPlaying(true);
+        //   } else {
+        //     //if different track
+        //     globalAudioRef.current.currentTime = 0;
+        //     if (!isPlaying) {
+        //       globalAudioRef.current.play();
+        //       setIsPlaying(true);
+        //     }
+        //   }
         } else {
           globalAudioRef.current[isPlaying ? 'pause' : 'play']();
           setIsPlaying((prevIsPlaying) => !prevIsPlaying);
         }
+
     };
 
     const songPlayPause = (songData, index, playlistId, songIds) => {
@@ -159,11 +184,34 @@ function App() {
             globalAudioRef.current.play();
         }
     };
+
+    //global functions
+    const updatePlayingTrack = (newTrackId) => {
+        setPlayingTrack(newTrackId);
+    };
+    const updatePlayingPlaylist = (newPlaylistId) => {
+        setPlayingPlaylist(newPlaylistId);
+    };
+    const updateQueuedTracks = (trackIds) => {
+        setQueuedTracks(trackIds);
+    };
+    const updatePlayingTrackIndex = (index) => {
+        setPlayingTrackIndex(index);
+    };
+    
+    const addLoadedMetadataListener = async(listener) => {
+        if (globalAudioRef.current) {
+            await globalAudioRef.current.addEventListener('loadedmetadata', listener);
+        }
+    };
+    const toggleIsShuffled= ()=>{
+        setIsShuffled(!isShuffled)
+    }
     //
     return (
         <Router>
             <div className="App">
-            <audio ref={globalAudioRef} src={track.src} onEnded={autoPlay}/>
+            <audio ref={globalAudioRef} src={track.src} onEnded={autoPlay} volume="0.5"/>
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;
@@ -179,6 +227,7 @@ function App() {
                                             isPlaying,
                                             queuedTracks,
                                             playingTrackIndex,
+                                            isShuffled,
                                             setIsPlaying,
                                             updatePlayingTrack,
                                             updatePlayingPlaylist,
@@ -186,6 +235,7 @@ function App() {
                                             updatePlayingTrackIndex,
                                             playlistPlayPause,
                                             songPlayPause,
+                                            toggleIsShuffled,
                                             addLoadedMetadataListener,
                                         }}
                                     >

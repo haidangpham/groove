@@ -11,18 +11,17 @@ import UnifiedPageLayout from "../../layouts/components/UnifiedPageLayout";
 
 const cx = classNames.bind(styles);
 function PlaylistPage() {
-    const playlistId = useParams();
+    const {playlistId} = useParams();
     const playlistData = globalPlaylists.find(
-        (item) => item.uniqueId === playlistId.playlistId
+        (item) => item.uniqueId === playlistId
     );
     
-    // //get songs
+    //get songs
     const songlist = [];
     playlistData.songIds.forEach((songId) => {
         songlist.push(songs.find((song) => song.uniqueId === songId));
     });
     return (
-        
         <UnifiedPageLayout itemData={playlistData}>
             <Playlist songlist={songlist}
                     playlistId={playlistData.uniqueId}/>

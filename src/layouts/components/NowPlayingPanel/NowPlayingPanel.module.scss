@@ -12,6 +12,10 @@ footer{
         &:hover{
             fill: var(--active-color);
         }
+        
+    }
+    .active{
+        fill: var(--theme-color);
     }
 }
 .wrapper{
@@ -101,13 +105,13 @@ footer{
                 --volume-progress: 50%;
                 width: 100px;
                 background: linear-gradient(to right, white 0%, white var(--volume-progress), #696969 var(--volume-progress), #696969 100%);
-                // &:hover, .volume-control .icon:hover{
-                //     background: linear-gradient(to right, var(--theme-color) 0%, var(--theme-color) var(--volume-progress), #696969 var(--volume-progress), #696969 100%);
-                // }
+
             }
+            transition: all 0.5s ease;
             &:hover{
                 .volume-bar{
                     background: linear-gradient(to right, var(--theme-color) 0%, var(--theme-color) var(--volume-progress), #696969 var(--volume-progress), #696969 100%);
+                    
                     &::-webkit-slider-thumb {
                         opacity: 1;
                     }

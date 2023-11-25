@@ -26,8 +26,10 @@ function NowPlayingPanel({ track }) {
         globalAudioRef,
         isPlaying,
         queuedTracks,
+        isShuffled,
         playingTrackIndex,
         setIsPlaying,
+        toggleIsShuffled,
         addLoadedMetadataListener,
         updatePlayingTrackIndex,
     } = useContext(TrackContext);
@@ -36,12 +38,11 @@ function NowPlayingPanel({ track }) {
     const playAnimationRef = useRef();
     const artistNames= track.authorId.map((id)=> artists.find((artist)=> id === artist.uniqueId).name)
     const artistData= track.authorId.map((id)=> artists.find((artist)=> id === artist.uniqueId))
-    console.log(artistData);
 
     const [isMute, setIsMute] = useState(false);
     const [timeProgress, setTimeProgress] = useState(0);
     const [duration, setDuration] = useState(0);
-    const [prevVolume, setPrevVolume] = useState(0.5);
+    const [prevVolume, setPrevVolume] = useState(0);
     const [volumeProgress, setVolumeProgress] = useState(50);
 
     const togglePlayPause = () => {
@@ -104,7 +105,8 @@ function NowPlayingPanel({ track }) {
     //handle volume
     const handleVolumeChange = () => {
         globalAudioRef.current.volume = volumeRef.current.value;
-        setVolumeProgress(volumeRef.current.value);
+        const currentVolume= volumeRef.current.value
+        setVolumeProgress(currentVolume);
         volumeRef.current.style.setProperty(
             "--volume-progress",
             `${volumeProgress * 100}%`
@@ -145,7 +147,10 @@ function NowPlayingPanel({ track }) {
         }else{
             playingTrackIndex - 1 < 0?updatePlayingTrackIndex(0): updatePlayingTrackIndex(playingTrackIndex - 1)
         }
+        setIsPlaying(true)
     }
+    //Shuffle
+  
     return (
         <footer>
             <div className={cx("wrapper")}>
@@ -170,7 +175,7 @@ function NowPlayingPanel({ track }) {
                 </div>
                 <div className={cx("controller")}>
                     <div className={cx("player-control")}>
-                        <ShuffleIcon className={cx("icon")} />
+                        <button onClick={toggleIsShuffled}><ShuffleIcon className={cx("icon", `${isShuffled?'active': ''}`)} /></button>
                         <button onClick={()=>handleSkipping(false)}><PreviousIcon className={cx("icon")} /></button>
                         {isPlaying ? (
                             <PlayButton

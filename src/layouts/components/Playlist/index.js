@@ -2,10 +2,8 @@ import classNames from "classnames/bind";
 import styles from './Playlist.module.scss';
 import { ClockIcon } from "../../../components/Icons";
 import PlaylistItem from "./PlaylistItem";
-import { useState } from "react";
 const cx= classNames.bind(styles)
 function Playlist({songlist, playlistId}) {
-
     
     return ( 
         <div className={cx('playlist-content')}>

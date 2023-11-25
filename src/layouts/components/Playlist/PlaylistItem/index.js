@@ -3,6 +3,7 @@ import styles from "./PlaylistItem.module.scss";
 
 import { useContext, useState } from "react";
 import { TrackContext } from "../../../../App";
+import { Link } from "react-router-dom";
 
 import {
     HeartIcon,
@@ -10,7 +11,6 @@ import {
     PauseIcon,
     PlayIcon,
 } from "../../../../components/Icons";
-import { Link } from "react-router-dom";
 import { artists } from "../../../../assets/data/users";
 import albums from "../../../../assets/data/albums";
 import { globalPlaylists } from "../../../../assets/data/playlist";
@@ -18,7 +18,6 @@ const cx = classNames.bind(styles);
 function PlaylistItem({ song, playlistId, index }) {
     const [isHovered, setHovered] = useState(false);
     const {
-        globalAudioRef,
         isPlaying,
         playingItems,
         songPlayPause,
