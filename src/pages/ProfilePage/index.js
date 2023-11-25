@@ -1,8 +1,9 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { NavContext } from "../../App";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import classNames from "classnames/bind";
 import styles from './ProfilePage.module.scss'
+import { artists } from "../../assets/data/users";
 const cx= classNames.bind(styles)
 function ProfilePage() {
     const {updateNavList}= useContext(NavContext)
@@ -10,7 +11,23 @@ function ProfilePage() {
     useEffect(()=>{
         updateNavList(location.pathname)
     },[location.pathname])
-    return ( <div>Profile Page</div> );
+    //get artist data
+    const artistId= useParams().artistId
+    const artistData= artists.find((artist)=> artist.uniqueId=== artistId)
+    const backgroundRef= useRef()
+    //
+    // backgroundRef.current.style.backgroundImg= artistData.coverImg
+    return (
+        <div className={cx('wrapper')} >
+            <div className={cx('header')} ref={backgroundRef}>
+
+            </div>
+            <div className={cx('content')}>
+
+            </div>
+            {/* <img className={cx('background-avatar')} alt="" src={artistData.coverImg}/> */}
+        </div>
+    );
 }
 
 export default ProfilePage;

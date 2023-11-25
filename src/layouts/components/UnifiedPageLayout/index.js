@@ -52,7 +52,7 @@ function UnifiedPageLayout({children, itemData}) {
                             </Link>
                             {
                                 itemData.type==='Song'?
-                                <><Link to={`/album/${itemData.albumId}`} className={cx('album-title')}> • {albums.find((album)=> album.uniqueId ===itemData.albumId).title}</Link> •
+                                <> •<Link to={`/album/${itemData.albumId}`} className={cx('album-title')}> {albums.find((album)=> album.uniqueId ===itemData.albumId).title}</Link> •
                                 <span> {itemData.releaseDate} • {itemData.duration} • {itemData.playCount}</span></>
                                 :
                                 <div></div>

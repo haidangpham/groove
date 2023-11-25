@@ -1,16 +1,14 @@
 .lyrics{
     color: var(--default-color);
     user-select: none;
-    .lrics-line{
-
-    }
+    margin-bottom: 2rem;
 }
 .artist{
     display: flex;
     gap: 1rem;
     align-items: center;
     padding: 1rem 0.4rem;
-    margin-top: 2rem;
+
     cursor: pointer;
     border-radius: 8px;
     .avatar{

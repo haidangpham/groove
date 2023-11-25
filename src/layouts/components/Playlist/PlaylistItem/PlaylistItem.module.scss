@@ -31,8 +31,9 @@
             margin-right: 1rem;
         }
         .song-title{
-        font-size: 1.6rem;
-        color: var(--white-font-color);
+            font-size: 1.6rem;
+            color: var(--white-font-color);
+            white-space: nowrap;
         }
         .song-artist{
             font-size: 1.4rem;

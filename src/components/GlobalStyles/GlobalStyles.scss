@@ -39,14 +39,17 @@
     opacity: 0; /* Set initial opacity to 0 */
     transition: opacity 0.3s;
   }
-  ::-webkit-scrollbar-thumb:hover {
-    // background: rgba(113, 113, 113, 0.614);
-    opacity: 1;
+  ::-webkit-scrollbar-track{
+    background: transparent;
   }
-  ::-webkit-scrollbar-thumb:active {
-    // background: rgba(155, 155, 155, 0.614);
-    opacity: 0;
-  }
+//   ::-webkit-scrollbar-thumb:hover {
+//     // background: rgba(113, 113, 113, 0.614);
+//     opacity: 0;
+//   }
+//   ::-webkit-scrollbar-thumb:active {
+//     // background: rgba(155, 155, 155, 0.614);
+//     opacity: 1;
+//   }
 *{
     box-sizing: border-box;
     margin: 0;

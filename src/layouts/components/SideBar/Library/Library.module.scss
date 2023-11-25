@@ -135,6 +135,14 @@
     &:hover{
         background-color: var(--background-hover-highlight);
     }
+    .item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .playing-icon{
+            fill: var(--theme-color);
+        }
+    }
     
 }
 .active{
@@ -151,6 +159,10 @@
 }
 .item-title{
     color: var(--white-font-color);
+    
+}
+.active-title{
+    color: var(--theme-color);
 }
 .item-subtitle{
     font-family: 'CircularSpBook';

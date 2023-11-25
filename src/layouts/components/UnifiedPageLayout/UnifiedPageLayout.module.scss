@@ -37,7 +37,8 @@
             font-family: 'CircularSpBook';
             font-weight: 100;
             .author-avatar{
-                width: 26px;
+                width: 2.5rem;
+                height: 2.5rem;
                 border-radius: 50%;
             }
             .other-details{
@@ -58,7 +59,7 @@
     background-color: var(--background-base);
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 1rem;
-    overflow: overlay;
+    overflow-x: hidden;
     .actions{
         display: flex;
         align-items: center;

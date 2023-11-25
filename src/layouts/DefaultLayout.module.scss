@@ -38,13 +38,10 @@
 .main-view {
     position: relative;
     width: calc(100vw - var(--sidebar-spacer) - var(--default-panel-gap));
-    overflow: overlay;
+    overflow-y: auto;
     scroll-behavior: smooth;
-    //
-    
     border-radius: 6px;
     transition: background-color 0.5s ease;
-    
 }
 //
 .icon {

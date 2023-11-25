@@ -30,8 +30,8 @@ function Search() {
                 <h2>Browse all</h2>
                 <div className={cx('grid-ctn')}>
                     {
-                        genres.map((genre)=>(
-                            <Link to={''}>
+                        genres.map((genre, index)=>(
+                            <Link to={''} key={index}>
                             <div className={cx('genre-card')} style={{backgroundColor: genre.themeColor}}>
                                 <h2>{genre.title}</h2>
                             </div>

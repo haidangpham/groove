@@ -12,11 +12,11 @@ export const userPlaylists= [
     {   
         id: 1,
         uniqueId: 'd02bafdb',
-        title: 'My Playlist #1',
+        title: 'LOL',
         description: null,
         authorId: ['9d2c865a'],
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
-        songIds:['047a58df', 'b403e6d1', '9d3a6d85','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85','935189f8','31e5f3c5','9d3a6d85'],
+        songIds:['047a58df', 'b403e6d1', '9cec521d'],
         duration: '',
         type: 'Playlist',
         themeColor: '#60789e'
@@ -47,7 +47,7 @@ export const userPlaylists= [
     },
     {   
         id: 4,
-        uniqueId: 'd02bafdb',
+        uniqueId: '1bbf6471',
         title: 'My Playlist #4',
         description: null,
         authorId: ['9d2c865a'],
@@ -84,7 +84,7 @@ export const userPlaylists= [
     {   
         id: 7,
         uniqueId: '375c047d',
-        title: 'V-Pop Hits',
+        title: 'V-Pop',
         description: null,
         authorId: ['9d2c865a'],
         coverImage: require('../images/playlistCoverImgs/V-Pop-Hits-cover.jpg'),
@@ -115,7 +115,7 @@ export const globalPlaylists=[
         description: 'Những ca khúc nhạc Việt hot nhất 2023.',
         authorId: ['9d2cb826'],
         coverImage: require('../images/playlistCoverImgs/V-Pop-Hits-cover.jpg'),
-        songIds:['8a087349','11d824c6', 'd9093b0c', 'e53a0a9f', 'd81a36b0', '46276a6f'],
+        songIds:['8a087349','11d824c6', 'd9093b0c', 'e53a0a9f', 'd81a36b0', '46276a6f', 'da9997ee', '9500f20e','9406d40d','1bbf6471'],
         duration: '',
         type: 'Playlist',
         themeColor: '#60789e'

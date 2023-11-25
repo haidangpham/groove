@@ -45,8 +45,8 @@ function TrackPage() {
                     })}
                 </div>
                     {
-                        artistData.map((artist)=>{
-                            <Link to={`/artist/${artist.uniqueId}`}>
+                        artistData.map((artist, index)=>(
+                            <Link to={`/artist/${artist.uniqueId}`} key={index}>
                                 <div className={cx('artist')} >
                                 <div className={cx('avatar')}><img alt= "" src={artist.avatar} /></div>
                                 <div>
@@ -55,7 +55,7 @@ function TrackPage() {
                                 </div>
                                 </div> 
                             </Link>
-                        })
+                        ))
                     }
                     
                 
