@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/groove/static/css/main.6589c826.css",
-    "main.js": "/groove/static/js/main.6ba780fa.js",
+    "main.css": "/groove/static/css/main.4be8d0c6.css",
+    "main.js": "/groove/static/js/main.037c0c1e.js",
     "static/js/787.61e465a2.chunk.js": "/groove/static/js/787.61e465a2.chunk.js",
     "static/media/MuonRoiMaSaoCon-SonTungMTP.mp3": "/groove/static/media/MuonRoiMaSaoCon-SonTungMTP.32f348e275a1bc828c46.mp3",
     "static/media/ThucGiac-DaLAB.mp3": "/groove/static/media/ThucGiac-DaLAB.2455cab45f2ae9433d3b.mp3",
@@ -78,12 +78,12 @@
     "static/media/son-tung-mtp_avatar.jpg": "/groove/static/media/son-tung-mtp_avatar.c46b5e9b499c31d0998b.jpg",
     "static/media/justin-bieber_avatar.jpg": "/groove/static/media/justin-bieber_avatar.6216cdae9385d47e6758.jpg",
     "index.html": "/groove/index.html",
-    "main.6589c826.css.map": "/groove/static/css/main.6589c826.css.map",
-    "main.6ba780fa.js.map": "/groove/static/js/main.6ba780fa.js.map",
+    "main.4be8d0c6.css.map": "/groove/static/css/main.4be8d0c6.css.map",
+    "main.037c0c1e.js.map": "/groove/static/js/main.037c0c1e.js.map",
     "787.61e465a2.chunk.js.map": "/groove/static/js/787.61e465a2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6589c826.css",
-    "static/js/main.6ba780fa.js"
+    "static/css/main.4be8d0c6.css",
+    "static/js/main.037c0c1e.js"
   ]
 }
