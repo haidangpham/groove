@@ -26,6 +26,7 @@
     .song-title-ctn{
         display: flex;
         align-items: center;
+        overflow: hidden;
         .song-img{
             width: 40px;
             margin-right: 1rem;

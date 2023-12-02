@@ -32,10 +32,10 @@ function Home() {
     return (
         <div className={cx("wrapper")}>
             <h3 className={cx("greet")}>{greeting}</h3>
-                <RecentPlaylists  playingPlaylist={playingItems.playingPlaylist} />
-                <Shelf title='hits'  cardList={['7435bcd8', '8227f292', 'd839b189', '960fdcff', '458fa796']}/>
-                <Shelf title='hits'  cardList={['7435bcd8', '8227f292', 'd839b189', '960fdcff', '458fa796']}/>
-                <Shelf title='hits'  cardList={['7435bcd8', '8227f292', 'd839b189', '960fdcff', '458fa796']}/>
+            <RecentPlaylists  playingPlaylist={playingItems.playingPlaylist} />
+            <Shelf title='hits'  cardList={['7435bcd8', '8227f292', 'd839b189', '960fdcff', '458fa796']}/>
+            <Shelf title='hits'  cardList={['7435bcd8', '8227f292', 'd839b189', '960fdcff', '458fa796']}/>
+            <Shelf title='hits'  cardList={['7435bcd8', '8227f292', 'd839b189', '960fdcff', '458fa796']}/>
         </div>
     );
 }

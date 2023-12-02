@@ -1,0 +1,82 @@
+
+.m-hidden{
+    display: none;
+}
+.footer{
+    --track-color: black;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: var(--mobile-nav-bar-height);
+    z-index: 10;
+    width: 99vw;
+    background-color: darkcyan;
+    border-radius: 0.8rem;
+    margin: 0 2px;
+    .icon{
+        fill: white;
+        cursor: pointer;
+        width: 1.8rem;
+        height: 1.8rem;
+        &:hover{
+            fill: var(--active-color);
+        }
+    }
+    .active{
+        fill: var(--theme-color);
+    }
+}
+.wrapper{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    .details-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        .track-details{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'CircularSpBook';
+
+
+            .cover-img{
+                width: 5rem;
+                border-radius: 6px;
+            }
+            .track-title{
+                margin: 0.4rem;
+                font-size: 1.4rem;
+                color: white;
+            } 
+        }
+        .m-play-btn{
+            margin-right: 2rem;
+        }
+    }
+    
+    
+    .controller{
+        
+        .playback-bar{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 99%;
+            .slide-container{
+                display: flex;
+                justify-content: flex-end;
+                .playback-progress{
+                    transform: translateY(2px);
+                    width: 98%;
+                    height: 3px;
+                    background: linear-gradient(to right, white 0%, white var(--range-progress), #696969 var(--range-progress), #696969 100%);
+                }
+            }
+        }
+    }
+}

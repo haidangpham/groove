@@ -16,7 +16,7 @@ export const userPlaylists= [
         description: null,
         authorId: ['9d2c865a'],
         coverImage: require('../images/playlistCoverImgs/liked-playlist.png'),
-        songIds:['047a58df', 'b403e6d1', '9cec521d'],
+        songIds:['047a58df', 'b403e6d1', '9cec521d', '0ef236a1'],
         duration: '',
         type: 'Playlist',
         themeColor: '#60789e'

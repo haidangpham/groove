@@ -1,0 +1,33 @@
+.wrapper{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    width: 100vw;
+    height: var(--mobile-nav-bar-height);
+    .nav-pages{
+        display:  flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}
+li{  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
+    width: 100%;
+    cursor: pointer;
+    fill: var(--default-color);
+    transition: var(--default-animation);
+   .icon{
+        width: 3rem;
+        height: 3rem;
+   }
+   font-size: 1.2rem;
+}
+.active{
+    color: var(--active-color);
+    fill: var(--active-color);
+}

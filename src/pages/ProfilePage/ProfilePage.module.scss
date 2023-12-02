@@ -1,5 +1,10 @@
 .wrapper{
+    --cover-image: '/';
+    margin-top: 0;
     .header{
-        // border: solid 1px red;
+        background-image: var(--cover-image);
+        img{
+            width: 100%;
+        }
     }
 }

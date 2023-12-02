@@ -375,5 +375,19 @@ const songs=[
         type: 'Song',
         themeColor: 'rgba(172,157,210,255)'
     },
+    {
+        id: 26,
+        uniqueId: '0ef236a1',
+        title: 'THE BADDEST',
+        coverImage: require('../images/albumCoverImgs/the-baddest_cover.jpg'),
+        authorId: ['5d12f87a', '2a72970f', 'd8ce8383', '0c0b6048', '72477c1f'],
+        albumId: '72a2ef1b',
+        releaseDate: 'Aug 27, 2020',
+        duration: '2:43',
+        playCount: '185,609,563',
+        src: require('./data/TheBaddest-KDAGIDLEBeaMillerWolftyla.mp3'),
+        type: 'Song',
+        themeColor: 'rgba(133,155,194,255)'
+    },
 ]
 export default songs

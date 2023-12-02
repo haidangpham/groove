@@ -1,28 +1,35 @@
 import classNames from "classnames/bind";
 import React, { useContext, useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 
-import { TrackContext } from "../App";
 import styles from "./DefaultLayout.module.scss";
-import songs from "../assets/tracks";
-
+import mobileStyles from './DefaultLayoutMobile.module.scss';
+import MobileNavBar from "./components/MobileNavBar";
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
 import NowPlayingPanel from "./components/NowPlayingPanel/NowPlayingPanel";
-import { useLocation } from "react-router-dom";
+
+import songs from "../assets/tracks";
+import { TrackContext } from "../App";
 import { globalPlaylists } from "../assets/data/playlist";
 
-const cx = classNames.bind(styles);
+
+
+let cx;
 function DefaultLayout({ children, path }) {
+  //Handle Agent
+  const isMobileAgent= /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
+
     const mainViewRef= useRef(null)
-   
     const [isScrolled, setIsScrolled]= useState(false)
-    const scrollFunction = (e) => {
-        
-    if (e.target.scrollTop > 300) {
-        setIsScrolled(true)
-    } else {
-        setIsScrolled(false)
-    }
+    const scrollFunction = (e) => {   
+      if (e.target.scrollTop > 300 || window.scrollY > 300) {
+        console.log('scrolled!');
+          setIsScrolled(true)
+      } else {
+          setIsScrolled(false)
+      }
     };
     //Now Playing
     const{playingItems}= useContext(TrackContext)
@@ -56,7 +63,7 @@ function DefaultLayout({ children, path }) {
     useEffect(() => {
         setTimeout(() => {
           wrapperRef.current.style.setProperty('--background-color', backgroundColor);
-        }, 1000); // Change after 1 second (adjust as needed)
+        }, 1); // Change after 1 second (adjust as needed)
       }, [location]);
     return (
         <div className={cx("wrapper")} ref={wrapperRef}>
@@ -69,15 +76,17 @@ function DefaultLayout({ children, path }) {
                 {/* content */}
                 <div className={cx('main-view')} ref={mainViewRef} onScroll={scrollFunction}>
                   
-                    <TopBar isScrolled={isScrolled}/>
+                    <TopBar isScrolled={isScrolled} isMobileAgent={isMobileAgent}/>
                     <div className={cx('content')}>
                         {children}
                     </div>
                     
-                </div>
-                
+                </div>  
             </div>
             <NowPlayingPanel track={track} />
+            {isMobileAgent?
+              <MobileNavBar path={path}/>
+              :<></>}
         </div>
     );
 }

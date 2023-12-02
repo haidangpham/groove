@@ -1,4 +1,4 @@
-footer{
+.footer{
     position: fixed;
     bottom: 0;
     width: 100vw;
@@ -12,7 +12,6 @@ footer{
         &:hover{
             fill: var(--active-color);
         }
-        
     }
     .active{
         fill: var(--theme-color);
@@ -24,35 +23,41 @@ footer{
     align-items: center;
     width: auto;
     padding: 0 8px;
-    .track-details{
+    .details-wrapper{
         display: flex;
         align-items: center;
-        width: 300px;
         gap: 1.2rem;
-        padding-left: 10px;
-        font-family: 'CircularSpBook';
-        .cover-img{
-            width: 5.6rem;
-            border-radius: 4px;
-        }
-        .track-title{
-            font-size: 1.4rem;
-            line-height: 1.5rem;
-            
-            .title{
-                color: var(--white-font-color);
-                cursor: pointer;  
+        .track-details{
+            display: flex;
+            align-items: center;
+            max-width: 300px;
+            gap: 1.2rem;
+            padding-left: 10px;
+            font-family: 'CircularSpBook';
+            .cover-img{
+                width: 5.6rem;
+                border-radius: 4px;
             }
-            .author{
-                font-size: 1.1rem;
-                cursor: pointer;
-            }
-            &>*:hover{
-                text-decoration: underline;
-                color: var(--white-font-color);
+            .track-title{
+                font-size: 1.4rem;
+                line-height: 1.5rem;
+                
+                .title{
+                    color: var(--white-font-color);
+                    cursor: pointer;  
+                }
+                .author{
+                    font-size: 1.1rem;
+                    cursor: pointer;
+                }
+                &>*:hover{
+                    text-decoration: underline;
+                    color: var(--white-font-color);
+                }
             }
         }
     }
+    
     .controller{
         display: flex;
         flex-direction: column;
@@ -74,10 +79,6 @@ footer{
             .slide-container{
                 display: flex;
                 align-items: center;
-                
-                input[type="range"]{
-                    
-                }
                 .playback-progress{
                     width: 500px;
                     background: linear-gradient(to right, white 0%, white var(--range-progress), #696969 var(--range-progress), #696969 100%);

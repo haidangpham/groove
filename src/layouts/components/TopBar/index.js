@@ -3,15 +3,21 @@ import { useContext, useRef } from "react";
 import {useLocation, useNavigate} from 'react-router-dom';
 
 import styles from './TopBar.module.scss';
-import { currentUser } from "../../../assets/data/users";
-import { BackwardIcon, BellIcon, DownloadIcon, ForwardIcon, SearchIcon } from "../../../components/Icons";
-import { NavContext, TrackContext } from "../../../App";
+import mobileStyles from './TopBarMobile.module.scss';
 import PlayButton from "../PlayButton/PlayButton";
+import { BackwardIcon, BellIcon, DownloadIcon, ForwardIcon, SearchIcon } from "../../../components/Icons";
+
+import { NavContext, TrackContext } from "../../../App";
+import { currentUser } from "../../../assets/data/users";
 import { globalPlaylists } from "../../../assets/data/playlist";
 import albums from "../../../assets/data/albums";
 import songs from "../../../assets/tracks";
-const cx=classNames.bind(styles)
-function TopBar({isScrolled}) {
+
+
+let cx;
+function TopBar({isScrolled, isMobileAgent}) {
+    isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
+
     const topBarRef= useRef(null)
     let location= useLocation().pathname.split('/')[1]
     const showPlayBtn = ['playlist', 'album','track'].includes(location);
@@ -38,7 +44,6 @@ function TopBar({isScrolled}) {
     const playBtnHandle= (itemData)=>{
         itemData.type ==='Playlist'?playlistPlayPause(itemData):songPlayPause(itemData)
     }
-
     return ( 
         <div className={cx('top-bar', `${isScrolled || location==='search'? 'bg-change': ''}`)} ref={topBarRef}>
                         <div className={cx('history-nav')}>
@@ -83,7 +88,7 @@ function TopBar({isScrolled}) {
                             }
                         </div>
                         
-                        <div className={cx('options')}>
+                        {!isMobileAgent?<div className={cx('options')}>
                            
                             <div className={cx('download')}>
                                 <DownloadIcon className={cx('icon')}/>
@@ -93,7 +98,7 @@ function TopBar({isScrolled}) {
                             <button className={cx('profile')}>
                                 <img src={currentUser.avatar} alt="user's name"/>
                             </button> 
-                        </div>
+                        </div>: <></>}
                     </div>
     );
 }

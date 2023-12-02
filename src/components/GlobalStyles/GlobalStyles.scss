@@ -7,7 +7,7 @@
         --font-family: CircularSp;
         --secondary-font-family: sans-serif;
         --background-color: rgb(45, 43, 43);
-        --default-panel-gap: 8px;
+        --default-panel-gap: 0.8rem;
         --default-color: rgb(179, 179, 179);
         --active-color: var(--theme-color);
         --white-font-color: rgb(255, 255, 255);
@@ -29,6 +29,9 @@
 
         //animation
         --default-animation: all 0.25s ease-out;
+
+        //MOBILE
+        --mobile-nav-bar-height: 6rem;
 }
 //scrollbar
 ::-webkit-scrollbar {

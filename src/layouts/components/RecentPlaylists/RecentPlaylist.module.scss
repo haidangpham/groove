@@ -1,8 +1,10 @@
 .recent-playlists{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    // grid-template-columns: repeat(auto-fit, cal);
+    // grid-template-rows: 50px 50px;
     gap: 8px;
-    
+    width: auto;
     .item{
         display: flex;
         cursor: pointer;

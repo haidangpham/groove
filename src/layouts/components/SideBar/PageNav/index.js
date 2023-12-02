@@ -16,7 +16,7 @@ function PageNav({ path }) {
         <div className={cx("wrapper")}>
             <ul className={cx("nav-pages")}>
                 <NavLink to={configs.routes.home}>
-                    <li className={cx({ active: path === "/" })}>
+                    <li className={cx({ active: path === "/" },'item')}>
                         {path === "/" ? (
                             <HomeIconActive className={cx("icon", "active")} />
                         ) : (
@@ -26,7 +26,7 @@ function PageNav({ path }) {
                     </li>
                 </NavLink>
                 <NavLink to={configs.routes.search}>
-                <li className={cx({ active: path === "/search" })}>
+                <li className={cx({ active: path === "/search" },'item')}>
                     {path === "/search" ? (
                         <SearchIconActive className={cx("icon", "active")} />
                     ) : (

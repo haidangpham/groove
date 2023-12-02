@@ -1,5 +1,5 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { createContext, useEffect, useRef, useState } from "react";
+import { Fragment, createContext, useEffect, useRef, useState } from "react";
 
 import publicRoutes from "./routes";
 import DefaultLayout from "./layouts/DefaultLayout";
@@ -111,7 +111,6 @@ function App() {
         // Insert the playing track to keep it playing
         const finalShuffled = queuedTracks === playlist ? [playingTrack, ...shuffled] : shuffled;
         setPlayingTrackIndex(0);
-        // setQueuedTracks(finalShuffled);
         return finalShuffled;
       };
 
@@ -132,21 +131,7 @@ function App() {
             }else{
                 setQueuedTracks(playlistData.songIds)
             }
-            // setQueuedTracks(playlistData.songIds)
-            console.log(playingTrack);
             setIsPlaying(true)
-            //if same track
-        //     if (playingTrack !== playlistData.songIds[0]) {
-        //     globalAudioRef.current.play();
-        //     setIsPlaying(true);
-        //   } else {
-        //     //if different track
-        //     globalAudioRef.current.currentTime = 0;
-        //     if (!isPlaying) {
-        //       globalAudioRef.current.play();
-        //       setIsPlaying(true);
-        //     }
-        //   }
         } else {
           globalAudioRef.current[isPlaying ? 'pause' : 'play']();
           setIsPlaying((prevIsPlaying) => !prevIsPlaying);

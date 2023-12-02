@@ -6,6 +6,7 @@ import Playlist from "../pages/PlaylistPage/PlaylistPage";
 import ProfilePage from "../pages/ProfilePage";
 import TrackPage from "../pages/TrackPage";
 import AlbumPage from "../pages/AlbumPage";
+import LibraryPage from "../pages/LibraryPage/LibraryPage";
 
 const publicRoutes=[
     {path: configs.routes.home, component: Home},
@@ -17,6 +18,7 @@ const publicRoutes=[
 
     {path: configs.routes.artist, component: ProfilePage},
     {path: configs.routes.profile, component: ProfilePage},
+    {path: configs.routes.library, component: LibraryPage},
 ]
     
 

@@ -1,18 +1,20 @@
 .wrapper{
     padding: 8px 12px;
 }
-li{  
+.item{  
     display: flex;
+    flex-direction: row;
     align-items: center;
     padding: 8px 12px;
     width: 100%;
     cursor: pointer;
-   fill: var(--default-color);
+    fill: var(--default-color);
+    transition: var(--default-animation);
+    font-size: 1.6rem;
    &:hover{
         fill: var(--active-color);
         color: var(--active-color);
    }
-   transition: var(--default-animation);
 }
 .active{
     color: var(--active-color);
@@ -27,4 +29,6 @@ li{
 .icon{
     color: inherit;
     margin-right: 20px;
+    width: 2.4rem;
+    height: 2.4rem;
 }

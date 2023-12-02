@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
-import styles from "./NowPlayingPanel.module.scss";
 import { TrackContext } from "../../../App";
 import { artists } from "../../../assets/data/users";
 import {
@@ -9,6 +9,8 @@ import {
     HeartIcon,
     LyricsIcon,
     NextIcon,
+    PauseIcon,
+    PlayIcon,
     PreviousIcon,
     QueueIcon,
     RepeatIcon,
@@ -18,9 +20,11 @@ import {
     VolumeMuteIcon,
 } from "../../../components/Icons";
 import PlayButton from "../PlayButton/PlayButton";
-import { Link } from "react-router-dom";
 
-const cx = classNames.bind(styles);
+import styles from "./NowPlayingPanel.module.scss";
+import mobileStyles from './NowPlaingPanelMobile.module.scss';
+
+let cx
 function NowPlayingPanel({ track }) {
     const {
         globalAudioRef,
@@ -149,32 +153,49 @@ function NowPlayingPanel({ track }) {
         }
         setIsPlaying(true)
     }
-    //Shuffle
-  
+      //Handle Agent
+    const isMobileAgent= /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
+
     return (
-        <footer>
+        <div className={cx('footer')}>
             <div className={cx("wrapper")}>
-                <div className={cx("track-details")}>
-                    <img
-                        src={track.coverImage}
-                        className={cx("cover-img")}
-                        alt=""
-                    />
-                    <div className={cx("track-title")}>
-                        <Link to={`/track/${track.uniqueId}`}><p className={cx("title")}>{track.title}</p></Link>
-                        {artistData.map((artist, index)=>{
-                            if(index>=1){
-                                return(<Link to={`/artist/${artist.uniqueId}`} key={index}>, <span className={cx("author")}>{artist.name}</span></Link>)
-                            }else{
-                                return(<Link to={`/artist/${artist.uniqueId}`} key={index}><span className={cx("author")} key={index}>{artist.name}</span></Link>)
+                <div className={cx("details-wrapper")}>
+                    <div className={cx("track-details")}>
+                        <img
+                            src={track.coverImage}
+                            className={cx("cover-img")}
+                            alt=""
+                        />
+                        <div className={cx("track-title")}>
+                            <Link to={`/track/${track.uniqueId}`}><p className={cx("title")}>{track.title}</p></Link>
+                            {artistData.map((artist, index)=>{
+                                if(index>=1){
+                                    return(<Link to={`/artist/${artist.uniqueId}`} key={index}>, <span className={cx("author")}>{artist.name}</span></Link>)
+                                }else{
+                                    return(<Link to={`/artist/${artist.uniqueId}`} key={index}><span className={cx("author")} key={index}>{artist.name}</span></Link>)
+                                }
                             }
-                        }
-                        )}
+                            )}
+                        </div>
                     </div>
-                    <HeartIcon className={cx("icon")} />
+                    <HeartIcon className={cx("icon","m-hidden")} />
+                    {isMobileAgent?
+                        <div className={cx('m-play-btn')}>
+                            <button onClick={togglePlayPause} >{isPlaying?<PauseIcon className={cx('icon')} />: <PlayIcon className={cx('icon')}/> }</button>
+                        </div>
+                        :<></>
+                    }
                 </div>
+                {/* {
+                    isMobileAgent?
+                    <div>
+                        <button onClick={togglePlayPause} className={cx('m-play-btn')}>{isPlaying?<PauseIcon className={cx('icon')} />: <PlayIcon className={cx('icon')}/> }</button>
+                    </div>:
+                    <></>
+                } */}
                 <div className={cx("controller")}>
-                    <div className={cx("player-control")}>
+                    <div className={cx("player-control","m-hidden")}>
                         <button onClick={toggleIsShuffled}><ShuffleIcon className={cx("icon", `${isShuffled?'active': ''}`)} /></button>
                         <button onClick={()=>handleSkipping(false)}><PreviousIcon className={cx("icon")} /></button>
                         {isPlaying ? (
@@ -191,7 +212,7 @@ function NowPlayingPanel({ track }) {
                         <RepeatIcon className={cx("icon")} />
                     </div>
                     <div className={cx("playback-bar")}>
-                        <span className={cx("playback-position")}>
+                        <span className={cx("playback-position", "m-hidden")}>
                             {formatTime(timeProgress)}
                         </span>
                         <div className={cx("slide-container")}>
@@ -206,12 +227,12 @@ function NowPlayingPanel({ track }) {
                             />
                         </div>
 
-                        <span className={cx("playback-duration")}>
+                        <span className={cx("playback-duration", "m-hidden")}>
                             {formatTime(duration)}
                         </span>
                     </div>
                 </div>
-                <div className={cx("options")}>
+                <div className={cx("options", "m-hidden")}>
                     <LyricsIcon className={cx("icon")} />
                     <QueueIcon className={cx("icon")} />
                     <div className={cx("volume-control")}>
@@ -242,7 +263,7 @@ function NowPlayingPanel({ track }) {
                     <FullScreenIcon className={cx("icon")} />
                 </div>
             </div>
-        </footer>
+        </div>
     );
 }
 
