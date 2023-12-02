@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/groove/static/css/main.88800582.css",
-    "main.js": "/groove/static/js/main.03eda443.js",
+    "main.css": "/groove/static/css/main.3edbd70d.css",
+    "main.js": "/groove/static/js/main.a0258a67.js",
     "static/js/787.61e465a2.chunk.js": "/groove/static/js/787.61e465a2.chunk.js",
     "static/media/MuonRoiMaSaoCon-SonTungMTP.mp3": "/groove/static/media/MuonRoiMaSaoCon-SonTungMTP.32f348e275a1bc828c46.mp3",
     "static/media/ThucGiac-DaLAB.mp3": "/groove/static/media/ThucGiac-DaLAB.2455cab45f2ae9433d3b.mp3",
@@ -31,10 +31,12 @@
     "static/media/TungQuen-WrenEvansitsnk.mp3": "/groove/static/media/TungQuen-WrenEvansitsnk.bb2eec789f30c0c7f401.mp3",
     "static/media/NguMotMinh-HIEUTHUHAINegavKewtiie.mp3": "/groove/static/media/NguMotMinh-HIEUTHUHAINegavKewtiie.3a8d22cf6d38f92c726c.mp3",
     "static/media/10000Hours-DanShayJustinBieber.mp3": "/groove/static/media/10000Hours-DanShayJustinBieber.c6416bd7f0cf9f637df6.mp3",
+    "static/media/TheBaddest-KDAGIDLEBeaMillerWolftyla.mp3": "/groove/static/media/TheBaddest-KDAGIDLEBeaMillerWolftyla.b4e7987a3f3da6253040.mp3",
     "static/media/charlie-puth_cover.jpg": "/groove/static/media/charlie-puth_cover.01065decc1471a004950.jpg",
     "static/media/anh-la-ngoai-le-cua-em-cover.jpg": "/groove/static/media/anh-la-ngoai-le-cua-em-cover.1752eb6987835d774280.jpg",
     "static/media/chill-hits-cover.jpg": "/groove/static/media/chill-hits-cover.5b5f4ea8e75093659d3d.jpg",
     "static/media/party-hits-cover.jpg": "/groove/static/media/party-hits-cover.b44086e37de7670128e9.jpg",
+    "static/media/the-baddest_cover.jpg": "/groove/static/media/the-baddest_cover.ed17cde9d75976c9fa51.jpg",
     "static/media/t-r-i_avatar.jpg": "/groove/static/media/t-r-i_avatar.e6b884fd088ef33d9aa6.jpg",
     "static/media/CircularSp-Bold.woff2": "/groove/static/media/CircularSp-Bold.8f862e2aafc540b1cca0.woff2",
     "static/media/hit-rewind-cover.jpg": "/groove/static/media/hit-rewind-cover.65c345990ade2baed1fe.jpg",
@@ -95,12 +97,12 @@
     "static/media/justin-bieber_avatar.jpg": "/groove/static/media/justin-bieber_avatar.6216cdae9385d47e6758.jpg",
     "static/media/jaira-burns_avatar.jpg": "/groove/static/media/jaira-burns_avatar.779c823814251d792827.jpg",
     "index.html": "/groove/index.html",
-    "main.88800582.css.map": "/groove/static/css/main.88800582.css.map",
-    "main.03eda443.js.map": "/groove/static/js/main.03eda443.js.map",
+    "main.3edbd70d.css.map": "/groove/static/css/main.3edbd70d.css.map",
+    "main.a0258a67.js.map": "/groove/static/js/main.a0258a67.js.map",
     "787.61e465a2.chunk.js.map": "/groove/static/js/787.61e465a2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.88800582.css",
-    "static/js/main.03eda443.js"
+    "static/css/main.3edbd70d.css",
+    "static/js/main.a0258a67.js"
   ]
 }
