@@ -1,14 +1,17 @@
 import classNames from "classnames/bind";
+import { useLocation } from "react-router-dom";
+import { useContext, useEffect } from "react";
 
 import styles from "./HomePage.module.scss";
-import Shelf from "../../layouts/components/Shelf/Shelf";
-
+import mobileStyles from "./HomePageMobile.module.scss";
 import RecentPlaylists from "../../layouts/components/RecentPlaylists";
-import { useContext, useEffect, useRef } from "react";
-import { NavContext, TrackContext } from "../../App";
-import { useLocation } from "react-router-dom";
-const cx = classNames.bind(styles);
+import { MobileContext, NavContext, TrackContext } from "../../App";
+
+import Shelf from "../../layouts/components/Shelf/Shelf";
+let cx;
 function Home() {
+    const {isMobileAgent}= useContext(MobileContext)
+    isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
     const { playingItems } = useContext(TrackContext);
     const {updateNavList}= useContext(NavContext)
     const location= useLocation()

@@ -1,46 +1,37 @@
 .wrapper{
     color: var(--white-font-color);
-    &> *{
-        padding: 0 24px 24px 24px;
-    }
+    overflow: auto;
 
 }
 .icon{
     fill: var(--default-color);
 }
 .cover-image{
-    width: 23.2rem;
+    width: 20rem;
 }
 .header{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 20px;
-    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .playlist-infos{
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        .type{
-            font-family: 'CircularSpBook';
-        }
         .title{
             display: block;
             font-family: 'CircularSp';
-            font-size: clamp(3.5rem, 4vw, 9.5rem);
+            font-size: clamp(2rem, 4vw, 5.5rem);
         }
-        
         .playlist-details{
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
             font-family: 'CircularSpBook';
-            font-weight: 100;
             .descript{
                 color: var(--default-color);
+                font-size: 1.4rem;
             }
             .author-avatar{
-                width: 2.5rem;
-                height: 2.5rem;
+                width: 1.6rem;
+                height: 1.6rem;
                 border-radius: 50%;
                 margin-right: 0.4rem;
             }
@@ -48,11 +39,6 @@
                 display: flex;
                 align-items: center;
                 font-size: 1.4rem;
-                .author-name, .album-title{
-                    &:hover{
-                        text-decoration: underline;
-                    }
-                }
             }
         }
         
@@ -61,14 +47,17 @@
 .content-wrapper{
     min-height: 100vh;
     background-color: var(--background-base);
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: transparent;
     border-radius: 1rem;
-    overflow-x: hidden;
     .actions{
         display: flex;
         align-items: center;
         gap: 18px;
         padding: 1.6rem;
+        .play-btn{
+            position: sticky;
+            top: 20px;
+        }
         .play-btn:hover{
             transform: scale(1.05);
             
@@ -77,9 +66,6 @@
             width: 3.2rem;
             height: 3.2rem;
             cursor: pointer;
-            &:hover{
-                fill: var(--active-color);
-            }
         }
         
         >*{

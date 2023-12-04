@@ -10,7 +10,7 @@ import TopBar from "./components/TopBar";
 import NowPlayingPanel from "./components/NowPlayingPanel/NowPlayingPanel";
 
 import songs from "../assets/tracks";
-import { TrackContext } from "../App";
+import { MobileContext, TrackContext } from "../App";
 import { globalPlaylists } from "../assets/data/playlist";
 
 
@@ -18,19 +18,21 @@ import { globalPlaylists } from "../assets/data/playlist";
 let cx;
 function DefaultLayout({ children, path }) {
   //Handle Agent
-  const isMobileAgent= /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  const {isMobileAgent}= useContext(MobileContext)
   isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
 
     const mainViewRef= useRef(null)
     const [isScrolled, setIsScrolled]= useState(false)
-    const scrollFunction = (e) => {   
+    const handleScroll = (e) => {   
       if (e.target.scrollTop > 300 || window.scrollY > 300) {
         console.log('scrolled!');
-          setIsScrolled(true)
+        setIsScrolled(true)
       } else {
           setIsScrolled(false)
       }
     };
+   
+
     //Now Playing
     const{playingItems}= useContext(TrackContext)
     const track= songs.find((song)=> song.uniqueId ===playingItems.playingTrack)
@@ -74,13 +76,11 @@ function DefaultLayout({ children, path }) {
                     <SideBar path={path}/>
                 </div>
                 {/* content */}
-                <div className={cx('main-view')} ref={mainViewRef} onScroll={scrollFunction}>
-                  
-                    <TopBar isScrolled={isScrolled} isMobileAgent={isMobileAgent}/>
+                <div className={cx('main-view')} ref={mainViewRef} onScroll={handleScroll}>
+                    <TopBar isScrolled={isScrolled}/>
                     <div className={cx('content')}>
                         {children}
                     </div>
-                    
                 </div>  
             </div>
             <NowPlayingPanel track={track} />

@@ -1,14 +1,14 @@
 .wrapper{
     display: grid;
     gap: 2rem;
-    padding: 2rem;
+    padding: 0.6rem;
     width: 100%;
-    font-size: 20px;
+    font-size: 2rem;
     color: var(--white-font-color);
     overflow: hidden;
     
 }
 .greet{
-    font-size: 40px;
-    user-select: none;
+    font-size: 3rem;
+    margin-left: 1rem;
 }

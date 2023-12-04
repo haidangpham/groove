@@ -2,19 +2,22 @@ import classNames from "classnames/bind";
 import { Link, useLocation } from "react-router-dom";
 import { useContext, useEffect } from "react";
 
-import { artists, currentUser } from "../../../assets/data/users";
-
 import styles from "./UnifiedPageLayout.module.scss";
-import { NavContext, TrackContext } from "../../../App";
-import PlayButton from "../PlayButton/PlayButton";
-import { HeartIcon, MoreOptionsIcon } from "../../../components/Icons";
+import mobileStyles from "./UnifiedPageLayoutMobile.module.scss"
+import { MobileContext, NavContext, TrackContext } from "../../../App";
+import { artists, currentUser } from "../../../assets/data/users";
 import albums from "../../../assets/data/albums";
 
+import PlayButton from "../PlayButton/PlayButton";
+import { HeartIcon, MoreOptionsIcon } from "../../../components/Icons";
 
-const cx = classNames.bind(styles);
+
+let cx;
 function UnifiedPageLayout({children, itemData}) {
+    const {isMobileAgent}= useContext(MobileContext)
+    isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
+
     const { playingItems, isPlaying, playlistPlayPause, songPlayPause } =useContext(TrackContext);
-    
     const {updateNavList}= useContext(NavContext)
     const location= useLocation()
     useEffect(()=>{
@@ -38,15 +41,21 @@ function UnifiedPageLayout({children, itemData}) {
                     className={cx("cover-image")}
                 />
                 <div className={cx("playlist-infos")}>
-                    <span className={cx("type")}>{itemData.type}</span>
+                    {!isMobileAgent?
+                        <div>
+                            <span className={cx("type")}>{itemData.type}</span>
+
+                        </div>
+                        :<></>}
                     <span className={cx('title')}>{itemData.title}</span>
                     <div className={cx("playlist-details")}>
+                        <span className={cx('descript')}>{itemData.description}</span>
+                        <span className={cx("other-details")}>
                         <img
                             className={cx("author-avatar")}
                             src={artists.find((artist)=> artist.uniqueId === itemData.authorId[0]).avatar}
                             alt=""
                         />
-                        <span className={cx("other-details")}>
                             <Link className={cx('author-name')} to={`/artist/${itemData.authorId[0]}`}>
                                 {artists.find((artist)=> artist.uniqueId === itemData.authorId[0]).name}
                             </Link>

@@ -26,9 +26,8 @@
             align-items: center;
             width: 32px;
             height: 32px;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.3);
             border-radius: 50%;
-            cursor: pointer;
             &.inactive {
                 opacity: 0.6;
                 user-select: none;

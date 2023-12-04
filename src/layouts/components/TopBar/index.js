@@ -4,18 +4,19 @@ import {useLocation, useNavigate} from 'react-router-dom';
 
 import styles from './TopBar.module.scss';
 import mobileStyles from './TopBarMobile.module.scss';
-import PlayButton from "../PlayButton/PlayButton";
-import { BackwardIcon, BellIcon, DownloadIcon, ForwardIcon, SearchIcon } from "../../../components/Icons";
-
-import { NavContext, TrackContext } from "../../../App";
+import { MobileContext, NavContext, TrackContext } from "../../../App";
 import { currentUser } from "../../../assets/data/users";
 import { globalPlaylists } from "../../../assets/data/playlist";
 import albums from "../../../assets/data/albums";
 import songs from "../../../assets/tracks";
 
+import PlayButton from "../PlayButton/PlayButton";
+import { BackwardIcon, BellIcon, DownloadIcon, ForwardIcon, SearchIcon } from "../../../components/Icons";
+
 
 let cx;
-function TopBar({isScrolled, isMobileAgent}) {
+function TopBar({isScrolled}) {
+    const {isMobileAgent}= useContext(MobileContext)
     isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
 
     const topBarRef= useRef(null)
@@ -44,16 +45,18 @@ function TopBar({isScrolled, isMobileAgent}) {
     const playBtnHandle= (itemData)=>{
         itemData.type ==='Playlist'?playlistPlayPause(itemData):songPlayPause(itemData)
     }
+    console.log(isScrolled);
     return ( 
         <div className={cx('top-bar', `${isScrolled || location==='search'? 'bg-change': ''}`)} ref={topBarRef}>
                         <div className={cx('history-nav')}>
                             <button className={cx('backward', 'action',`${navList.length<=1?'inactive':'active'}`)} onClick={()=>handleNav(-1)}>
                                 <BackwardIcon className={cx('icon')}/>
                             </button>
-                            <button className={cx('forward',`${navList.length>=prevNavList.length?'inactive':'active'}`)} onClick={()=>handleNav(1)}>
+                            {/* disable on mobile */}
+                            {!isMobileAgent?<button className={cx('forward',`${navList.length>=prevNavList.length?'inactive':'active'}`)} onClick={()=>handleNav(1)}>
                                 <ForwardIcon className={cx('icon')}/>
-                            </button>
-                            {showPlayBtn?<div className={cx('backup-play-btn',`${isScrolled? 'show': ''}`)}>
+                            </button>:<></>}
+                            {showPlayBtn && !isMobileAgent?<div className={cx('backup-play-btn',`${isScrolled? 'show': ''}`)}>
                                 {(playingItems.playingPlaylist === itemData.uniqueId || playingItems.playingTrack === itemData.uniqueId) &&
                                     isPlaying ? (
                                         <PlayButton

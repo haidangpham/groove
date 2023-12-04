@@ -1,14 +1,20 @@
 import classNames from "classnames/bind";
-import styles from "./Card.module.scss";
-import { globalPlaylists } from "../../../../assets/data/playlist";
 import { Link } from "react-router-dom";
-import PlayButton from "../../PlayButton/PlayButton";
 import { useContext } from "react";
-import { TrackContext } from "../../../../App";
+
+import styles from "./Card.module.scss";
+import mobileStyles from "./CardMobile.module.scss";
+import { globalPlaylists } from "../../../../assets/data/playlist";
+import { MobileContext, TrackContext } from "../../../../App";
+
+import PlayButton from "../../PlayButton/PlayButton";
 import { XIcon } from "../../../../components/Icons";
 
-const cx = classNames.bind(styles);
+let cx;
 function Card({ playlistId,index, removeable, updateCardList}) {
+    const {isMobileAgent}= useContext(MobileContext)
+    isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
+
     const playlistData = globalPlaylists.find(
         (item) => playlistId === item.uniqueId
     );
@@ -37,12 +43,12 @@ function Card({ playlistId,index, removeable, updateCardList}) {
                         alt=""
                         loading="lazy"
                     />
-                    <PlayButton
+                    {!isMobileAgent?<PlayButton
                         onClick={(e) => handlePlayPause(e, playlistData)}
                         className={cx("play-btn", `${playingItems.playingPlaylist === playlistId && isPlaying? 'playing': 'pause'}`)}
                         medium
                         pause={playingItems.playingPlaylist === playlistId && isPlaying}
-                    />
+                    />:<></>}
                 </div>
                 <div className={cx("card-info")}>
                     <p className={cx("title")}>{playlistData.title}</p>

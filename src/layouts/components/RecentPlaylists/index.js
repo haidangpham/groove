@@ -1,15 +1,19 @@
 import classNames from "classnames/bind";
 
 import styles from "./RecentPlaylist.module.scss";
+import mobileStyles from "./ReccentPlaylistsMobile.module.scss";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { TrackContext } from "../../../App";
+import { MobileContext, TrackContext } from "../../../App";
 import { recentPlaylists, userPlaylists } from "../../../assets/data/playlist";
 import PlayButton from "../PlayButton/PlayButton";
 import { PlayingIcon } from "../../../components/Icons";
-const cx = classNames.bind(styles);
+
+let cx;
 
 function RecentPlaylists({ playingPlaylist }) {
+    const {isMobileAgent}= useContext(MobileContext)
+    isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
     const { isPlaying, playlistPlayPause } = useContext(TrackContext);
     return (
         <div className={cx("recent-playlists")}>

@@ -17,7 +17,7 @@ export const artists=[
         id: 1,
         uniqueId: '9d2cb826',
         name: 'Groove',
-        avatar: require('../images/avatars/avatar.jpg'),
+        avatar: require('../images/avatars/groove_avatar.jpg'),
         coverImg: require('../images/artistCoverImgs/charlie-puth_cover.jpg'), 
         mthlyCount: '76,247,649',
         verified: true,

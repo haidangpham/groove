@@ -51,6 +51,7 @@ const songs=[
         playCount: '1,583,524,512',
         src: require('./data/AnhLaNgoaiLeCuaEm-PhuongLy.mp3'),
         type: 'Song',
+        themeColor: 'rgba(185,11,33,255)'
     },
     {
         id: 5,

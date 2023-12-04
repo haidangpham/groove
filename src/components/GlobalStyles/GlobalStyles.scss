@@ -32,6 +32,7 @@
 
         //MOBILE
         --mobile-nav-bar-height: 6rem;
+        --mobile-background-color: #0c0c0c;
 }
 //scrollbar
 ::-webkit-scrollbar {
@@ -59,6 +60,7 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
     :visited{
         color: unset;
     }
@@ -67,6 +69,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 body {
     font-family: var(--font-family);

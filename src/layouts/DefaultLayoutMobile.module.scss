@@ -2,19 +2,19 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100vw;
-    --background-color: var(--panel-background-color);
+    --background-color: var(--mobile-background-color);
     .panel-wrapper {
         position: relative;
         height: calc(100vh - var(--mobile-nav-bar-height));
         overflow-y: auto;
         padding-bottom: var(--now-playing-panel-height);
-        background-color: var(--panel-background-color);
+        background-color: var(--mobile-background-color);
         .sidebar {
             display: none;
         }
     }
     .main-view {
+        width: 100vw;
         position: relative;
         overflow-y: auto;
         scroll-behavior: smooth;
@@ -24,8 +24,8 @@
             padding-top: var(--top-bar-height);
             background: linear-gradient(
                     0deg,
-                    var(--panel-background-color) 70%,
-                    var(--panel-background-color) 70%,
+                    var(--mobile-background-color) 70%,
+                    var(--mobile-background-color) 70%,
                     var(--background-color) 115%,
                     var(--background-color) 100%
                 ),

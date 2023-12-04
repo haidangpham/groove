@@ -1,15 +1,14 @@
-import classNames from "classnames/bind";
+
 import { useParams } from "react-router-dom";
 
 import songs from "../../assets/tracks";
 import { globalPlaylists } from "../../assets/data/playlist";
 
-import styles from "./PlaylistPage.module.scss";
+
 
 import Playlist from "../../layouts/components/Playlist";
 import UnifiedPageLayout from "../../layouts/components/UnifiedPageLayout";
 
-const cx = classNames.bind(styles);
 function PlaylistPage() {
     const {playlistId} = useParams();
     const playlistData = globalPlaylists.find(

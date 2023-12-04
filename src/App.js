@@ -8,6 +8,7 @@ import songs from "./assets/tracks";
 
 export const TrackContext = createContext();
 export const NavContext= createContext();
+export const MobileContext= createContext();
 function App() {
     const globalAudioRef= useRef()
     const [isPlaying, setIsPlaying]= useState(false)
@@ -19,6 +20,8 @@ function App() {
     const [navList, setNavList]= useState([]);
     const [prevNavList, setPrevNavList]= useState([])
     const [isShuffled, setIsShuffled]= useState(false);
+    //check user agent
+    const isMobileAgent= /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 
     //NAV
     useEffect(()=>{
@@ -227,11 +230,11 @@ function App() {
                                         <NavContext.Provider
                                             value={{navList,prevNavList, updateNavList, modifyNavList}}
                                         >
-                                            <DefaultLayout
-                                            path={route.path}
-                                        >
-                                            <Page />
-                                        </DefaultLayout>
+                                            <MobileContext.Provider value={{isMobileAgent}}>
+                                                <DefaultLayout path={route.path}>
+                                                    <Page />
+                                                </DefaultLayout>
+                                            </MobileContext.Provider>
                                         </NavContext.Provider>
                                         
                                     </TrackContext.Provider>

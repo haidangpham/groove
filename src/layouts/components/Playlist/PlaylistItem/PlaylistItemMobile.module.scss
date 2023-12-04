@@ -1,0 +1,36 @@
+.song{
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 5px;
+    & > *{align-self: center;}
+    transition: var(--default-animation);
+    font-family: 'CircularSpBook';
+    overflow: hidden;
+    .icon{
+        fill: var(--default-color);
+    } 
+    .song-img{
+        width: 4.6rem;
+        
+    }
+    .song-title{
+        font-size: 1.4rem;
+        color: var(--white-font-color);
+        white-space: nowrap;
+        
+    }
+    .song-artist{
+        font-size: 1.2rem;
+    }
+}
+// .active{
+//     .song-artist, .song-album{
+//         color: var(--white-font-color);
+//     }
+// }
+.active-p{
+    fill: var(--theme-color);
+    color: var(--theme-color) !important;
+}

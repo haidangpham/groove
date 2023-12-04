@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { TrackContext } from "../../../App";
+import { MobileContext, TrackContext } from "../../../App";
 import { artists } from "../../../assets/data/users";
 import {
     FullScreenIcon,
@@ -154,7 +154,7 @@ function NowPlayingPanel({ track }) {
         setIsPlaying(true)
     }
       //Handle Agent
-    const isMobileAgent= /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    const {isMobileAgent}= useContext(MobileContext)
     isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
 
     return (
