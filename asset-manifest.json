@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/groove/static/css/main.1d1d667a.css",
-    "main.js": "/groove/static/js/main.ace3e09e.js",
+    "main.css": "/groove/static/css/main.7638d820.css",
+    "main.js": "/groove/static/js/main.8273c7da.js",
     "static/js/787.61e465a2.chunk.js": "/groove/static/js/787.61e465a2.chunk.js",
     "static/media/MuonRoiMaSaoCon-SonTungMTP.mp3": "/groove/static/media/MuonRoiMaSaoCon-SonTungMTP.32f348e275a1bc828c46.mp3",
     "static/media/ThucGiac-DaLAB.mp3": "/groove/static/media/ThucGiac-DaLAB.2455cab45f2ae9433d3b.mp3",
@@ -98,12 +98,12 @@
     "static/media/justin-bieber_avatar.jpg": "/groove/static/media/justin-bieber_avatar.6216cdae9385d47e6758.jpg",
     "static/media/jaira-burns_avatar.jpg": "/groove/static/media/jaira-burns_avatar.779c823814251d792827.jpg",
     "index.html": "/groove/index.html",
-    "main.1d1d667a.css.map": "/groove/static/css/main.1d1d667a.css.map",
-    "main.ace3e09e.js.map": "/groove/static/js/main.ace3e09e.js.map",
+    "main.7638d820.css.map": "/groove/static/css/main.7638d820.css.map",
+    "main.8273c7da.js.map": "/groove/static/js/main.8273c7da.js.map",
     "787.61e465a2.chunk.js.map": "/groove/static/js/787.61e465a2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d1d667a.css",
-    "static/js/main.ace3e09e.js"
+    "static/css/main.7638d820.css",
+    "static/js/main.8273c7da.js"
   ]
 }
