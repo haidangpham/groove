@@ -117,6 +117,7 @@ const songs=[
         playCount: '349,259,395',
         src: require('./data/CheatingOnYou-CharliePuth.mp3'),
         type: 'Song',
+        themeColor: 'rgba(117,117,117,255)'
     },
     {
         id: 9,

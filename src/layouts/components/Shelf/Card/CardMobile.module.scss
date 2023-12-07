@@ -5,11 +5,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 18rem;
-    max-height: 28rem;
+    width: 15rem;
+    max-height: 20.6rem;
     padding: 0;
     background-color: transparent;
-    // border-radius: 8px;
     transition: var(--default-animation);
     .x-btn{
         position: absolute;
@@ -35,15 +34,13 @@
         justify-content: center;
         position: relative;
         .cover-img{
-            // width: var(--cover-img-width);
             width: 100%;
             border-radius: 5px;
         }
     }
     .card-info{
         overflow: hidden;
-        line-height: 1.4rem;
-        // margin: 1rem 1.6rem;    
+        line-height: 1.4rem; 
         .title{
             font-size: 1.6rem;
             margin-top: 0.8rem;
@@ -53,6 +50,7 @@
             font-size: 1.3rem;
             font-family: 'CircularSpBook';
             color: var(--default-color);
+            
         }
     }
 }

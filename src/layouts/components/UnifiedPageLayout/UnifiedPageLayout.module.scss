@@ -7,6 +7,12 @@
 }
 .icon{
     fill: var(--default-color);
+    width: 3.2rem;
+            height: 3.2rem;
+            cursor: pointer;
+            &:hover{
+                fill: var(--active-color);
+            }
 }
 .cover-image{
     width: 23.2rem;
@@ -72,16 +78,7 @@
         .play-btn:hover{
             transform: scale(1.05);
             
-        }
-        .more-icon,.heart-icon{
-            width: 3.2rem;
-            height: 3.2rem;
-            cursor: pointer;
-            &:hover{
-                fill: var(--active-color);
-            }
-        }
-        
+        }      
         >*{
             transition: var(--default-animation);
         }

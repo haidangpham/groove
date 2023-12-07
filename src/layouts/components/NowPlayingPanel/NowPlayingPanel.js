@@ -1,8 +1,8 @@
 import classNames from "classnames/bind";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
-import { MobileContext, TrackContext } from "../../../App";
+import { MobileContext, NavContext, TrackContext } from "../../../App";
 import { artists } from "../../../assets/data/users";
 import {
     FullScreenIcon,
@@ -153,116 +153,115 @@ function NowPlayingPanel({ track }) {
         }
         setIsPlaying(true)
     }
-      //Handle Agent
+    //Handle Agent
     const {isMobileAgent}= useContext(MobileContext)
     isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
-
+    //
+    const location= useLocation()
+    const isLyricsPage= location.pathname ==='/lyrics'
+    const {navList}= useContext(NavContext)
+    //
     return (
         <div className={cx('footer')}>
-            <div className={cx("wrapper")}>
-                <div className={cx("details-wrapper")}>
-                    <div className={cx("track-details")}>
-                        <img
-                            src={track.coverImage}
-                            className={cx("cover-img")}
-                            alt=""
-                        />
-                        <div className={cx("track-title")}>
-                            <Link to={`/track/${track.uniqueId}`}><p className={cx("title")}>{track.title}</p></Link>
-                            {artistData.map((artist, index)=>{
-                                if(index>=1){
-                                    return(<Link to={`/artist/${artist.uniqueId}`} key={index}>, <span className={cx("author")}>{artist.name}</span></Link>)
-                                }else{
-                                    return(<Link to={`/artist/${artist.uniqueId}`} key={index}><span className={cx("author")} key={index}>{artist.name}</span></Link>)
-                                }
-                            }
-                            )}
-                        </div>
-                    </div>
-                    <HeartIcon className={cx("icon","m-hidden")} />
-                    {isMobileAgent?
-                        <div className={cx('m-play-btn')}>
-                            <button onClick={togglePlayPause} >{isPlaying?<PauseIcon className={cx('icon')} />: <PlayIcon className={cx('icon')}/> }</button>
-                        </div>
-                        :<></>
-                    }
-                </div>
-                {/* {
-                    isMobileAgent?
-                    <div>
-                        <button onClick={togglePlayPause} className={cx('m-play-btn')}>{isPlaying?<PauseIcon className={cx('icon')} />: <PlayIcon className={cx('icon')}/> }</button>
-                    </div>:
-                    <></>
-                } */}
-                <div className={cx("controller")}>
-                    <div className={cx("player-control","m-hidden")}>
-                        <button onClick={toggleIsShuffled}><ShuffleIcon className={cx("icon", `${isShuffled?'active': ''}`)} /></button>
-                        <button onClick={()=>handleSkipping(false)}><PreviousIcon className={cx("icon")} /></button>
-                        {isPlaying ? (
-                            <PlayButton
-                                onClick={togglePlayPause}
-                                pause
-                                small
-                                white
+            
+                <div className={cx("wrapper")}>
+                    <div className={cx("details-wrapper")}>
+                        <div className={cx("track-details")}>
+                            <img
+                                src={track.coverImage}
+                                className={cx("cover-img")}
+                                alt=""
                             />
-                        ) : (
-                            <PlayButton onClick={togglePlayPause} small white />
-                        )}
-                        <button  onClick={()=>handleSkipping(true)}><NextIcon className={cx("icon")} /></button>
-                        <RepeatIcon className={cx("icon")} />
+                            <div className={cx("track-title")}>
+                                <Link to={`/track/${track.uniqueId}`}><p className={cx("title")}>{track.title}</p></Link>
+                                {artistData.map((artist, index)=>{
+                                    if(index>=1){
+                                        return(<Link to={`/artist/${artist.uniqueId}`} key={index}>, <span className={cx("author")}>{artist.name}</span></Link>)
+                                    }else{
+                                        return(<Link to={`/artist/${artist.uniqueId}`} key={index}><span className={cx("author")} key={index}>{artist.name}</span></Link>)
+                                    }
+                                }
+                                )}
+                            </div>
+                        </div>
+                        <HeartIcon className={cx("icon","m-hidden")} />
+                        {isMobileAgent?
+                            <div className={cx('m-play-btn')}>
+                                <button onClick={togglePlayPause} >{isPlaying?<PauseIcon className={cx('icon')} />: <PlayIcon className={cx('icon')}/> }</button>
+                            </div>
+                            :<></>
+                        }
                     </div>
-                    <div className={cx("playback-bar")}>
-                        <span className={cx("playback-position", "m-hidden")}>
-                            {formatTime(timeProgress)}
-                        </span>
-                        <div className={cx("slide-container")}>
+                    <div className={cx("controller")}>
+                        <div className={cx("player-control","m-hidden")}>
+                            <button onClick={toggleIsShuffled}><ShuffleIcon className={cx(`${isShuffled?'i-active': 'icon'}`)} /></button>
+                            <button onClick={()=>handleSkipping(false)}><PreviousIcon className={cx("icon")} /></button>
+                            {isPlaying ? (
+                                <PlayButton
+                                    onClick={togglePlayPause}
+                                    pause
+                                    small
+                                    white
+                                />
+                            ) : (
+                                <PlayButton onClick={togglePlayPause} small white />
+                            )}
+                            <button  onClick={()=>handleSkipping(true)}><NextIcon className={cx("icon")} /></button>
+                            <RepeatIcon className={cx("icon")} />
+                        </div>
+                        <div className={cx("playback-bar")}>
+                            <span className={cx("playback-position", "m-hidden")}>
+                                {formatTime(timeProgress)}
+                            </span>
+                            <div className={cx("slide-container")}>
+                                <input
+                                    ref={progressBarRef}
+                                    onChange={handleProgressChange}
+                                    onMouseUp={handleProgressChange}
+                                    className={cx("playback-progress")}
+                                    type="range"
+                                    min="0"
+                                    defaultValue="0"
+                                />
+                            </div>
+
+                            <span className={cx("playback-duration", "m-hidden")}>
+                                {formatTime(duration)}
+                            </span>
+                        </div>
+                    </div>
+                    <div className={cx("options", "m-hidden")}>
+                        <Link to={`${!isLyricsPage?'/lyrics': navList[navList.length - 1]}`}><LyricsIcon className={cx(`${isLyricsPage?'i-active': 'icon'}`)} /></Link>
+                        <QueueIcon className={cx("icon")} />
+                        <div className={cx("volume-control")}>
+                            <button onClick={handleMute}>
+                                {globalAudioRef.current?.volume === 0 && (
+                                    <VolumeMuteIcon className={cx("icon")} />
+                                )}
+                                {globalAudioRef.current?.volume > 0 &&
+                                    globalAudioRef.current?.volume < 0.5 && (
+                                        <VolumeLowIcon className={cx("icon")} />
+                                    )}
+                                {globalAudioRef.current?.volume >= 0.5 && (
+                                    <VolumeHighIcon className={cx("icon")} />
+                                )}
+                            </button>
                             <input
-                                ref={progressBarRef}
-                                onChange={handleProgressChange}
-                                onMouseUp={handleProgressChange}
-                                className={cx("playback-progress")}
+                                ref={volumeRef}
+                                onChange={handleVolumeChange}
+                                onClick={handleVolumeChange}
+                                className={cx("volume-bar")}
                                 type="range"
                                 min="0"
-                                defaultValue="0"
+                                max="1"
+                                step="0.01"
+                                defaultValue="0.5"
                             />
                         </div>
-
-                        <span className={cx("playback-duration", "m-hidden")}>
-                            {formatTime(duration)}
-                        </span>
+                        <FullScreenIcon className={cx("icon")} />
                     </div>
                 </div>
-                <div className={cx("options", "m-hidden")}>
-                    <LyricsIcon className={cx("icon")} />
-                    <QueueIcon className={cx("icon")} />
-                    <div className={cx("volume-control")}>
-                        <button onClick={handleMute}>
-                            {globalAudioRef.current?.volume === 0 && (
-                                <VolumeMuteIcon className={cx("icon")} />
-                            )}
-                            {globalAudioRef.current?.volume > 0 &&
-                                globalAudioRef.current?.volume < 0.5 && (
-                                    <VolumeLowIcon className={cx("icon")} />
-                                )}
-                            {globalAudioRef.current?.volume >= 0.5 && (
-                                <VolumeHighIcon className={cx("icon")} />
-                            )}
-                        </button>
-                        <input
-                            ref={volumeRef}
-                            onChange={handleVolumeChange}
-                            onClick={handleVolumeChange}
-                            className={cx("volume-bar")}
-                            type="range"
-                            min="0"
-                            max="1"
-                            step="0.01"
-                            defaultValue="0.5"
-                        />
-                    </div>
-                    <FullScreenIcon className={cx("icon")} />
-                </div>
-            </div>
+            
         </div>
     );
 }

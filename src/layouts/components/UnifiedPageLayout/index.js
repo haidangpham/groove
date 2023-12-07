@@ -9,7 +9,7 @@ import { artists, currentUser } from "../../../assets/data/users";
 import albums from "../../../assets/data/albums";
 
 import PlayButton from "../PlayButton/PlayButton";
-import { HeartIcon, MoreOptionsIcon } from "../../../components/Icons";
+import { HeartIcon, MoreOptionsIcon, ShuffleIcon } from "../../../components/Icons";
 
 
 let cx;
@@ -17,7 +17,7 @@ function UnifiedPageLayout({children, itemData}) {
     const {isMobileAgent}= useContext(MobileContext)
     isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
 
-    const { playingItems, isPlaying, playlistPlayPause, songPlayPause } =useContext(TrackContext);
+    const { playingItems, isPlaying, isShuffled, playlistPlayPause, songPlayPause, toggleIsShuffled } =useContext(TrackContext);
     const {updateNavList}= useContext(NavContext)
     const location= useLocation()
     useEffect(()=>{
@@ -88,8 +88,8 @@ function UnifiedPageLayout({children, itemData}) {
                             large
                         />
                     )}
-                    {itemData.authorId !== currentUser.uniqueId? <HeartIcon className={cx('icon', 'heart-icon')}/>: <></>}
-                    <MoreOptionsIcon className={cx("more-icon", "icon")} />
+                    {itemData.authorId !== currentUser.uniqueId && !isMobileAgent? <HeartIcon className={cx('icon')}/>: <button onClick={toggleIsShuffled}><ShuffleIcon className={cx('icon',`${isShuffled?'active':''}`)}/></button>}
+                    <MoreOptionsIcon className={cx("icon")} />
                 </div>
                 {children}
             </div>

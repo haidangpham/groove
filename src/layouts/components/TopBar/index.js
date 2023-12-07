@@ -45,7 +45,6 @@ function TopBar({isScrolled}) {
     const playBtnHandle= (itemData)=>{
         itemData.type ==='Playlist'?playlistPlayPause(itemData):songPlayPause(itemData)
     }
-    console.log(isScrolled);
     return ( 
         <div className={cx('top-bar', `${isScrolled || location==='search'? 'bg-change': ''}`)} ref={topBarRef}>
                         <div className={cx('history-nav')}>

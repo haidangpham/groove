@@ -3,16 +3,16 @@
     display: none;
 }
 .footer{
-    --track-color: black;
+    --background-color: var(--track-color);
     position: fixed;
     left: 0;
     right: 0;
     bottom: var(--mobile-nav-bar-height);
-    z-index: 10;
-    width: 99vw;
-    background-color: darkcyan;
-    border-radius: 0.8rem;
     margin: 0 2px;
+    width: 99vw;
+    border-radius: 0.8rem;
+    background-color: var(--background-color);
+    z-index: 10;
     .icon{
         fill: white;
         cursor: pointer;
@@ -31,45 +31,76 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px;
+    padding: 0.8rem;
     .details-wrapper{
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        
         .track-details{
             display: flex;
-            justify-content: center;
             align-items: center;
             font-family: 'CircularSpBook';
-
-
             .cover-img{
                 width: 5rem;
                 border-radius: 6px;
+                box-shadow: 4px 0px 8px 0px var(--background-color);
+                z-index: 10;
             }
             .track-title{
-                margin: 0.4rem;
+                position: relative;
+                padding: 0.4rem;
+                width: 65%;
                 font-size: 1.4rem;
-                color: white;
+                white-space: nowrap;
+                overflow: hidden;
+                .title{
+                    color: white;
+                    white-space: nowrap;
+                    animation: scrollText 10s linear infinite;
+                }
+                .author{
+                    font-size: 1.2rem;
+                    color: var(--default-color);
+                }
+                @keyframes scrollText {
+                    0% {
+                        transform: translateX(0%);
+                    }
+                    20%{
+                        transform: translateX(0%);
+                    }
+                    50%{
+                        transform: translateX(-30%);
+                    }
+                    70%{
+                        transform: translateX(-30%);
+                    }
+                    100% {
+                        transform: translateX(0%);
+                    }
+                }
             } 
         }
         .m-play-btn{
-            margin-right: 2rem;
+            position: absolute;
+            right: 2rem;
         }
     }
     
     
     .controller{
-        
         .playback-bar{
             position: absolute;
             bottom: 0;
             left: 0;
             width: 99%;
+            pointer-events: none;
             .slide-container{
                 display: flex;
                 justify-content: flex-end;
+                user-select: none;
                 .playback-progress{
                     transform: translateY(2px);
                     width: 98%;

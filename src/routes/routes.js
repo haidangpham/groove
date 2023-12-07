@@ -7,5 +7,6 @@ const routes={
     artist: '/artist/:artistId',
     profile: '/user/:userId',
     library: '/library',
+    lyrics: '/lyrics',
 }
 export default routes

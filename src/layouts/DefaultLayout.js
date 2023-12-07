@@ -21,21 +21,21 @@ function DefaultLayout({ children, path }) {
   const {isMobileAgent}= useContext(MobileContext)
   isMobileAgent?cx = classNames.bind(mobileStyles):cx = classNames.bind(styles)
 
-    const mainViewRef= useRef(null)
-    const [isScrolled, setIsScrolled]= useState(false)
-    const handleScroll = (e) => {   
-      if (e.target.scrollTop > 300 || window.scrollY > 300) {
-        console.log('scrolled!');
-        setIsScrolled(true)
-      } else {
-          setIsScrolled(false)
-      }
-    };
+  //Handle Scroll event
+  const mainViewRef= useRef(null)
+  const [isScrolled, setIsScrolled]= useState(false)
+  const handleScroll = (e) => {   
+    if (e.target.scrollTop > 300 || window.scrollY > 300) {
+      console.log('scrolled!');
+      setIsScrolled(true)
+    } else {
+        setIsScrolled(false)
+    }
+  };
    
-
-    //Now Playing
-    const{playingItems}= useContext(TrackContext)
-    const track= songs.find((song)=> song.uniqueId ===playingItems.playingTrack)
+  //Now Playing
+  const{playingItems}= useContext(TrackContext)
+  const track= songs.find((song)=> song.uniqueId ===playingItems.playingTrack)
     
     //Background color
     const wrapperRef= useRef()
@@ -53,6 +53,9 @@ function DefaultLayout({ children, path }) {
           break;
         case 'search':
           backgroundColor = '#121212';
+          break;
+          case 'lyrics':
+          backgroundColor = 'transparent';
           break;
         default:
           //Default color

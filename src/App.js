@@ -142,34 +142,48 @@ function App() {
 
     };
 
-    const songPlayPause = (songData, index, playlistId, songIds) => {
-        //function for Single Tracks
-        if(!songIds){
-            
-            setQueuedTracks([songData.uniqueId])
-            setPlayingTrackIndex(0)
-            setPlayingPlaylist(null)
+    const songPlayPause = (songData, index, playlistId, songIds, isMobileAgent= false) => {
+        // Check if it's a single track or part of a playlist
+        if (!songIds) {
+            // Single track scenario
+            setQueuedTracks([songData.uniqueId]);
+            setPlayingTrackIndex(0);
+            setPlayingPlaylist(null);
+    
+            // Toggle play/pause and update state
             globalAudioRef.current[isPlaying ? "pause" : "play"]();
-            setIsPlaying(!isPlaying)
+            setIsPlaying(!isPlaying);
+            return;
+        }
+        //!!!!FIX!!!!!!
+        if(isShuffled){
+            setQueuedTracks(songIds)
+            setPlayingTrack(songData.uniqueId)
+            shuffle(queuedTracks)
             return
         }
-        //function for Tracks in Playlists
+        // Playlist track scenario
         const isSamePlaylist = playlistId === playingItems.playingPlaylist;
         const isSameTrack = songData.uniqueId === playingItems.playingTrack;
+    
         if (isSamePlaylist) {
-            if (isSameTrack) {
+            // Same playlist
+            if (isSameTrack && !isMobileAgent) {
+                // Toggle play/pause if it's the same track
                 setIsPlaying((prevIsPlaying) => !prevIsPlaying);
             } else {
+                // Update track index and play new track
                 updatePlayingTrackIndex(index);
                 updatePlayingTrack(queuedTracks[playingTrackIndex]);
-                globalAudioRef.current.play()
-            }          
+                setIsPlaying(true);
+            }
         } else {
+            // Different playlist
             updatePlayingPlaylist(playlistId);
             updateQueuedTracks(songIds);
             updatePlayingTrackIndex(index);
             updatePlayingTrack(queuedTracks[playingTrackIndex]);
-            globalAudioRef.current.play();
+            setIsPlaying(true);
         }
     };
 

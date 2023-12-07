@@ -1,66 +1,276 @@
-export const lyrics= [
+export const lyrics = [
     {
-        songId: '0de36070',
-        lyrics: ["It started with a kiss on your mama's couch",
-                "2012 was nothing serious",
-                "I know we caught the feels, it got really real",
-                "Too good to be true, I guess I thought you was, yeah",
-                "Why did I run away, run away, run away?",
-                "Oh, your love was everything, everything, everything",
-                "I know it's gettin' late, gettin' late, gettin' late",
-                "But can I still be on my way, on my way? Yeah",
-                "I know I said goodbye and baby, you said it too",
-                "But when I touch her I feel like I'm cheating on you",
-                "I thought that I'd be better when I found someone new",
-                "But when I touch her I feel like I'm cheating on you",
-                "Baby now, oh-oh-oh",
-                "Oh, oh, oh, oh",
-                "Cheating on you",
-                "Baby now, oh-oh-oh",
-                "But when I touch her I feel like I'm cheating on you",
-                "Thought I could get you back any time of day",
-                "Shouldn't have been so cocky",
-                "Shouldn't have did you wrong (woah, oh)",
-                "And now I miss you bad, really, really bad",
-                "Guess you don't know what you got until it's gone",
-                "Why did I run away, run away, run away? (Run away)",
-                "Oh, your love was everything, everything, everything (everything)",
-                "I know it's getting late, getting late, getting late (getting late)",
-                "But can I still be on my way, on my way? Yeah",
-                "I know I said goodbye and baby, you said it too (you said it too, baby)",
-                "But when I touch her I feel like I'm cheating on you (I'm cheating on you)",
-                "I thought that I'd be better when I found someone new (ooh)",
-                "But when I touch her I feel like I'm cheating on you",
-                "Baby now, oh-oh-oh",
-                "Oh, oh, oh, oh",
-                "Cheating on you",
-                "Baby now, oh-oh-oh",
-                "But when I touch her I feel like I'm cheating on you",
-                "Baby, no",
-                "There ain't no lips like your lips",
-                "And nobody else feels like this",
-                "There's no moving on, I'll admit",
-                "If you go away",
-                "Yeah, ah",
-                "I know I said goodbye and baby, you said it too",
-                "But when I touch her I feel like I'm cheating on you (I'm cheating on you)",
-                "I thought that I'd be better when I found someone new (found someone new)",
-                "But when I touch her I feel like I'm cheating on you (believe it, baby)",
-                "Baby now, oh-oh-oh",
-                "Oh, oh, oh, oh",
-                "Cheating on you",
-                "Baby now, oh-oh-oh",
-                "But when I touch her I feel like I'm cheating on you",
-                "You said goodbye",
-                "And you said goodbye"]
+        songId: "0de36070",
+        lyrics: [
+            {
+                line: "It started with a kiss on your mama's couch",
+                startTime: 7,
+                endTime: 10,
+            },
+            {
+                line: "2012 was nothing serious",
+                startTime: 10,
+                endTime: 15,
+            },
+            {
+                line: "I know we caught the feels, it got really real",
+                startTime: 15,
+                endTime: 18.5,
+            },
+            {
+                line: "Too good to be true, I guess I thought you was, yeah",
+                startTime: 18.5,
+                endTime: 23,
+            },
+            {
+                line: "Why did I run away, run away, run away?",
+                startTime: 23,
+                endTime: 26.5,
+            },
+            {
+                line: "Oh, your love was everything, everything, everything",
+                startTime: 26.5,
+                endTime: 30.5,
+            },
+            {
+                line: "I know it's gettin' late, gettin' late, gettin' late",
+                startTime: 30.5,
+                endTime: 34,
+            },
+            {
+                line: "But can I still be on my way, on my way? Yeah",
+                startTime: 34,
+                endTime: 38.5,
+            },
+            {
+                line: "I know I said goodbye and baby, you said it too",
+                startTime: 38.5,
+                endTime: 43,
+            },
+            {
+                line: "But when I touch her I feel like I'm cheating on you",
+                startTime: 43,
+                endTime: 47,
+            },
+            {
+                line: "I thought that I'd be better when I found someone new",
+                startTime: 47,
+                endTime: 50.5,
+            },
+            {
+                line: "But when I touch her I feel like I'm cheating on you",
+                startTime: 50.5,
+                endTime: 54.5,
+            },
+            {
+                line: "Baby now, oh-oh-oh",
+                startTime: 54.5,
+                endTime: 58.5,
+            },
+            {
+                line: "Oh, oh, oh, oh",
+                startTime: 58.5,
+                endTime: 60,
+            },
+            {
+                line: "Cheating on you",
+                startTime: 60,
+                endTime: 62.5,
+            },
+            {
+                line: "Baby now, oh-oh-oh",
+                startTime: 62.5,
+                endTime: 66.5,
+            },
+            {
+                line: "But when I touch her I feel like I'm cheating on you",
+                startTime: 66.5,
+                endTime: 70,
+            },
+            {
+                line: "Thought I could get you back any time of day",
+                startTime: 70,
+                endTime: 73,
+            },
+            {
+                line: "Shouldn't have been so cocky",
+                startTime: 73,
+                endTime: 74.5,
+            },
+            {
+                line: "Shouldn't have did you wrong (woah, oh)",
+                startTime: 74.5,
+                endTime: 78,
+            },
+            {
+                line: "And now I miss you bad, really, really bad",
+                startTime: 78,
+                endTime: 81.5,
+            },
+            {
+                line: "Guess you don't know what you got until it's gone",
+                startTime: 81.5,
+                endTime: 85.5,
+            },
+            {
+                line: "Why did I run away, run away, run away? (Run away)",
+                startTime: 85.5,
+                endTime: 89,
+            },
+            {
+                line: "Oh, your love was everything, everything, everything (everything)",
+                startTime: 89,
+                endTime: 93,
+            },
+            {
+                line: "I know it's getting late, getting late, getting late (getting late)",
+                startTime: 93,
+                endTime: 96.5,
+            },
+            {
+                line: "But can I still be on my way, on my way? Yeah",
+                startTime: 96.5,
+                endTime: 101,
+            },
+            {
+                line: "I know I said goodbye and baby, you said it too (you said it too, baby)",
+                startTime: 101,
+                endTime: 105,
+            },
+            {
+                line: "But when I touch her I feel like I'm cheating on you (I'm cheating on you)",
+                startTime: 105,
+                endTime: 109.5,
+            },
+            {
+                line: "I thought that I'd be better when I found someone new (ooh)",
+                startTime: 109.5,
+                endTime: 113,
+            },
+            {
+                line: "But when I touch her I feel like I'm cheating on you",
+                startTime: 113,
+                endTime: 116.5,
+            },
+            {
+                line: "Baby now, oh-oh-oh",
+                startTime: 116.5,
+                endTime: 121,
+            },
+            {
+                line: "Oh, oh, oh, oh",
+                startTime: 121,
+                endTime: 123,
+            },
+            {
+                line: "Cheating on you",
+                startTime: 123,
+                endTime: 125,
+            },
+            {
+                line: "Baby now, oh-oh-oh",
+                startTime: 125,
+                endTime: 129,
+            },
+            {
+                line: "But when I touch her I feel like I'm cheating on you",
+                startTime: 129,
+                endTime: 132,
+            },
+            {
+                line: "Baby, no",
+                startTime: 132,
+                endTime: 133.8,
+            },
+            {
+                line: "There ain't no lips like your lips",
+                startTime: 133.8,
+                endTime: 137.5,
+            },
+            {
+                line: "And nobody else feels like this",
+                startTime: 137.5,
+                endTime: 141,
+            },
+            {
+                line: "There's no moving on, I'll admit",
+                startTime: 141,
+                endTime: 145,
+            },
+            {
+                line: "If you go away",
+                startTime: 145,
+                endTime: 154,
+            },
+            {
+                line: "Yeah, ah",
+                startTime: 154,
+                endTime: 156,
+            },
+            {
+                line: "I know I said goodbye and baby, you said it too",
+                startTime: 156,
+                endTime: 160,
+            },
+            {
+                line: "But when I touch her I feel like I'm cheating on you (I'm cheating on you)",
+                startTime: 160,
+                endTime: 164,
+            },
+            {
+                line: "I thought that I'd be better when I found someone new (found someone new)",
+                startTime: 164,
+                endTime: 168,
+            },
+            {
+                line: "But when I touch her I feel like I'm cheating on you (believe it, baby)",
+                startTime: 168,
+                endTime: 171.5,
+            },
+            {
+                line: "Baby now, oh-oh-oh",
+                startTime: 171.5,
+                endTime: 176,
+            },
+            {
+                line: "Oh, oh, oh, oh",
+                startTime: 176,
+                endTime: 178,
+            },
+            {
+                line: "Cheating on you",
+                startTime: 178,
+                endTime: 179.5,
+            },
+            {
+                line: "Baby now, oh-oh-oh",
+                startTime: 179.5,
+                endTime: 183.5,
+            },
+            {
+                line: "But when I touch her I feel like I'm cheating on you",
+                startTime: 183.5,
+                endTime: 187.3,
+            },
+            {
+                line: "You said goodbye",
+                startTime: 187.3,
+                endTime: 190,
+            },
+            {
+                line: "And you said goodbye",
+                startTime: 190,
+                endTime: 195,
+            },
+        ],
     },
     {
-        songId: '935189f8',
-        lyrics:[
+        songId: "935189f8",
+        lyrics: [
             "She played the fiddle in an Irish band",
             "But she fell in love with an English man",
             "Kissed her on the neck and then I took her by the hand",
-            "Said, \"Baby, I just want to dance\"",
+            'Said, "Baby, I just want to dance"',
             "I met her on Grafton street right outside of the bar",
             "She shared a cigarette with me while her brother played the guitar",
             "She asked me what does it mean, the Gaelic ink on your arm?",
@@ -72,7 +282,7 @@ export const lyrics= [
             "You know, she played the fiddle in an Irish band",
             "But she fell in love with an English man",
             "Kissed her on the neck and then I took her by the hand",
-            "Said, \"Baby, I just want to dance\"",
+            'Said, "Baby, I just want to dance"',
             "With my pretty little Galway Girl",
             "You're my pretty little Galway Girl",
             "You know she beat me at darts and then she beat me at pool",
@@ -86,7 +296,7 @@ export const lyrics= [
             "You know, she played the fiddle in an Irish band",
             "But she fell in love with an English man",
             "Kissed her on the neck and then I took her by the hand",
-            "Said, \"Baby, I just want to dance\"",
+            'Said, "Baby, I just want to dance"',
             "My pretty little Galway Girl",
             "My, my, my, my, my, my, my Galway Girl",
             "My, my, my, my, my, my, my Galway Girl",
@@ -102,16 +312,16 @@ export const lyrics= [
             "She played the fiddle in an Irish band",
             "But she fell in love with an English man",
             "Kissed her on the neck and then I took her by the hand",
-            "Said, \"Baby, I just want to dance\"",
+            'Said, "Baby, I just want to dance"',
             "My pretty little Galway Girl",
             "My, my, my, my, my, my, my Galway Girl",
             "My, my, my, my, my, my, my Galway Girl",
-            "My, my, my, my, my, my, my Galway Girl"
-        ]
+            "My, my, my, my, my, my, my Galway Girl",
+        ],
     },
     {
-        songId: '31e5f3c5',
-        lyrics:[
+        songId: "31e5f3c5",
+        lyrics: [
             "Yeah, ah",
             "Tell me what you really like",
             "Baby I can take my time",
@@ -166,22 +376,22 @@ export const lyrics= [
             "I feel it coming (I feel it comin')",
             "I feel it coming, babe (I know what you say right now)",
             "I feel it coming (na, na, na, na, na, na I feel it comin')",
-           " I feel it coming, babe (I feel it comin', baby)",
+            " I feel it coming, babe (I feel it comin', baby)",
             "I feel it coming (I feel it comin')",
             "I feel it coming, babe",
             "I feel it coming, babe",
             "I feel it coming, babe",
             "I feel it coming, babe",
-            "I feel it coming, babe"
-        ]
+            "I feel it coming, babe",
+        ],
     },
     {
-        songId: '9d3a6d85',
-        lyrics:[
+        songId: "9d3a6d85",
+        lyrics: [
             "Lately, I've been, I've been losing sleep",
             "Dreaming about the things that we could be",
             "But baby, I've been, I've been praying hard",
-            "Said, \"No more counting dollars, we'll be counting stars\"",
+            'Said, "No more counting dollars, we\'ll be counting stars"',
             "Yeah, we'll be counting stars",
             "I see this life, like a swinging vine",
             "Swing my heart across the line",
@@ -200,7 +410,7 @@ export const lyrics= [
             "Lately, I've been, I've been losing sleep",
             "Dreaming about the things that we could be",
             "But baby, I've been, I've been praying hard",
-            "Said, \"No more counting dollars, we'll be counting stars\"",
+            'Said, "No more counting dollars, we\'ll be counting stars"',
             "Lately, I've been, I've been losing sleep",
             "Dreaming about the things we could be",
             "But baby, I've been, I've been praying hard",
@@ -221,7 +431,7 @@ export const lyrics= [
             "Lately, I've been, I've been losing sleep",
             "Dreaming about the things that we could be",
             "But baby, I've been, I've been praying hard",
-            "Said, \"No more counting dollars, we'll be counting stars\"",
+            'Said, "No more counting dollars, we\'ll be counting stars"',
             "Lately, I've been, I've been losing sleep",
             "Dreaming about the things that we could be",
             "But baby, I've been, I've been praying hard",
@@ -238,7 +448,7 @@ export const lyrics= [
             "Lately, I've been, I've been losing sleep",
             "Dreaming about the things that we could be",
             "But baby, I've been, I've been praying hard",
-            "Said, \"No more counting dollars, we'll be counting stars\"",
+            'Said, "No more counting dollars, we\'ll be counting stars"',
             "Lately, I've been, I've been losing sleep",
             "Dreaming about the things that we could be",
             "But baby, I've been, I've been praying hard",
@@ -250,16 +460,16 @@ export const lyrics= [
             "Take that money, watch it burn",
             "Sink in the river the lessons I've learned",
             "Take that money, watch it burn",
-            "Sink in the river the lessons I've learned"
-        ]
+            "Sink in the river the lessons I've learned",
+        ],
     },
     {
-        songId: '8a087349',
-        lyrics:[
+        songId: "8a087349",
+        lyrics: [
             "Và em đã biết sẽ không thể yêu ai khác ngoài anh ra",
             "Lòng em đã hết chỗ không để dành ai khác ngoài anh ra",
             "Cửa vào tim em, chìa khoá đây, chỉ muốn duy nhất anh cầm",
-           " Nhiều hơn cả thichthich, giờ em yeuyeu ah",
+            " Nhiều hơn cả thichthich, giờ em yeuyeu ah",
             "Ồ hoá ra em thật nhỏ bé",
             "Gọn vào trong chiếc ôm của anh ngỡ như là đang ôm cả thế giới",
             "Ồ hoá ra em chẳng mạnh mẽ (đến vậy)",
@@ -272,7 +482,7 @@ export const lyrics= [
             "Và em đã biết sẽ không thể yêu ai khác ngoài anh ra",
             "Lòng em đã hết chỗ không để dành ai khác ngoài anh ra",
             "Cửa vào tim em, chìa khoá đây, chỉ muốn duy nhất anh cầm",
-           " Nhiều hơn cả thichthich, giờ em yeuyeu ah",
+            " Nhiều hơn cả thichthich, giờ em yeuyeu ah",
             "Vì baby anh là",
             "Lalalala lalalala là ngoại lệ của em",
             "Lalalala, vì anh là ngoại lệ của em",
@@ -293,18 +503,18 @@ export const lyrics= [
             "Và em đã biết sẽ không thể yêu ai khác ngoài anh ra",
             "Lòng em đã hết chỗ không để dành ai khác ngoài anh ra",
             "Cửa vào tim em, chìa khoá đây, chỉ muốn duy nhất anh cầm",
-           " Nhiều hơn cả thichthich, giờ em yeuyeu ah",
+            " Nhiều hơn cả thichthich, giờ em yeuyeu ah",
             "Vì baby anh là",
             "Lalalala lalalala là ngoại lệ của em",
             "Lalalala, vì anh là ngoại lệ của em",
             "Lalalala lalalala là ngoại lệ của em",
             "Lalalala, vì anh là ngoại lệ của em",
-            "Vì anh là ngoại lệ của em"
-        ]
+            "Vì anh là ngoại lệ của em",
+        ],
     },
     {
-        songId: 'f36e5afa',
-        lyrics:[
+        songId: "f36e5afa",
+        lyrics: [
             "Rót đến tràn ly",
             "Anh chìm đắm trong men cay đắng nồng",
             "Khóc chát làn mi",
@@ -362,12 +572,12 @@ export const lyrics= [
             "Mình tự rời bỏ nhau",
             "Say đến điên dại",
             "Say hết kiếp người",
-            "Say cho cháy đời"
-        ]
+            "Say cho cháy đời",
+        ],
     },
     {
-        songId: '60aba40d',
-        lyrics:[
+        songId: "60aba40d",
+        lyrics: [
             "Lala lala lala",
             "Hình bóng ai đó nhẹ nhàng vụt qua nơi đây",
             "Quyến rũ ngây ngất loạn nhịp làm tim mê say",
@@ -450,12 +660,12 @@ export const lyrics= [
             "Hãy trao cho anh hãy trao cho anh",
             "Hãy trao cho anh cho anh cho anh (lala)",
             "Hãy trao cho anh hãy trao cho anh",
-            "Hãy trao cho anh thứ anh đang mong chờ"
-        ]
+            "Hãy trao cho anh thứ anh đang mong chờ",
+        ],
     },
     {
-        songId: '832801c2',
-        lyrics:[
+        songId: "832801c2",
+        lyrics: [
             "Có tiếc nuối không em ơi?",
             "Người đang thấy vui hay buồn về những ký ức ta đi chơi?",
             "Người đâu biết anh đi lạc vào một tình yêu mà không rõ đâu là đúng sai",
@@ -489,12 +699,12 @@ export const lyrics= [
             "Đừng làm anh phải hao gầy, nghĩ đến em từng giây, yeah, eh",
             "Nhìn em, anh bối rối",
             "Anh thua rồi, tim em lắm lối",
-            "Anh chưa từng dám nói anh yêu một ai thế này"
-        ]
+            "Anh chưa từng dám nói anh yêu một ai thế này",
+        ],
     },
     {
-        songId: '01adb04c',
-        lyrics:[
+        songId: "01adb04c",
+        lyrics: [
             "Vì anh không muốn phải ngủ một mình đêm nay đâu",
             "Hãy ở lại với anh thêm một ngày nữa thôi",
             "Bên ngoài và uống say hay là ta nằm đây cả đêm",
@@ -534,12 +744,12 @@ export const lyrics= [
             "Bởi vì anh không muốn phải ngủ một mình đêm nay",
             "Chỉ là anh không muốn phải ngủ một mình đêm nay",
             "Yeah yeah",
-            "Baby nói cho anh nghe baby nói cho anh nghe những điều là"
-        ]
+            "Baby nói cho anh nghe baby nói cho anh nghe những điều là",
+        ],
     },
     {
-        songId: 'f2d46ad6',
-        lyrics:[
+        songId: "f2d46ad6",
+        lyrics: [
             "I fell by the wayside, like everyone else",
             "I hate you, I hate you, I hate you",
             "But I was just kidding myself",
@@ -586,12 +796,12 @@ export const lyrics= [
             "Was there something I could've said",
             "To make it all stop hurting?",
             "It kills me how your mind can make you feel so worthless",
-            "So, before you go"
-        ]
+            "So, before you go",
+        ],
     },
     {
-        songId: 'd69983d6',
-        lyrics:[
+        songId: "d69983d6",
+        lyrics: [
             "I was distracted",
             "And in traffic",
             "I didn't feel it",
@@ -669,16 +879,16 @@ export const lyrics= [
             "You'd come over, right?",
             "You'd come over, you'd come over, you'd come over, right?",
             "If the world was ending",
-            "You'd come over, right?"
-        ]
+            "You'd come over, right?",
+        ],
     },
     {
-        songId: '6840748d',
-        lyrics:[
+        songId: "6840748d",
+        lyrics: [
             "Mmm, mmm, mmm",
             "Flowers in hand, waiting for me",
             "Every word in poetry",
-            "Won't call me by name, only \"baby\"",
+            'Won\'t call me by name, only "baby"',
             "The more that you give, the less that I need",
             "Everyone says I look happy",
             "When it feels right",
@@ -696,7 +906,7 @@ export const lyrics= [
             "Before you let go, just one more time",
             "Take off your clothes, pretend that it's fine",
             "A little more hurt won't kill you",
-            "Tonight, mother says, \"You don't look happy\"",
+            'Tonight, mother says, "You don\'t look happy"',
             "Close your eyes",
             "I know that you're wrong for me",
             "Gonna wish we never met on the day I leave",
@@ -713,19 +923,19 @@ export const lyrics= [
             "It's not your fault I ruin everything (everything)",
             "And it's not your fault I can't be what you need",
             "Baby, angels like you can't fly down hell with me, oh",
-            "Angels like you can't fly down hell with me "
-        ]
+            "Angels like you can't fly down hell with me ",
+        ],
     },
     {
-        songId: '217d3406',
-        lyrics:[
+        songId: "217d3406",
+        lyrics: [
             "Georgia",
             "Wrap me up in all your—, I want ya",
             "In my arms, oh, let me hold ya",
             "I'll never let you go again like I did",
             "Oh, I used to say",
-            "\"I would never fall in love again until I found her\"",
-            "I said, \"I would never fall unless it's you I fall into\"",
+            '"I would never fall in love again until I found her"',
+            'I said, "I would never fall unless it\'s you I fall into"',
             "I was lost within the darkness, but then I found her",
             "I found you",
             "Heaven",
@@ -736,18 +946,18 @@ export const lyrics= [
             "Juliet to your Romeo",
             "How I heard you say",
             "I would never fall in love again until I found her",
-            "I said, \"I would never fall unless it's you I fall into\"",
+            'I said, "I would never fall unless it\'s you I fall into"',
             "I was lost within thе darkness, but then I found her",
             "I found you",
             "I would nеver fall in love again until I found her",
-            "I said, \"I would never fall unless it's you I fall into\"",
+            'I said, "I would never fall unless it\'s you I fall into"',
             "I was lost within the darkness, but then I found her",
-            "I found you"
-        ]
+            "I found you",
+        ],
     },
     {
-        songId: 'c0e575ca',
-        lyrics:[
+        songId: "c0e575ca",
+        lyrics: [
             "I know it's a bad idea",
             "But how can I help myself?",
             "Been inside for most this year",
@@ -808,12 +1018,12 @@ export const lyrics= [
             "Eye-eye-eye-eyes",
             "Eye-eye-eye-eyes closed",
             "Eye-eye-eye-eyes",
-            "Oh, I keep dancin' with my-"
-        ]
+            "Oh, I keep dancin' with my-",
+        ],
     },
     {
-        songId: 'd9093b0c',
-        lyrics:[
+        songId: "d9093b0c",
+        lyrics: [
             "Nếu lúc đó em không buông tay",
             "Nếu lúc đó anh không lung lay",
             "Nếu lúc đó ta không trốn chạy",
@@ -865,12 +1075,12 @@ export const lyrics= [
             "Anh thấy sao? (Thấy sao?)",
             "Anh thấy sao? (Thấy sao?)",
             "Anh nghĩ sao? (Nghĩ sao?)",
-            "Anh nghĩ sao? (Nghĩ sao?)"
-        ]
+            "Anh nghĩ sao? (Nghĩ sao?)",
+        ],
     },
     {
-        songId: 'e53a0a9f',
-        lyrics:[
+        songId: "e53a0a9f",
+        lyrics: [
             "Anh đã từng nói với em rằng hãy mãi bên cạnh anh",
             "Cớ sao giờ những hứa hẹn ngày đó trở nên mỏng manh",
             "Có lẽ nào là do em đã làm phiền anh quá nhiều",
@@ -923,12 +1133,12 @@ export const lyrics= [
             "Đã từng thiết tha mà cớ sao bây giờ chỉ còn thấy nhau",
             "Trong những giấc mơ ùa về",
             "Tại sao thế",
-            "Em không hiểu"
-        ]
+            "Em không hiểu",
+        ],
     },
     {
-        songId: 'd81a36b0',
-        lyrics:[
+        songId: "d81a36b0",
+        lyrics: [
             "Muộn rồi mà sao còn",
             "Nhìn lên trần nhà rồi quay ra lại quay vào",
             "Nằm trằn trọc vậy đến sáng mai",
@@ -1016,12 +1226,12 @@ export const lyrics= [
             "Muốn em đặt tên",
             "Cứ ôm anh đi ôm anh đi ôm anh đi ôm anh đi",
             "Ôm trong giấc mơ trong cơn mơ trong cơn mơ ôm trong cơn mơ",
-            "Yêu đến vậy thôi phát điên rồi làm sao giờ"
-        ]
+            "Yêu đến vậy thôi phát điên rồi làm sao giờ",
+        ],
     },
     {
-        songId: '047a58df',
-        lyrics:[
+        songId: "047a58df",
+        lyrics: [
             "Go-Go-Go-Go-Go-Gods",
             "Go-Go-Go-Go-Go-Gods",
             "(Ayy) This is what you came for",
@@ -1077,12 +1287,12 @@ export const lyrics= [
             "Go-Go-Go-Go-Go-Gods",
             "Yeah, we're (Gods)",
             "Go-Go-Go-Go-Go-Gods",
-            "Once you play"
-        ]
+            "Once you play",
+        ],
     },
     {
-        songId: 'b403e6d1',
-        lyrics:[
+        songId: "b403e6d1",
+        lyrics: [
             "Don't ever say it's over if I'm breathin'",
             "Racin' to the moonlight and I'm speedin'",
             "I'm headed to the stars, ready to go far",
@@ -1113,7 +1323,7 @@ export const lyrics= [
             "These niggas don't like me, they don't like me",
             "Likely, they wanna fight me",
             "Come on, try it out, try me",
-            "They put me down, but I never cried out, \"Why me?\"",
+            'They put me down, but I never cried out, "Why me?"',
             "Word from the wise",
             "Don't put worth inside a nigga that ain't try",
             "They said I wouldn't make it out alive",
@@ -1132,12 +1342,12 @@ export const lyrics= [
             "Don't ever say it's over if I'm breathin'",
             "Racin' to the moonlight and I'm speedin'",
             "I'm headed to the stars, ready to go far",
-            "I'm star walkin'"
-        ]
+            "I'm star walkin'",
+        ],
     },
     {
-        songId: '25e4d077',
-        lyrics:[
+        songId: "25e4d077",
+        lyrics: [
             "How was I to know?",
             "It's a crazy thing",
             "I showed you my hand",
@@ -1166,12 +1376,12 @@ export const lyrics= [
             "And hearts that would give you a diamond ring",
             "When I folded, you saw the best in me",
             "The joker and the queen",
-            "The joker and the queen"
-        ]
+            "The joker and the queen",
+        ],
     },
     {
-        songId: '3a070e49',
-        lyrics:[
+        songId: "3a070e49",
+        lyrics: [
             "Do you love the rain, does it make you dance",
             "When you're drunk with your friends at a party?",
             "What's your favorite song, does it make you smile?",
@@ -1207,12 +1417,12 @@ export const lyrics= [
             "I'm gonna love you (Ooh, ooh-ooh, ooh, ooh)",
             "I'm gonna love you, oh yeah(Ooh, ooh-ooh, ooh, ooh)",
             "And I, I'm gonna love you (Ooh, ooh-ooh, ooh, ooh)",
-            "I, I'm gonna love you (Ooh, ooh-ooh, ooh, ooh)"
-        ]
+            "I, I'm gonna love you (Ooh, ooh-ooh, ooh, ooh)",
+        ],
     },
     {
-        songId: '46276a6f',
-        lyrics:[
+        songId: "46276a6f",
+        lyrics: [
             "Sau những con đường quen",
             "Ta đã vô tình đến",
             "Là nụ cười em quẩn quanh với giấc mơ",
@@ -1292,12 +1502,12 @@ export const lyrics= [
             "Tình yêu là thứ khiến em quên đi vài lần yếu đuối",
             "Lặng nhìn giọt sương rơi",
             "Lạc trong màu u tối",
-            "Là khi tình yêu ấy đã khiến em thôi những mộng mơ (ohh ohhh)"
-        ]
+            "Là khi tình yêu ấy đã khiến em thôi những mộng mơ (ohh ohhh)",
+        ],
     },
     {
-        songId: '11d824c6',
-        lyrics:[
+        songId: "11d824c6",
+        lyrics: [
             "Những cơn sóng xô lâu đài vỡ trong bóng đêm",
             "Nỗi đau cứ như đang vội ghé thăm trái tim",
             "Chiều hoàng hôn kéo theo mây đen về",
@@ -1344,12 +1554,12 @@ export const lyrics= [
             "Ánh trăng dần khuất sau khu rừng",
             "Chạy theo sau lưng anh ký ức không thể quên",
             "Vì sau cơn mưa đêm qua",
-            "Không ai nhắc về chuyện đôi ta (chuyện đôi ta chuyện đôi ta huh)"
-        ]
+            "Không ai nhắc về chuyện đôi ta (chuyện đôi ta chuyện đôi ta huh)",
+        ],
     },
     {
-        songId: '9cec521d',
-        lyrics:[
+        songId: "9cec521d",
+        lyrics: [
             "You know who it is",
             "Coming 'round again",
             "You want a dose of this right now",
@@ -1433,12 +1643,12 @@ export const lyrics= [
             "We pop stars (pop stars)",
             "Only winning, winning now",
             "Ain't nobody bringing us",
-            "Down, down, down, down"
-        ]
+            "Down, down, down, down",
+        ],
     },
     {
-        songId: 'da9997ee',
-        lyrics:[
+        songId: "da9997ee",
+        lyrics: [
             "Chưa bao giờ tôi thấy, em cười nhiều như hôm nay",
             "Chưa bao giờ tôi thấy, mắt em long lanh thế này",
             "Em say mê nói về anh ta, về cuộc hẹn hò ngày hôm qua",
@@ -1474,62 +1684,242 @@ export const lyrics= [
             "Dù anh sẽ chẳng ở mãi bên em",
             "Vì giờ đã có người thay thế anh",
             "Xin người kia sẽ chẳng để lệ rơi mắt em",
-            "Sẽ luôn thật quan tâm em"
-        ]
+            "Sẽ luôn thật quan tâm em",
+        ],
     },
     {
-        songId: '9500f20e',
-        lyrics:[
-            "Cũng đã đến lúc nghẹn ngào",
-            "Nói lời chào đến mối tình đầu",
-            "Một cuốn sách ngọt ngào mà đôi ta từng viết",
-            "Em như bông hoa mặt trời",
-            "Có nụ cười đốt cháy lòng người",
-            "Có lẽ em là thanh xuân của tôi",
-            "Từ ngày mai tôi phải đi",
-            "Hẹn gặp em trong một khi khác",
-            "Kỷ niệm đôi ta đành ghi nhớ trong tim",
-            "Này người ơi em đừng quên",
-            "Lần đầu tiên ta bước đến",
-            "Mình đã chìm vào vùng trời yêu thương",
-            "Nếu lỡ mai đây vô tình thấy được nhau",
-            "Hãy để cho tôi nói với em lời chào",
-            "Nếu trái tim ta chung nỗi nhớ đong đầy",
-            "Hẹn gặp lại em ngày tháng của sau này",
-            "Hoo-uh-uh-ah uh-ah-uh hoo-uh-uh-ah",
-            "Hoo-uh-uh-ah ha-ah-ah hoo-yeah",
-            "Hoo-uh-uh-ah uh-ah-uh hoo-uh-uh-ah",
-            "Hẹn gặp lại em ngày tháng của sau này",
-            "Oh oh, tôi giờ đang nơi xa",
-            "Bận lòng nhiều điều về em (worry about you)",
-            "Em bình tâm hơn chưa",
-            "Hay là nước mắt nhòe suốt đêm",
-            "Một ngày của em dạo này như thế nào?",
-            "Thường đi quán quen hay đến nơi ồn ào",
-            "Từ ngày tụi mình kết thúc bây giờ cuộc sống em ra sao?",
-            "Thôi thì mong em đừng khóc nữa",
-            "Đừng bỏ bữa những ngày sau",
-            "Không còn anh, bao điều vẫn tốt như xưa",
-            "Mong em ngủ ngoan không hoài nghĩ nữa",
-            "Đừng thức trắng đêm trầm tư",
-            "Vì anh chẳng muốn thấy người mà mình yêu đau",
-            "Nếu lỡ mai đây vô tình thấy được nhau",
-            "Hãy để cho tôi nói với em lời chào",
-            "Nếu trái tim ta chung nỗi nhớ đong đầy",
-            "Hẹn gặp lại em ngày tháng của sau này",
-            "Nếu lỡ mai đây vô tình thấy được nhau",
-            "Hãy để cho tôi nói với em lời chào",
-            "Nếu trái tim ta chung nỗi nhớ đong đầy",
-            "Hẹn gặp lại em ngày tháng của sau này (muốn nói với em thật nhiều)",
-            "Hoo-uh-uh-ah uh-ah-uh hoo-uh-uh-ah",
-            "Hoo-uh-uh-ah ha-ah-ah hoo",
-            "Hoo-uh-uh-ah uh-ah-uh hoo-uh-uh-ah",
-            "Hẹn gặp lại em ngày tháng của sau này"
-        ]
+        songId: "9500f20e",
+        lyrics: [
+            {
+                line: "Cũng đã đến lúc nghẹn ngào",
+                startTime: 18,
+                endTime: 21,
+            },
+            {
+                line: "Nói lời chào đến mối tình đầu",
+                startTime: 21,
+                endTime: 24,
+            },
+            {
+                line: "Một cuốn sách ngọt ngào mà đôi ta từng viết",
+                startTime: 24,
+                endTime: 28,
+            },
+            {
+                line: "Em như bông hoa mặt trời",
+                startTime: 29,
+                endTime: 30,
+            },
+            {
+                line: "Có nụ cười đốt cháy lòng người",
+                startTime: 30,
+                endTime: 33,
+            },
+            {
+                line: "Có lẽ em là thanh xuân của tôi",
+                startTime: 33,
+                endTime: 38,
+            },
+            {
+                line: "Từ ngày mai tôi phải đi",
+                startTime: 38,
+                endTime: 40,
+            },
+            {
+                line: "Hẹn gặp em trong một khi khác",
+                startTime: 40,
+                endTime: 43,
+            },
+            {
+                line: "Kỷ niệm đôi ta đành ghi nhớ trong tim",
+                startTime: 43,
+                endTime: 48,
+            },
+            {
+                line: "Này người ơi em đừng quên",
+                startTime: 48,
+                endTime: 51,
+            },
+            {
+                line: "Lần đầu tiên ta bước đến",
+                startTime: 51,
+                endTime: 53,
+            },
+            {
+                line: "Mình đã chìm vào vùng trời yêu thương",
+                startTime: 53,
+                endTime: 57,
+            },
+            {
+                line: "Nếu lỡ mai đây vô tình thấy được nhau",
+                startTime: 57,
+                endTime: 62,
+            },
+            {
+                line: "Hãy để cho tôi nói với em lời chào",
+                startTime: 62,
+                endTime: 67,
+            },
+            {
+                line: "Nếu trái tim ta chung nỗi nhớ đong đầy",
+                startTime: 67,
+                endTime: 72,
+            },
+            {
+                line: "Hẹn gặp lại em ngày tháng của sau này",
+                startTime: 72,
+                endTime: 77,
+            },
+            {
+                line: "Hoo-uh-uh-ah uh-ah-uh hoo-uh-uh-ah",
+                startTime: 77,
+                endTime: 82,
+            },
+            {
+                line: "Hoo-uh-uh-ah ha-ah-ah hoo-yeah",
+                startTime: 82,
+                endTime: 86,
+            },
+            {
+                line: "Hoo-uh-uh-ah uh-ah-uh hoo-uh-uh-ah",
+                startTime: 86,
+                endTime: 91,
+            },
+            {
+                line: "Hẹn gặp lại em ngày tháng của sau này",
+                startTime: 91,
+                endTime: 96,
+            },
+            {
+                line: "Oh oh, tôi giờ đang nơi xa",
+                startTime: 96,
+                endTime: 99,
+            },
+            {
+                line: "Bận lòng nhiều điều về em (worry about you)",
+                startTime: 99,
+                endTime: 102,
+            },
+            {
+                line: "Em bình tâm hơn chưa",
+                startTime: 102,
+                endTime: 103,
+            },
+            {
+                line: "Hay là nước mắt nhòe suốt đêm",
+                startTime: 103,
+                endTime: 105,
+            },
+            {
+                line: "Một ngày của em dạo này như thế nào?",
+                startTime: 105,
+                endTime: 108,
+            },
+            {
+                line: "Thường đi quán quen hay đến nơi ồn ào",
+                startTime: 108,
+                endTime: 109,
+            },
+            {
+                line: "Từ ngày tụi mình kết thúc bây giờ cuộc sống em ra sao?",
+                startTime: 109,
+                endTime: 114,
+            },
+            {
+                line: "Thôi thì mong em đừng khóc nữa",
+                startTime: 114,
+                endTime: 117,
+            },
+            {
+                line: "Đừng bỏ bữa những ngày sau",
+                startTime: 117,
+                endTime: 120,
+            },
+            {
+                line: "Không còn anh, bao điều vẫn tốt như xưa",
+                startTime: 120,
+                endTime: 124,
+            },
+            {
+                line: "Mong em ngủ ngoan không hoài nghĩ nữa",
+                startTime: 124,
+                endTime: 127,
+            },
+            {
+                line: "Đừng thức trắng đêm trầm tư",
+                startTime: 127,
+                endTime: 130,
+            },
+            {
+                line: "Vì anh chẳng muốn thấy người mà mình yêu đau",
+                startTime: 130,
+                endTime: 133,
+            },
+            {
+                line: "Nếu lỡ mai đây vô tình thấy được nhau",
+                startTime: 133,
+                endTime: 139,
+            },
+            {
+                line: "Hãy để cho tôi nói với em lời chào",
+                startTime: 139,
+                endTime: 144,
+            },
+            {
+                line: "Nếu trái tim ta chung nỗi nhớ đong đầy",
+                startTime: 144,
+                endTime: 149,
+            },
+            {
+                line: "Hẹn gặp lại em ngày tháng của sau này",
+                startTime: 149,
+                endTime: 173,
+            },
+            {
+                line: "Nếu lỡ mai đây vô tình thấy được nhau",
+                startTime: 173,
+                endTime: 177,
+            },
+            {
+                line: "Hãy để cho tôi nói với em lời chào",
+                startTime: 177,
+                endTime: 183,
+            },
+            {
+                line: "Nếu trái tim ta chung nỗi nhớ đong đầy",
+                startTime: 183,
+                endTime: 187,
+            },
+            {
+                line: "Hẹn gặp lại em ngày tháng của sau này (muốn nói với em thật nhiều)",
+                startTime: 187,
+                endTime: 193,
+            },
+            {
+                line: "Hoo-uh-uh-ah uh-ah-uh hoo-uh-uh-ah",
+                startTime: 193,
+                endTime: 197,
+            },
+            {
+                line: "Hoo-uh-uh-ah ha-ah-ah hoo",
+                startTime: 197,
+                endTime: 202,
+            },
+            {
+                line: "Hoo-uh-uh-ah uh-ah-uh hoo-uh-uh-ah",
+                startTime: 202,
+                endTime: 207,
+            },
+            {
+                line: "Hẹn gặp lại em ngày tháng của sau này",
+                startTime: 207,
+                endTime: 215,
+            },
+        ],
     },
     {
-        songId: '9406d40d',
-        lyrics:[
+        songId: "9406d40d",
+        lyrics: [
             "Chiều đang dần buông hạt mưa rơi xuống không gian lắng yên",
             "Suy tư vấn vương ngồi mộng mơ",
             "Đơn phương nhớ đến một nàng thơ",
@@ -1587,12 +1977,12 @@ export const lyrics= [
             "Oh-woah, oh yeah, yeah yeah",
             "Oh-woah, oh, oh-ooh",
             "Hey-ey-yeah",
-            "Hey-ey-yeah"
-        ]
+            "Hey-ey-yeah",
+        ],
     },
     {
-        songId: '1bbf6471',
-        lyrics:[
+        songId: "1bbf6471",
+        lyrics: [
             "Từ nụ hôn đầu tiên",
             "Chờ đợi anh triền miên",
             "Nhớ về anh phát điên",
@@ -1631,7 +2021,7 @@ export const lyrics= [
             "Nhìn cà phê cứ rơi (cứ rơi)",
             "Còn thời gian cứ trôi (cứ trôi)",
             "Lòng buồn rầu nghĩ ngợi",
-           " Chắc anh ta lại quên mất rồi (oh my god)",
+            " Chắc anh ta lại quên mất rồi (oh my god)",
             "Ngồi uống cà phê đến tối",
             "Không giờ rồi mà anh chưa tới",
             "Cà phê cứ tí tách rơi",
@@ -1657,12 +2047,12 @@ export const lyrics= [
             "Anh giết chết em rồi",
             "Ối giời ơi",
             "Anh giết chết em rồi",
-            "Ối giời ơi"
-        ]
+            "Ối giời ơi",
+        ],
     },
     {
-        songId: '0ef236a1',
-        lyrics:[
+        songId: "0ef236a1",
+        lyrics: [
             "Baddest do, what the baddest do (hey)",
             "The baddest do (hey), we the baddest, ooh",
             "Baddest do, what the baddest do (hey)",
@@ -1690,7 +2080,7 @@ export const lyrics= [
             "Pretty face 걸어들어와",
             "유행 선두자",
             "원하지만 못하잖아, 애가 타잖아",
-            "You like \"whoa\" KALI you the GOAT",
+            'You like "whoa" KALI you the GOAT',
             "난 알지 I know",
             "준비해 'cause I like to ball",
             "멈추지 않아",
@@ -1737,8 +2127,7 @@ export const lyrics= [
             "Sorry, not sorry for being the best",
             "언제든지 내가 좀 해",
             "Look at the gold all on my chest",
-            "Look at the gold, call it a flex"
-        ]
-    }
-   
-]
+            "Look at the gold, call it a flex",
+        ],
+    },
+];

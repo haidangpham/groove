@@ -10,11 +10,12 @@
         fill: var(--default-color);
         cursor: pointer;
         &:hover{
-            fill: var(--active-color);
+            fill: white;
         }
     }
-    .active{
+    .i-active{
         fill: var(--theme-color);
+        cursor: pointer;
     }
 }
 .wrapper{

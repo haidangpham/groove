@@ -4,12 +4,12 @@ import { globalPlaylists } from "../../../../assets/data/playlist";
 import styles from './PlaylistItemMobile.module.scss';
 import classNames from "classnames/bind";
 import { artists } from "../../../../assets/data/users";
+import { MoreOptionsIcon } from "../../../../components/Icons";
 
 const cx= classNames.bind(styles)
 function PlaylistItemMobile({ song, playlistId, index }) {
     const [isHovered, setHovered] = useState(false);
     const {
-        isPlaying,
         playingItems,
         songPlayPause,
     } = useContext(TrackContext);
@@ -21,16 +21,17 @@ function PlaylistItemMobile({ song, playlistId, index }) {
     return (
         <div
         className={cx("song", `${isHovered ? "active" : ""}`)}
-        onClick={()=>songPlayPause(song, index, playlistId, songIds)}
+        onClick={()=>songPlayPause(song, index, playlistId, songIds, true)}
         onMouseOver={() => setHovered(true)}
         onMouseOut={() => setHovered(false)}
     >
         {/* play pause */}
+        <div className={cx('song-details')}>
+        
             <img className={cx("song-img")} src={song.coverImage} alt="" />
             <div>
                 <span className={cx("song-title", `${isActiveTrack?"active-p": ''}`)}>
-
-                        {song.title}
+                    {song.title}
                 </span>
                 <p className={cx("song-artist")}>
                         {
@@ -41,6 +42,8 @@ function PlaylistItemMobile({ song, playlistId, index }) {
                         }
                 </p>
             </div>
+            </div>
+            <button><MoreOptionsIcon className={cx('icon')} /></button>
     </div>
     );
 }
