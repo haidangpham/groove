@@ -232,7 +232,7 @@ function NowPlayingPanel({ track }) {
                     </div>
                     <div className={cx("options", "m-hidden")}>
                         <Link to={`${!isLyricsPage?'/lyrics': navList[navList.length - 1]}`}><LyricsIcon className={cx(`${isLyricsPage?'i-active': 'icon'}`)} /></Link>
-                        <QueueIcon className={cx("icon")} />
+                        <Link to={'/queue'}><QueueIcon className={cx("icon")} /></Link>
                         <div className={cx("volume-control")}>
                             <button onClick={handleMute}>
                                 {globalAudioRef.current?.volume === 0 && (

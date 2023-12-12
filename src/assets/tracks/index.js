@@ -12,6 +12,7 @@ const songs=[
         playCount: '1,222,787,439',
         src: require('./data/GalwayGirl-EdSheeran.mp3'),
         type: 'Song',
+        themeColor: 'rgb(37, 150, 190)',
     },
     {
         id: 2,
@@ -25,6 +26,7 @@ const songs=[
         playCount: '1,583,524,512',
         src: require('./data/I Feel It Coming-The Weeknd.mp3'),
         type: 'Song',
+        themeColor: 'rgba(156,3,49,255)',
     },
     {
         id: 3,
@@ -38,6 +40,7 @@ const songs=[
         playCount: '1,583,524,512',
         src: require('./data/Counting Stars - OneRepublic.mp3'),
         type: 'Song',
+        themeColor: 'rgba(133,34,50,255)',
     },
     {
         id: 4,

@@ -17,14 +17,12 @@ function LyricsPage() {
     const backgroundRef = useRef();
     const activeLineRef = useRef(null);
     const [currentLyricIndex, setCurrentLyricIndex] = useState(0);
-        console.log('re-render');
     useEffect(() => {
         //background color
         backgroundRef.current.style.setProperty(
             "--background-color",
             trackColor
         );
-
     
         //
         const updateLyricIndex = () => {
@@ -36,12 +34,12 @@ function LyricsPage() {
             if (newIndex !== -1 && newIndex !== currentLyricIndex) {
                 setCurrentLyricIndex(newIndex);
                 // Scroll the active line into view
-                if (activeLineRef.current) {
-                    // activeLineRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    // activeLineRef.current.classList.add('active')
-                }
+                // if (activeLineRef.current) {
+                //     // activeLineRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                //     // activeLineRef.current.classList.add('active')
+                // }
             }
-            // console.log(currentTime);
+            console.log(currentTime);
         };
 
         globalAudioRef.current.addEventListener(
@@ -55,6 +53,10 @@ function LyricsPage() {
             );
         };
     }, [trackColor, globalAudioRef, currentLyricIndex]);
+    //
+    const jumpToLine= (startTime)=>{
+        globalAudioRef.current.currentTime= startTime
+    }
     return (
         <div className={cx("wrapper")} ref={backgroundRef}>
             <div>
@@ -62,18 +64,13 @@ function LyricsPage() {
                     <div
                         className={cx("line",`${index === currentLyricIndex? 'active': ''}`, `${index < currentLyricIndex? 'passed': ''}`)}
                         key={index}
-                        // style={{
-                        //     animation:
-                        //         index === currentLyricIndex
-                        //             ? "yourAnimation 2s ease-in-out"
-                        //             : "none",
-                        // }}
                         ref={(ref)=>{
                                 if (index === currentLyricIndex) {
                                     activeLineRef.current = ref;
                                 }
                             }
                         }
+                        onClick={()=>jumpToLine(item.startTime)}
                     >
                         {item.line}
                     </div>

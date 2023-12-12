@@ -11,14 +11,18 @@
     fill: var(--default-color);
     transition: var(--default-animation);
     font-size: 1.6rem;
-   &:hover{
-        fill: var(--active-color);
-        color: var(--active-color);
-   }
+    &:hover{
+            fill: var(--white-font-color);
+            color:  var(--white-font-color);
+    }
 }
 .active{
     color: var(--active-color);
     fill: var(--active-color);
+    &:hover{
+        color: var(--active-color);
+        fill: var(--active-color);
+   }
 }
 .nav-pages{
     display: flex;

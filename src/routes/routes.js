@@ -8,5 +8,6 @@ const routes={
     profile: '/user/:userId',
     library: '/library',
     lyrics: '/lyrics',
+    queue: '/queue',
 }
 export default routes

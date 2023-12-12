@@ -1,15 +1,23 @@
 .song{
+    display: grid;
+    grid-template-columns: [index] 16px [first] 6fr [album] 4fr [rlsdate] 3fr [last] minmax(12rem,1fr);
+    justify-content: center;
+    gap: 1rem;
     padding: 4px 10px;
-    user-select: none;
     border-radius: 5px;
-    & > *{align-self: center;}
+    font-family: 'CircularSpBook';
+    user-select: none;
     transition: var(--default-animation);
+    & > *{
+        align-self: center;
+    }
     &:hover{
         background-color: hsla(0,0%,100%,.1);
         .duration .icon{
             opacity: 1;
         }
     }
+    
     .icon{
         fill: var(--default-color);
     }
@@ -23,18 +31,26 @@
             fill: var(--theme-color);
         }
     }
-    .song-title-ctn{
+    .song-header-ctn{
         display: flex;
         align-items: center;
+        height: fit-content;
         overflow: hidden;
+        .title-ctn{
+            display: flex;
+            
+        }
         .song-img{
-            width: 40px;
+            width: 4rem;
+            height: 4rem;
             margin-right: 1rem;
+            border-radius: 4px;
         }
         .song-title{
             font-size: 1.6rem;
             color: var(--white-font-color);
             white-space: nowrap;
+            
         }
         .song-artist{
             font-size: 1.4rem;
@@ -42,7 +58,7 @@
     }
     .duration{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         .icon{
             opacity: 0;
             width: 2rem;
@@ -74,4 +90,7 @@
         color: var(--white-font-color);
         text-decoration: underline;
     }
+}
+.date-disabled{
+    grid-template-columns: [index] 16px [first] 6fr [album] 4fr [last] minmax(12rem,1fr);
 }

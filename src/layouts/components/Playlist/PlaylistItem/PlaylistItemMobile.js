@@ -7,37 +7,34 @@ import { artists } from "../../../../assets/data/users";
 import { MoreOptionsIcon } from "../../../../components/Icons";
 
 const cx= classNames.bind(styles)
-function PlaylistItemMobile({ song, playlistId, index }) {
+function PlaylistItemMobile({ trackData, playlistId= null, trackIds, index }) {
     const [isHovered, setHovered] = useState(false);
     const {
         playingItems,
         songPlayPause,
     } = useContext(TrackContext);
-    const songIds = globalPlaylists.find(
-        (playlist) => playlist.uniqueId === playlistId
-    ).songIds;
    
-    const isActiveTrack= song.uniqueId === playingItems.playingTrack && playlistId === playingItems.playingPlaylist;
+    const isActiveTrack= trackData.uniqueId === playingItems.playingTrack && playlistId === playingItems.playingPlaylist;
     return (
         <div
         className={cx("song", `${isHovered ? "active" : ""}`)}
-        onClick={()=>songPlayPause(song, index, playlistId, songIds, true)}
+        onClick={()=>songPlayPause(trackData, index, playlistId, trackIds, true)}
         onMouseOver={() => setHovered(true)}
         onMouseOut={() => setHovered(false)}
     >
         {/* play pause */}
         <div className={cx('song-details')}>
         
-            <img className={cx("song-img")} src={song.coverImage} alt="" />
+            <img className={cx("song-img")} src={trackData.coverImage} alt="" />
             <div>
                 <span className={cx("song-title", `${isActiveTrack?"active-p": ''}`)}>
-                    {song.title}
+                    {trackData.title}
                 </span>
                 <p className={cx("song-artist")}>
                         {
                             artists.find(
                                 (artist) =>
-                                    artist.uniqueId === song.authorId[0]
+                                    artist.uniqueId === trackData.authorId[0]
                             ).name
                         }
                 </p>

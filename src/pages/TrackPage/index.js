@@ -40,8 +40,8 @@ function TrackPage() {
             <div>
                 <h2>Lyrics</h2>
                 <div className={cx('lyrics')}>
-                    {lyricsData?.map((line, index)=>{
-                        return(<p className={cx('lyrics-line')} key={index}>{line}</p>)
+                    {lyricsData?.map((lyric, index)=>{
+                        return(<p className={cx('lyrics-line')} key={index}>{lyric.line}</p>)
                     })}
                 </div>
                     {
