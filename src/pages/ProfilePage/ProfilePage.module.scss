@@ -1,10 +1,17 @@
 .wrapper{
-    --cover-image: '/';
     margin-top: 0;
+    border: solid 1px red;
     .header{
         background-image: var(--cover-image);
-        img{
-            width: 100%;
+        .avatar{
+            height: clamp(160px, 18vw, 220px);
+            width: clamp(160px, 18vw, 220px);
+            img{
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
         }
     }
 }

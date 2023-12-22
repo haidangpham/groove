@@ -115,7 +115,7 @@ export const globalPlaylists=[
         description: 'Những ca khúc nhạc Việt hot nhất 2023.',
         authorId: ['9d2cb826'],
         coverImage: require('../images/playlistCoverImgs/V-Pop-Hits-cover.jpg'),
-        songIds:['8a087349','11d824c6', 'd9093b0c', 'e53a0a9f', 'd81a36b0', '46276a6f', 'da9997ee', '9500f20e','9406d40d','1bbf6471'],
+        songIds:['8a087349','11d824c6', 'd9093b0c','cc9db0a4', 'e53a0a9f', 'd81a36b0', '46276a6f', 'da9997ee', '9500f20e','9406d40d','1bbf6471'],
         duration: '',
         type: 'Playlist',
         themeColor: '#60789e'

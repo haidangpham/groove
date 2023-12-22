@@ -3342,4 +3342,244 @@ export const lyrics = [
             },
         ],
     },
+    {
+        songId: "cc9db0a4",
+        lyrics: [
+            {
+                line: "Em có gì đâu ngoài những vết thương sâu",
+                startTime: 0,
+                endTime: 17.8,
+            },
+            {
+                line: "Yêu bao nhiêu lâu mà vẫn cứ thấy đau",
+                startTime: 17.8,
+                endTime: 22.8,
+            },
+            {
+                line: "Gieo bao tương tư nặng ôm những nỗi buồn",
+                startTime: 22.8,
+                endTime: 28.2,
+            },
+            {
+                line: "Em trao tim em rồi đem bán linh hồn",
+                startTime: 28.2,
+                endTime: 33,
+            },
+            {
+                line: "Để đổi lấy đôi phút bình yên (bình yên)",
+                startTime: 33,
+                endTime: 35.6,
+            },
+            {
+                line: "Dù nước mắt ướt gối hằng đêm (hằng đêm)",
+                startTime: 35.6,
+                endTime: 38.3,
+            },
+            {
+                line: "Mà em ơi hi sinh vậy có xứng đáng (vậy có xứng đáng)",
+                startTime: 38.3,
+                endTime: 43,
+            },
+            {
+                line: "Vết bầm trên người em nhiều thêm (nhiều thêm)",
+                startTime: 43,
+                endTime: 45.8,
+            },
+            {
+                line: "Chẳng có lấy một ngày ấm êm (ấm êm)",
+                startTime: 45.8,
+                endTime: 48.5,
+            },
+            {
+                line: "Chỉ còn tai ương thâu đêm",
+                startTime: 48.5,
+                endTime: 51,
+            },
+            {
+                line: "Không còn tương lai đâu em",
+                startTime: 51,
+                endTime: 53,
+            },
+            {
+                line: "Em ơi dừng lại khi nắng đã phai dừng lại khi em bước sai ",
+                startTime: 53,
+                endTime: 58.5,
+            },
+            {
+                line: "Dừng lại khi chẳng có ai biết em vẫn đang tồn tại",
+                startTime: 58.5,
+                endTime: 63.2,
+            },
+            {
+                line: "Em ơi đừng làm lệ vương khoé mi đừng làm thân xác úa si",
+                startTime: 63.2,
+                endTime: 68.6,
+            },
+            {
+                line: "Tình cảm xin cất bước đi chớ lưu luyến thêm làm gì cố yêu được chi",
+                startTime: 68.6,
+                endTime: 74.1,
+            },
+            {
+                line: "Chơi đùa chơi đùa thôi à",
+                startTime: 74.1,
+                endTime: 75.3,
+            },
+            {
+                line: "Xin đừng trêu đùa tôi mà",
+                startTime: 75.3,
+                endTime: 76.2,
+            },
+            {
+                line: "Đừng giam lòng tin vào nơi vực sâu dựng xây niềm đau thành ngôi nhà luôn là luôn là tôi ya",
+                startTime: 76.2,
+                endTime: 79.9,
+            },
+            {
+                line: "Đau lòng nhưng mà thôi ya",
+                startTime: 79.9,
+                endTime: 81.2,
+            },
+            {
+                line: "Thiên hà rơi tả tơi hmm tim là nơi lả lơi",
+                startTime: 81.2,
+                endTime: 83.5,
+            },
+            {
+                line: "Họ lại xem tôi như con cờ đạp đổ tương lai tôi mong chờ ya",
+                startTime: 83.5,
+                endTime: 86,
+            },
+            {
+                line: "Sai vì tôi mộng mơ vì tình yêu nơi tôi tôn thờ",
+                startTime: 86,
+                endTime: 88.6,
+            },
+            {
+                line: "Tình tàn tình vỡ tan trở về với khuôn mặt đáng thương",
+                startTime: 88.6,
+                endTime: 91,
+            },
+            {
+                line: "Nhìn hành trình dở dang chê bai hay những lời tán dương",
+                startTime: 91,
+                endTime: 93.7,
+            },
+            {
+                line: "Lệ mang sầu đau trên những vết son",
+                startTime: 93.7,
+                endTime: 97.1,
+            },
+            {
+                line: "Người thương em xưa giờ đây chẳng còn",
+                startTime: 97.1,
+                endTime: 99.7,
+            },
+            {
+                line: "Đào sương hoa mơ em còn bỡ ngỡ",
+                startTime: 99.7,
+                endTime: 102.2,
+            },
+            {
+                line: 'Thời gian thoi đưa tim em tan vỡ',
+                startTime: 102.2,
+                endTime: 104.8,
+            },
+            {
+                line: "Thương khi em yêu có đâu ngờ",
+                startTime: 104.8,
+                endTime: 107.3,
+            },
+            {
+                line: "Trăng soi thân em cứ xác xơ",
+                startTime: 107.3,
+                endTime: 111.3,
+            },
+            {
+                line: "Ở đâu người em nhớ",
+                startTime: 111.3,
+                endTime: 113.2,
+            },
+            {
+                line: "Em ơi dừng lại khi nắng đã phai dừng lại khi em bước sai",
+                startTime: 113.2,
+                endTime: 119.3,
+            },
+            {
+                line: "Dừng lại khi chẳng có ai biết em vẫn đang tồn tại",
+                startTime: 119.3,
+                endTime: 124,
+            },
+            {
+                line: "Em ơi đừng làm lệ vương khoé mi đừng làm thân xác úa si",
+                startTime: 124,
+                endTime: 129.4,
+            },
+            {
+                line:"Tình cảm xin cất bước đi chớ lưu luyến thêm làm gì cố yêu được chi",
+                startTime: 129.4,
+                endTime: 134.1,
+            },
+            {
+                line: "Một khi đã hết giá trị lợi dụng họ trói con tim em vào xiềng gông",
+                startTime: 134.1,
+                endTime: 136.8,
+            },
+            {
+                line: "Em chỉ muốn đến góp vui cho đời họ nghĩ là em đang chờ tiền công",
+                startTime: 136.8,
+                endTime: 139.4,
+            },
+            {
+                line: "Em đã từng ở thời hoàng kim sải cánh bay cùng đàn chim",
+                startTime: 139.4,
+                endTime: 142.1,
+            },
+            {
+                line: "Giờ nhìn lại thì em có gì không một ai biết không người hàn huyên em",
+                startTime: 142.1,
+                endTime: 144.6,
+            },
+            {
+                line: "Trượt dài theo con dốc em đã từng là một nàng tiên",
+                startTime: 144.6,
+                endTime: 147,
+            },
+            {
+                line: "Em kể và cười y như con ngốc anh nghe rồi khóc như một thằng điên em",
+                startTime: 147,
+                endTime: 150,
+            },
+            {
+                line: "Trượt dài theo con dốc em đã từng là một nàng tiên",
+                startTime: 150,
+                endTime: 152.1,
+            },
+            {
+                line: "Em kể và cười y như con ngốc anh nghe rồi khóc như một thằng điên",
+                startTime: 152.1,
+                endTime: 175.4,
+            },
+            {
+                line: "Em có gì đâu ngoài những vết thương sâu (em không buồn em không khóc cũng chẳng thấy đau)",
+                startTime: 175.4,
+                endTime: 179.9,
+            },
+            {
+                line: "Yêu bao nhiêu lâu mà vẫn cứ thấy đau (như cái cách mà loài người vẫn thường cứu lấy nhau)",
+                startTime: 179.9,
+                endTime: 185.2,
+            },
+            {
+                line: "Em có gì đâu ngoài những vết thương sâu (em không buồn em không khóc cũng chẳng thấy đau)",
+                startTime: 185.2,
+                endTime: 190.4,
+            },
+            {
+                line: "Yêu bao nhiêu lâu mà vẫn cứ thấy đau (như cái cách mà loài người vẫn thường cứu lấy nhau)",
+                startTime: 190.4,
+                endTime: 196,
+            }
+        ],
+    },
 ];

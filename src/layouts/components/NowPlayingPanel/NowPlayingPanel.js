@@ -159,11 +159,11 @@ function NowPlayingPanel({ track }) {
     //
     const location= useLocation()
     const isLyricsPage= location.pathname ==='/lyrics'
+    const isQueuePage= location.pathname ==='/queue'
     const {navList}= useContext(NavContext)
     //
     return (
         <div className={cx('footer')}>
-            
                 <div className={cx("wrapper")}>
                     <div className={cx("details-wrapper")}>
                         <div className={cx("track-details")}>
@@ -232,7 +232,7 @@ function NowPlayingPanel({ track }) {
                     </div>
                     <div className={cx("options", "m-hidden")}>
                         <Link to={`${!isLyricsPage?'/lyrics': navList[navList.length - 1]}`}><LyricsIcon className={cx(`${isLyricsPage?'i-active': 'icon'}`)} /></Link>
-                        <Link to={'/queue'}><QueueIcon className={cx("icon")} /></Link>
+                        <Link to={`${!isQueuePage?'/queue': navList[navList.length - 1]}`}><QueueIcon className={cx(`${isQueuePage?'i-active': 'icon'}`)} /></Link>
                         <div className={cx("volume-control")}>
                             <button onClick={handleMute}>
                                 {globalAudioRef.current?.volume === 0 && (

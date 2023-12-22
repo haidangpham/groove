@@ -34,12 +34,8 @@ function LyricsPage() {
             if (newIndex !== -1 && newIndex !== currentLyricIndex) {
                 setCurrentLyricIndex(newIndex);
                 // Scroll the active line into view
-                // if (activeLineRef.current) {
-                //     // activeLineRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                //     // activeLineRef.current.classList.add('active')
-                // }
             }
-            console.log(currentTime);
+            // console.log(currentTime);
         };
 
         globalAudioRef.current.addEventListener(
@@ -59,7 +55,7 @@ function LyricsPage() {
     }
     return (
         <div className={cx("wrapper")} ref={backgroundRef}>
-            <div>
+            <div className={cx('lyrics')}>
                 {lyricsData.lyrics.map((item, index) => (
                     <div
                         className={cx("line",`${index === currentLyricIndex? 'active': ''}`, `${index < currentLyricIndex? 'passed': ''}`)}

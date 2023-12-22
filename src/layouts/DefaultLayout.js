@@ -42,7 +42,7 @@ function DefaultLayout({ children, path }) {
     const location= useLocation()
     const type= location.pathname.split('/')[1]
     const backgroundId= location.pathname.split('/')[2]
-    //Handle background color
+    //Handle background color for each page
     let backgroundColor
     switch (type) {
         case 'playlist':
@@ -54,8 +54,11 @@ function DefaultLayout({ children, path }) {
         case 'search':
           backgroundColor = '#121212';
           break;
-          case 'lyrics':
+        case 'lyrics':
           backgroundColor = 'transparent';
+          break;
+          case 'queue':
+          backgroundColor = '#121212';
           break;
         default:
           //Default color

@@ -6,8 +6,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .lyrics{
+        width: 100%;
+        padding: 0 3.4rem;
+    }
     .line{
-        font-size: 3rem;
+        width: inherit;
+        font-size: clamp(2rem, 3rem, 3.2rem);
         color: black;
         cursor: pointer;
         font-weight: 700;

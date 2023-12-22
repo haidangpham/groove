@@ -13,23 +13,26 @@ import {
 } from "../../../../components/Icons";
 import { artists } from "../../../../assets/data/users";
 import albums from "../../../../assets/data/albums";
+import EqualizerIcon from "../../../../components/EqualiserIcon";
+import { globalPlaylists } from "../../../../assets/data/playlist";
 const cx = classNames.bind(styles);
-function PlaylistItem({ trackData, playlistId= null, trackIds, index, showDate= true }) {
+function PlaylistItem({ trackData, playlistId= null, trackIds, index, showDate= true, active= false }) {
     const [isHovered, setHovered] = useState(false);
     const {
         isPlaying,
         playingItems,
         songPlayPause,
     } = useContext(TrackContext);
-   
-    const isActiveTrack= trackData.uniqueId === playingItems.playingTrack && playlistId === playingItems.playingPlaylist;
+    const isActiveTrack= trackData.uniqueId === playingItems.playingTrack && (active || playlistId === playingItems.playingPlaylist);
+    //get playlist data
+    const playlistData= globalPlaylists.find((p)=> p.uniqueId === playlistId)
     return (
         <div
             className={cx("song",`${!showDate?"date-disabled":""}` ,`${isHovered ? "active" : ""}`)}
             onMouseOver={() => setHovered(true)}
             onMouseOut={() => setHovered(false)}
         >
-            <span onClick={()=>songPlayPause(trackData, index, playlistId, trackIds)}>
+            <span onClick={()=>songPlayPause(trackData, playlistData, playlistId, index, trackIds)}>
                     {isHovered ? (
                         isPlaying &&
                         playingItems.playingTrack === trackData.uniqueId &&
@@ -39,8 +42,11 @@ function PlaylistItem({ trackData, playlistId= null, trackIds, index, showDate= 
                             <PlayIcon className={cx("icon", "play-btn")} />
                         )
                     ) : (
-                        <span className={isActiveTrack?cx("active-p"): cx('')}>{index + 1}</span>
+                        isActiveTrack && isPlaying?<EqualizerIcon />:<span className={isActiveTrack?cx("active-p"): cx('')}>{index + 1}</span>
                     )}
+                    {
+                        
+                    }
                 </span>
             
             <div className={cx("song-header-ctn")}>

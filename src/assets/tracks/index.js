@@ -394,5 +394,19 @@ const songs=[
         type: 'Song',
         themeColor: 'rgba(133,155,194,255)'
     },
+    {
+        id: 27,
+        uniqueId: 'cc9db0a4',
+        title: 'Lệ Lưu Ly',
+        coverImage: require('../images/albumCoverImgs/le-luu-ly_cover.jpg'),
+        authorId: ['7d9a3d17', '61976f68'],
+        albumId: '72a2ef1b',
+        releaseDate: 'Sep 20, 2023',
+        duration: '3:20',
+        playCount: '8,530,788',
+        src: require('./data/LeLuuLy-VuPhungTienDrum7.mp3'),
+        type: 'Song',
+        themeColor: 'rgb(232,36,44)'
+    },
 ]
 export default songs

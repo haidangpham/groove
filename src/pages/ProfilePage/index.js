@@ -16,17 +16,14 @@ function ProfilePage() {
     const artistData= artists.find((artist)=> artist.uniqueId=== artistId)
     const backgroundRef= useRef()
     //
-    useEffect(() => {
-        setTimeout(() => {
-            backgroundRef.current.style.setProperty('--cover-image', artistData.coverImg);
-        }, 10); // Change after 1 second (adjust as needed)
-        console.log(artistData.coverImg);
-      }, [location]);
     
     return (
         <div className={cx('wrapper')} >
             <div className={cx('header')} ref={backgroundRef}>
-                {/* <img src={artistData.coverImg} alt=""/> */}
+                <div className={cx('avatar')}>
+                    <img src={artistData.avatar} className={cx('')} alt=""/>
+
+                </div>
             </div>
             <div className={cx('content')}>
 

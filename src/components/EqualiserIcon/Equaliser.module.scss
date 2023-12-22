@@ -1,0 +1,48 @@
+.equalizer-icon {
+  --parent-width: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 2rem;
+    width: 2var(--parent-width);
+  }
+  
+  .bar {
+    width: calc(var(--parent-width)/5);
+    height: 50%;
+    margin: 0.5px;
+    background-color: var(--theme-color);
+    animation: equalizerAnimation 1s infinite ease-in-out;
+    
+  }
+  
+  .bar1 {
+    animation-delay: 0.4s;
+  }
+  
+  .bar2 {
+    animation-delay: 0.23s;
+  }
+  
+  .bar3 {
+    animation-delay: 0.5s;
+  }
+  .bar4 {
+    animation-delay: 0.68s;
+  }
+  .bar5 {
+    animation-delay: 0s;
+  }
+  
+  @keyframes equalizerAnimation {
+    0%, 100% {
+      // transform: scaleY(1);
+      height: 20%;
+    }
+  
+    50% {
+      // transform: scaleY(0.5);
+      height: 100%;
+    }
+  }
+  

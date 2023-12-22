@@ -4,6 +4,7 @@ import { Fragment, createContext, useEffect, useRef, useState } from "react";
 import publicRoutes from "./routes";
 import DefaultLayout from "./layouts/DefaultLayout";
 import songs from "./assets/tracks";
+import { globalPlaylists } from "./assets/data/playlist";
 
 
 export const TrackContext = createContext();
@@ -16,6 +17,7 @@ function App() {
     const [unshuffledQueue, setUnshuffledQueue]= useState(["31e5f3c5"])
     const [playingTrack, setPlayingTrack] = useState("31e5f3c5");
     const [playingPlaylist, setPlayingPlaylist] = useState(null);
+    const prevPlaylistRef= useRef()
     const [playingTrackIndex, setPlayingTrackIndex]= useState(0);
     const [navList, setNavList]= useState([]);
     const [prevNavList, setPrevNavList]= useState([])
@@ -23,13 +25,58 @@ function App() {
     //check user agent
     const isMobileAgent= /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 
-    //NAV
-    useEffect(()=>{
-        //update prevList
-       if(navList.length >= prevNavList.length){
-            setPrevNavList(navList)
-        }
-    },[navList])
+    //AUTO
+        //Auto update NAV
+        useEffect(()=>{
+            //update prevList
+        if(navList.length >= prevNavList.length){
+                setPrevNavList(navList)
+            }
+        },[navList])
+
+        //Auto play/pause track
+        useEffect(()=>{
+            if(isPlaying){
+                globalAudioRef.current.play()
+            }else{
+                globalAudioRef.current.pause()
+                document.title = "Groove - Experience music world.";
+            }
+        }, [globalAudioRef.current?.paused, isPlaying])
+
+        //Auto reset audio when playingPlaylist changes
+        useEffect(()=>{
+            if(prevPlaylistRef.current !== playingPlaylist){
+                prevPlaylistRef.current= playingPlaylist
+                globalAudioRef.current.currentTime = 0
+                
+            }
+        },[playingPlaylist, globalAudioRef])
+        //Auto update playingTrack when queuedTrack changes
+        useEffect(() => {
+            // Update the playingTrack when playingTrackIndex changes
+            setPlayingTrack(queuedTracks[playingTrackIndex]);
+        }, [playingTrackIndex, queuedTracks]);  
+
+        //Auto update queuedTracks when playingPlaylist changes
+        // useEffect(()=>{
+        //     const playingPlaylistData= globalPlaylists.find((p)=> p.uniqueId === playingPlaylist)
+        //     if(isShuffled){
+        //         setQueuedTracks(shuffle(playingPlaylistData?.songIds))
+        //     }else{
+        //         setQueuedTracks(playingPlaylistData?.songIds)
+        //     }
+        //     setQueuedTracks(playingPlaylist)
+        // },[playingPlaylist, isShuffled])
+
+        //Auto shuffle
+        useEffect(()=>{
+            setQueuedTracks(shuffle(queuedTracks))
+            console.log('auto run');
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        },[isShuffled])
+
+    
     const updateNavList= (location)=>{
         //stop update navList if nav btn is clicked Back/Forwarded
         if((navList.length < prevNavList.length && location === prevNavList[navList.length])|| location === navList[navList.length - 1]){
@@ -60,15 +107,7 @@ function App() {
         playingPlaylist: playingPlaylist,
     };
     
-    //set isPlaying state
-    useEffect(()=>{
-        if(globalAudioRef.current.paused){
-            setIsPlaying(false)
-            document.title = "Groove - Experience music world.";
-        }else{
-            setIsPlaying(true)
-        }
-    }, [globalAudioRef.current?.paused, isPlaying])
+    
   
     //AutoPlay
     const autoPlay= ()=>{
@@ -86,14 +125,12 @@ function App() {
                 }, 1000);
         }
     }
-    //update playingTrack when queuedTrack is updated
-    useEffect(() => {
-    // Update the playingTrack when playingTrackIndex changes
-    setPlayingTrack(queuedTracks[playingTrackIndex]);
-    }, [playingTrackIndex, queuedTracks]);
+
+
 
     //Shuffle Handler
     const shuffle = (playlist) => {
+        console.log(playlist);
         if (!isShuffled) {
           const findIndex = unshuffledQueue.indexOf(playingTrack);
           setPlayingTrackIndex(findIndex);
@@ -117,15 +154,11 @@ function App() {
         return finalShuffled;
       };
 
-    useEffect(()=>{
-        setQueuedTracks(shuffle(queuedTracks))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[isShuffled])
 
-    //Play Pause Of Playlists
+    // Play/Pause Of Playlists
     const playlistPlayPause = (playlistData) => {
         //if different playlist
-        if (playlistData.uniqueId !== playingItems.playingPlaylist) {
+        if (playlistData.uniqueId !== playingPlaylist) {
             setPlayingPlaylist(playlistData.uniqueId);
             setPlayingTrackIndex(0)
             //if shuffle
@@ -142,50 +175,89 @@ function App() {
 
     };
 
-    const songPlayPause = (songData, index, playlistId, songIds, isMobileAgent= false) => {
-        // Check if it's a single track or part of a playlist
-        if (!songIds) {
-            // Single track scenario
-            setQueuedTracks([songData.uniqueId]);
-            setPlayingTrackIndex(0);
-            setPlayingPlaylist(null);
+    // const songPlayPause = (songData, index, playlistId, songIds, isMobileAgent= false) => {
+    //     // Check if it's a single track or part of a playlist
+    //     if (!songIds) {
+    //         // Single track scenario
+    //         setQueuedTracks([songData.uniqueId]);
+    //         setPlayingTrackIndex(0);
+    //         setPlayingPlaylist(null);
     
-            // Toggle play/pause and update state
-            globalAudioRef.current[isPlaying ? "pause" : "play"]();
-            setIsPlaying(!isPlaying);
-            return;
-        }
-        //!!!!FIX!!!!!!
-        if(isShuffled){
-            setQueuedTracks(songIds)
+    //         // Toggle play/pause and update state
+    //         globalAudioRef.current[isPlaying ? "pause" : "play"]();
+    //         setIsPlaying(!isPlaying);
+    //         return;
+    //     }
+    //     //!!!!FIX!!!!!!
+    //     if(isShuffled){
+    //         setQueuedTracks(songIds)
+    //         setPlayingTrack(songData.uniqueId)
+    //         shuffle(queuedTracks)
+    //         return
+    //     }
+    //     // Playlist track scenario
+    //     const isSamePlaylist = playlistId === playingItems.playingPlaylist;
+    //     const isSameTrack = songData.uniqueId === playingItems.playingTrack;
+    
+    //     if (isSamePlaylist) {
+    //         // Same playlist
+    //         if (isSameTrack && !isMobileAgent) {
+    //             // Toggle play/pause if it's the same track
+    //             setIsPlaying((prevIsPlaying) => !prevIsPlaying);
+    //         } else {
+    //             // Update track index and play new track
+    //             updatePlayingTrackIndex(index);
+    //             updatePlayingTrack(queuedTracks[playingTrackIndex]);
+    //             setIsPlaying(true);
+    //         }
+    //     } else {
+    //         // Different playlist
+    //         updatePlayingPlaylist(playlistId);
+    //         updateQueuedTracks(songIds);
+    //         updatePlayingTrackIndex(index);
+    //         updatePlayingTrack(queuedTracks[playingTrackIndex]);
+    //         setIsPlaying(true);
+    //     }
+    // };
+    const songPlayPause = (songData, playlistData, playlistId= playingPlaylist,index, isMobileAgent= false) => {
+        
+        //Functions
+        const play= ()=>{
+            setPlayingPlaylist(playlistId)
             setPlayingTrack(songData.uniqueId)
-            shuffle(queuedTracks)
+            setIsPlaying(true)
+            //set queuedTracks
+            if(isShuffled){
+                setQueuedTracks(shuffle(playlistData.songIds))
+            }else{
+                setQueuedTracks(playlistData.songIds)
+                setPlayingTrackIndex(playlistData.songIds.indexOf(songData.uniqueId))
+            }
+        }
+        const pause= ()=>{
+            setIsPlaying(false)
+        }
+
+        if(!isPlaying){
+            play()
+            return
+        }else{
+            //Play different track while isPlaying=== true
+            if(playingPlaylist === playlistId && playingTrack !== songData.uniqueId){
+                play()
+                return
+            }
+            //play same track from different playlist
+            if(playingPlaylist !== playlistId){
+                globalAudioRef.current.currentTime = 0
+                play()
+                return
+            }
+            pause()
             return
         }
-        // Playlist track scenario
-        const isSamePlaylist = playlistId === playingItems.playingPlaylist;
-        const isSameTrack = songData.uniqueId === playingItems.playingTrack;
-    
-        if (isSamePlaylist) {
-            // Same playlist
-            if (isSameTrack && !isMobileAgent) {
-                // Toggle play/pause if it's the same track
-                setIsPlaying((prevIsPlaying) => !prevIsPlaying);
-            } else {
-                // Update track index and play new track
-                updatePlayingTrackIndex(index);
-                updatePlayingTrack(queuedTracks[playingTrackIndex]);
-                setIsPlaying(true);
-            }
-        } else {
-            // Different playlist
-            updatePlayingPlaylist(playlistId);
-            updateQueuedTracks(songIds);
-            updatePlayingTrackIndex(index);
-            updatePlayingTrack(queuedTracks[playingTrackIndex]);
-            setIsPlaying(true);
-        }
     };
+    
 
     //global functions
     const updatePlayingTrack = (newTrackId) => {
@@ -213,7 +285,7 @@ function App() {
     return (
         <Router>
             <div className="App">
-            <audio ref={globalAudioRef} src={track.src} onEnded={autoPlay} volume="0.5"/>
+            <audio ref={globalAudioRef} src={track.src} onEnded={autoPlay} defaultvolume='0.5'/>
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;
