@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/groove/static/css/main.15d76a2e.css",
-    "main.js": "/groove/static/js/main.baf500eb.js",
+    "main.css": "/groove/static/css/main.8102de95.css",
+    "main.js": "/groove/static/js/main.7aca5dfa.js",
     "static/js/787.61e465a2.chunk.js": "/groove/static/js/787.61e465a2.chunk.js",
     "static/media/MuonRoiMaSaoCon-SonTungMTP.mp3": "/groove/static/media/MuonRoiMaSaoCon-SonTungMTP.32f348e275a1bc828c46.mp3",
     "static/media/ThucGiac-DaLAB.mp3": "/groove/static/media/ThucGiac-DaLAB.2455cab45f2ae9433d3b.mp3",
     "static/media/HayTraoChoAnh-SonTungMTPSnoopDogg.mp3": "/groove/static/media/HayTraoChoAnh-SonTungMTPSnoopDogg.b0e98894f6f9943869ef.mp3",
     "static/media/I Feel It Coming-The Weeknd.mp3": "/groove/static/media/I Feel It Coming-The Weeknd.2bb9a9154786f3b6cd24.mp3",
     "static/media/TuyAm-XesiMasewNhatNguyen.mp3": "/groove/static/media/TuyAm-XesiMasewNhatNguyen.fc027454408b223619e6.mp3",
+    "static/media/LeLuuLy-VuPhungTienDrum7.mp3": "/groove/static/media/LeLuuLy-VuPhungTienDrum7.e9c211e88d2645679235.mp3",
     "static/media/AnhLaNgoaiLeCuaEm-PhuongLy.mp3": "/groove/static/media/AnhLaNgoaiLeCuaEm-PhuongLy.c874e2bf3c480c65bb71.mp3",
     "static/media/GalwayGirl-EdSheeran.mp3": "/groove/static/media/GalwayGirl-EdSheeran.b98dcdf52da8f4966136.mp3",
     "static/media/Counting Stars - OneRepublic.mp3": "/groove/static/media/Counting Stars - OneRepublic.f678209c6b5cef938e73.mp3",
@@ -46,6 +47,8 @@
     "static/media/CircularSp-Book.woff2": "/groove/static/media/CircularSp-Book.4d08acc2822e73fe6c91.woff2",
     "static/media/liked-playlist.png": "/groove/static/media/liked-playlist.5ebae1ae1a72170b226d.png",
     "static/media/groove_avatar.jpg": "/groove/static/media/groove_avatar.a5108e2b9c00131b2ac2.jpg",
+    "static/media/drum7_avatar.jpg": "/groove/static/media/drum7_avatar.abf088f70f993e7e94a2.jpg",
+    "static/media/le-luu-ly_cover.jpg": "/groove/static/media/le-luu-ly_cover.77909df02e50b23c4b71.jpg",
     "static/media/coldplay_avatar.jpg": "/groove/static/media/coldplay_avatar.3619bfb6c9b9e7b6c1ef.jpg",
     "static/media/angels-like-you-cover.jpg": "/groove/static/media/angels-like-you-cover.6d2afae2999e2edea3fe.jpg",
     "static/media/divide-cover.jpg": "/groove/static/media/divide-cover.d268be29f52d12bfb8d3.jpg",
@@ -98,12 +101,12 @@
     "static/media/justin-bieber_avatar.jpg": "/groove/static/media/justin-bieber_avatar.6216cdae9385d47e6758.jpg",
     "static/media/jaira-burns_avatar.jpg": "/groove/static/media/jaira-burns_avatar.779c823814251d792827.jpg",
     "index.html": "/groove/index.html",
-    "main.15d76a2e.css.map": "/groove/static/css/main.15d76a2e.css.map",
-    "main.baf500eb.js.map": "/groove/static/js/main.baf500eb.js.map",
+    "main.8102de95.css.map": "/groove/static/css/main.8102de95.css.map",
+    "main.7aca5dfa.js.map": "/groove/static/js/main.7aca5dfa.js.map",
     "787.61e465a2.chunk.js.map": "/groove/static/js/787.61e465a2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.15d76a2e.css",
-    "static/js/main.baf500eb.js"
+    "static/css/main.8102de95.css",
+    "static/js/main.7aca5dfa.js"
   ]
 }
